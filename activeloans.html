@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotsDNA - Active Loans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ed 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-desc {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            /* color: white; */
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 140px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+        .testimonials {
+        background-color: #f8fafc;
+        padding: 80px 0;
+    }
+
+
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-up {
+        position: fixed;
+        bottom: 80px;
+        right: 28px;
+        z-index: 999;
+        display: none; /* Hidden by default */
+        cursor: pointer;
+    }
+
+    .scroll-up svg {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.2s ease;
+    }
+
+    .scroll-up:hover svg {
+        transform: translateY(-3px);
+    }
+    .watch-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4f46e5;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .watch-more-btn:hover {
+        background-color: #fff;
+    }
+
+     /* Tabs Styles */
+     .tabs-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .tabs-header {
+        display: flex;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tab-btn {
+        flex: 1;
+        padding: 15px 20px;
+        text-align: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .tab-btn:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .tab-btn.active {
+        color: var(--primary);
+    }
+
+    .tab-btn.active:after {
+        transform: scaleX(1);
+    }
+
+    .tab-btn:hover:not(.active) {
+        color: var(--dark);
+        background-color: #f8fafc;
+    }
+
+    .tabs-content {
+        padding: 30px;
+    }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Table Styles */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .data-table th {
+        background-color: var(--primary);
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-weight: 600;
+    }
+
+    .data-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e2e8f0;
+        vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    .data-table tr:hover {
+        background-color: #f0f4ff;
+    }
+
+    .data-table .status {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .data-table .status.active {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
+    .data-table .status.inactive {
+        background-color: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .data-table .status.pending {
+        background-color: #fef3c7;
+        color: #92400e;
+    }
+
+    .data-table .action-btn {
+        padding: 6px 12px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+    }
+
+    .data-table .action-btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-1px);
+    }
+
+
+
+    /* Responsive Tables */
+    @media (max-width: 768px) {
+        .data-table {
+            display: block;
+            overflow-x: auto;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src = "images/logo.png" alt ="BotsDNA" style = "width: 200px">
+                <!-- <i class="fas fa-robot"></i>
+                BotsDNA -->
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://docs.google.com/forms/d/1FHzTZ1L0yI2JlHcLhsT4cCsEUxhx83B5qZnpoPc0Wr4/viewform?edit_requested=true" target="_blank">Mock interview Request</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Active Loans <i class="fa fa-landmark"></i></h2>
+            <p class="section-subtitle">Track and manage all your active loans seamlessly with BotsDNA – real-time status, repayments, and more at your fingertips.</p>
+        </div>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=wVPvum68JNE" target = "_blank">Requirement</a>
+                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=fQ0cK4Y7MUA&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=9" target = "_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/active-loans/5" target = "_blank">End2End(Source Code)</a>
+            </div>
+            <div class="tabs-content">
+                <!-- Customer List Tab -->
+                <div class="tab-pane active" id="customer-list">
+                    <h3 style="text-align: center;">Loans List</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Loan Code</th>
+                                <th>PAN Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SAPTHAGIRI GRAMIN BANK-7325</td><td>DIWPK9815G</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI BANK-6673</td><td>QISTV8492U</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CENTRAL BANK OF BANK-5652</td><td>GTDFR6483T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UNION BANK OF INDIA-7541</td><td>GHAST6432K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>INDIAN BANK-5174</td><td>DIWGH9765T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI BANK-3687</td><td>HDGTS5427K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>IDBI-3832</td><td>CIWTS8549K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI BANK-1514</td><td>SGTEI7453B</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>AXIS BANK-6943</td><td>CTRBD5738Y</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-5132</td><td>DIWGK3721P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-3243</td><td>SIKDA9523L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KOTAK BANK-4553</td><td>LDSCT4628C</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>LAXMI NIVAS BANK-4392</td><td>JSFGT8291K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>HDFC-1545</td><td>SAYDG7351J</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-3431</td><td>AKLTB3921L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>AXIS BANK-2854</td><td>KLERT7451H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>HDFC-8261</td><td>LOATY7258D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-6294</td><td>QISTW9054F</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>PUNJAB GRAMIN BANK-5376</td><td>RESCT8421B</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>KOTAK BANK-9353</td><td>FSTEY7638P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ANDRA BANK-7653</td><td>LPEST9640K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>TELANGANA GRAMIN BANK-9524</td><td>YDREI6382H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KOTAK BANK-5114</td><td>GTPUE3856E</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>AXIS BANK-8723</td><td>LPSTA7251A</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>ANDRA BANK-3762</td><td>RFSBZ5194S</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-2647</td><td>YWQAV4172C</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SYDICATE BANK-4853</td><td>LAZTU2819D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>APGVB-1415</td><td>SWUTL6217J</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ANDRA BANK-9151</td><td>LSTAQ7294X</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>CANARA BANK-4935</td><td>PECZA7132P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>FEDRAL BANK OF INDIA-4653</td><td>PQYXA9061F</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KARNATAKA BANK-3734</td><td>UDBMS0261H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-6242</td><td>HLWOQ7427V</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>SBI-2715</td><td>BQIST1438G</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>BANK OF BARODA-3671</td><td>PLSTR8475A</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>FEDRAL BANK OF INDIA-5633</td><td>GFCNZ8139L</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>SYDICATE BANK-6527</td><td>GTMPA8501T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI-2726</td><td>FSEZT0643L</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>SBI-5146</td><td>PDWZY9274Q</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI BANK-1654</td><td>FNTWO5914T</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>INDIAN BANK-0264</td><td>MLKST7535X</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-5014</td><td>NYELA0751B</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KERALA GRAMIN BANK-8454</td><td>PSVWQ7382U</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>CORPORATION BANK-8265</td><td>HEZXT8641U</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>BANK OF BARODA-5082</td><td>JUTXZ8537R</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UNION BANK OF INDIA-5357</td><td>FEQCT5281H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KOTAK BANK-8092</td><td>PSTQS7421R</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UCO BANK-8321</td><td>DIWSK9817G</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>KOTAK BANK-0854</td><td>BCMRX5294D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>BANK OF BARODA-5381</td><td>YQIST9421G</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>KARNATAKA GRAMIN BANK-4361</td><td>WUSKA8351V</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-7544</td><td>MPGQL8416S</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>VIJAYA BANK-7436</td><td>GLUEQ9537D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>AXISBANK-8798</td><td>PSTEQ5192G</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SYDICATE BANK-2546</td><td>WQZCT6128P</td></tr>
+                            <tr><td>ONHOLD</td><td>AXIS BANK-4334</td><td>STWGH7254T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>AXIS BANK-4153</td><td>SEQYR3195P</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>UCO BANK-4951</td><td>LAQU5419T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>IDBI-7342</td><td>PSTQW2841F</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UCO BANK-7461</td><td>PSTDW6459E</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-4294</td><td>AQSTF9376H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CENTRAL BANK OF INDIA-4232</td><td>HDXRT7543E</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>CANARA BANK-9213</td><td>EDSKU6953B</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ANDRA BANK-3413</td><td>WXFBS3752S</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-9345</td><td>XGRTS9064W</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>KOTAK BANK-2273</td><td>DXPET7291H</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ANDRA BANK-8421</td><td>LPSFT7389C</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>BARODA GUJARAT GRAMIN BANK-9721</td><td>LYSQE3921M</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-5401</td><td>SQWOD7835K</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>SAPTAGIRI BANK-5621</td><td>XBDTS4794Z</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-7816</td><td>LPSFW0638V</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CHAITANYA GODAVARI GARMEENA BANK-4679</td><td>ZGREQ8329P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>APGP BANK-0736</td><td>ZEWUS1039L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CORPORATION BANK-1934</td><td>PAWHC0421M</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>INDIAN BANK-4564</td><td>LTRPE9327Z</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SYDICATE BANKs-6497</td><td>MJIKS0573D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>AXIS BANK-8591</td><td>TXLAQ7294C</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SYDICATE BANK-4394</td><td>BHTEW7138F</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>UNION BANK OF INDIA-8764</td><td>APTQZ4027S</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-6556</td><td>EVTQU7392P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ICICI BANK-1673</td><td>HTFRG4023F</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>INDIAN BANK-3716</td><td>WXZLO9367T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CENTRAL BANK OF INDIA-9852</td><td>PQAHT6182G</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>BANDHANBANK-4471</td><td>PDSKU8428M</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>APGB-4461</td><td>YCFEK1794N</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>TELANGANA GRAMIN BANK-4762</td><td>PQWZT7283E</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>HDFC-5653</td><td>UNBWT9317G</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>MAHARASTARA BANK-7686</td><td>LDTWQ8362I</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SYDICATE BANK-8542</td><td>FKECY8732B</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>IDBI-5285</td><td>YWESR5293L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UNION BANK OF INDIA-4446</td><td>DKPTG7483A</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KOTAK BANK-2945</td><td>PQTC8301V</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UCO BANK-3221</td><td>SXAPH7294L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>SBI-8266</td><td>KLQIF7362Y</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UNION BANK OF BANK-6136</td><td>BSGHE9821M</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>UNION BANK OF INDIA-1336</td><td>NJSED9357T</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CANARA BANK-3135</td><td>HSTWU6235J</td></tr>
+                            <tr><td><span class="status onhold">ON HOLD</span></td><td>CORPORATION BANK-1454</td><td>FPOYX5294P</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>CENTRAL BANK OF INDIA-6621</td><td>WSRGB5291K</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>UNION BANK OF INDIA-4685</td><td>DECTQ5287K</td></tr>
+                            <tr><td><span class="status inactive">INACTIVE</span></td><td>HDFC-2922</td><td>LYTQP5195D</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>ANDRA BANK-1332</td><td>PLDTM8510L</td></tr>
+                            <tr><td><span class="status active">ACTIVE</span></td><td>KOTAK BANK-9823</td><td>LBJRS7362R</td></tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <img src ="images/logo.png" alt = "BotDNS" style = "width:250px">
+                    <p>Learn UiPath step by step with real projects, expert guidance, and job-focused training — all in one place.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 BotsDNA. All rights reserved.Designed By IES</p>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/919705435277" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <!-- SVG Up Arrow Icon -->
+    <a href="#" class="scroll-up" id="scrollUp" title="Go to Top">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+    <script>
+        const scrollUp = document.getElementById('scrollUp');
+
+        // Show/hide the up arrow based on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollUp.style.display = 'block';
+            } else {
+                scrollUp.style.display = 'none';
+            }
+        });
+
+        // Scroll to top on click
+        scrollUp.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
