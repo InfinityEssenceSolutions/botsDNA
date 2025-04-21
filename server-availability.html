@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Notary Services</title>
+    <title>BotsDNA - Server Availability</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -465,6 +465,7 @@
     background: #f1f1f1;
 }
 
+
     .tab-btn {
         flex: 1;
         padding: 15px 20px;
@@ -700,7 +701,7 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Notary Services <i class="fas fa-stamp"></i></h2>
+            <h2 class="section-title">Server Availability <i class="fa fa-server"></i></h2>
             <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
         <br>
@@ -717,20 +718,24 @@
                 <!-- Assign Courts Tab -->
                 <div class="tab-pane active" id="assign-courts">
                     <div class="form-card">
-                        <h2>FILL NOTARY ADVOCATE Details</h2>
                         <form>
-                          <label for="team-code">NOTARY ADVOCATE NAME</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Advocate Name" required>
+                          <label for="team-code">Username</label>
+                          <input type="text" id="team-code" name="team_code" placeholder="Enter Username" required>
 
-                          <label for="team-code">AREA OF PRACTICE</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Area of Practice" required>
+                          <label for="team-code">Password</label>
+                          <input type="password" id="team-code" name="team_code" placeholder="Enter Area of Practice" required>
 
-                          <label for="court-name">District</label>
+                          <label for="court-name">Server</label>
                           <select id="court-name" name="court_name">
-                            <option value="Dribble Football">Vizianagaram</option>
+                            <option value="">--- Select Server ---</option>
+                            <option value="TS-202-32-5">TS-202-32-5</option>
+                            <option value="BE-126-42-6">BE-126-42-6</option>
+                            <option value="VG-654-67-7">VG-654-67-7</option>
+                            <option value="TY-567-87-8">TY-567-87-8</option>
+                            <option value="HJ-876-43-9">HJ-876-43-9</option>
                           </select>
 
-                          <button type="submit">Submit Notary</button>
+                          <button type="submit">Start Server</button>
                         </form>
                       </div>
                 </div>

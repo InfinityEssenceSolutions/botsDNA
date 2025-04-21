@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Notary Services</title>
+    <title>BotsDNA - Virtual Plots</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -651,7 +651,7 @@
     }
 
     .form-card button {
-      width: 100%;
+      width: 12%;
       padding: 12px;
       background: var(--primary-dark);
       color: #fff;
@@ -700,8 +700,8 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Notary Services <i class="fas fa-stamp"></i></h2>
-            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
+            <h2 class="section-title">Booking Land Virtual <i class="fa fa-home"></i></h2>
+            <p class="section-subtitle">The best investment on Earth is earth😀</p>
         </div>
         <br>
         <div class="tabs-container">
@@ -713,24 +713,50 @@
             </div>
 
             <div class="tabs-content">
-
-                <!-- Assign Courts Tab -->
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <table class="data-table">
+                        <thead>
+                          <tr>
+                            <th>Buyer</th>
+                            <th>Seller</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>MV Subbarao</td><td>9574876588</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Kakinada Ramarao</td><td>8957848621</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>H. Paparao</td><td>7858758896</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>T.P.Apparao</td><td>9587412357</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Nandipati Kiran Kumar</td><td>8579855246</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>B.Rajendra Prasad</td><td>9587457488</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>K.Khaja</td><td>8574879853</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>G.U. Thimmaiah</td><td>9856587456</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Sunil Kumar</td><td>9658745877</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Mouli basha .M</td><td>8698578523</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>K. Raghavendra</td><td>9632587456</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Jagadeesh kumar</td><td>8528529631</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Venkata Ramana</td><td>9898568421</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>Y.Ananthasen Reddy</td><td>8569968524</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>T. Hari chandrudu</td><td>9853524178</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>M.Narendra</td><td>9685787896</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>A.Rama Mohan Reddy</td><td>9856893244</td></tr>
+                          <tr><td><input type="radio" name="buyer"></td><td><input type="radio" name="seller"></td><td>S Krishna</td><td>9968553222</td></tr>
+                        </tbody>
+                      </table>
+                </div>
+                <br>
                 <div class="tab-pane active" id="assign-courts">
                     <div class="form-card">
-                        <h2>FILL NOTARY ADVOCATE Details</h2>
                         <form>
-                          <label for="team-code">NOTARY ADVOCATE NAME</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Advocate Name" required>
+                          <label for="team-code">Plot No</label>
+                          <input type="text" id="team-code" name="team_code" placeholder="Enter Plot Number" required>
 
-                          <label for="team-code">AREA OF PRACTICE</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Area of Practice" required>
+                          <label for="team-code">Sqft</label>
+                          <input type="text" id="team-code" name="team_code" placeholder="Enter Square Feet" required>
 
-                          <label for="court-name">District</label>
-                          <select id="court-name" name="court_name">
-                            <option value="Dribble Football">Vizianagaram</option>
-                          </select>
-
-                          <button type="submit">Submit Notary</button>
+                          <button type="submit">Submit</button>
                         </form>
                       </div>
                 </div>

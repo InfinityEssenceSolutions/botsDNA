@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Notary Services</title>
+    <title>BotsDNA - Server Setup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -566,11 +566,6 @@
         color: #065f46;
     }
 
-    .data-table .status.onhold {
-        background-color: #fff3cd; /* Light warning background */
-        color: #856404;            /* Bootstrap's text-warning color */
-    }
-
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -606,51 +601,34 @@
             overflow-x: auto;
         }
     }
-
-    .form-card {
-      background: #ffffff;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 955px;
-      text-align: center;
+    select {
+            width: 100%;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+        .label {
+      font-size: 20px;
+      color: var(--dark-gray);
+      font-weight: bold;
+      white-space: nowrap;
     }
-
-    .form-card h2 {
-      margin-bottom: 25px;
-      color: #2d2d2d;
-      font-size: 24px;
+    .value {
+      font-size: 18px;
+      color: var(--dark-gray);
     }
-
-    .form-card label {
+    input[type="submit"] {
+      margin: 5px;
+      padding: 5px 10px;
+    }
+    .apps-list label {
       display: block;
-      text-align: left;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: #333;
+      font-size: 18px;
+      color: var(--dark-gray);
+      margin-bottom: 5px;
     }
-
-    .form-card input,
-    .form-card select {
-      width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 18px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      background: #f9f9f9;
-      transition: border 0.3s;
-    }
-
-    .form-card input:focus,
-    .form-card select:focus {
-      border-color: var(--primary-dark);
-      outline: none;
-      background-color: #fff;
-    }
-
-    .form-card button {
+    button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -663,16 +641,9 @@
       transition: background 0.3s;
     }
 
-    .form-card button:hover {
+    .button:hover {
       background: #0056b3;
     }
-
-    .form-note {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #888;
-    }
-
     </style>
 </head>
 <body>
@@ -700,43 +671,79 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Notary Services <i class="fas fa-stamp"></i></h2>
-            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
+            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
+            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
         </div>
-        <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=wVPvum68JNE" target = "_blank">Requirement</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=aY_2O9fuS80" target = "_blank">Requirement</a>
                 <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=fQ0cK4Y7MUA&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=9" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/active-loans/5" target = "_blank">End2End(Source Code)</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=UaoiYTzH43U&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=5" target = "_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/locator/4" target = "_blank">Source Code</a>
             </div>
-
             <div class="tabs-content">
+                <!-- Customer List Tab -->
+                <div class="tab-pane active" id="customer-list">
 
-                <!-- Assign Courts Tab -->
-                <div class="tab-pane active" id="assign-courts">
-                    <div class="form-card">
-                        <h2>FILL NOTARY ADVOCATE Details</h2>
-                        <form>
-                          <label for="team-code">NOTARY ADVOCATE NAME</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Advocate Name" required>
+                    <form action = "#" method = "POST">
+                        <table class = "data-table">
+                          <tr>
+                            <td class="label">Choose Operating System (OS):</td>
+                            <td>
+                              <select name="os" class="value">
+                                <option value="windows_nt">WINDOWS NT</option>
+                                <option value="windows_10">WINDOWS 10</option>
+                                <option value="linux">LINUX</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="label">RAM Size:</td>
+                            <td>
+                              <select name="ram" class="value">
+                                <option>4 GB</option>
+                                <option>8 GB</option>
+                                <option>16 GB</option>
+                                <option>32 GB</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="label">HDD Size:</td>
+                            <td class="value">
+                              <input type="radio" name="hdd" value="250"> 250 GB
+                              <input type="radio" name="hdd" value="500"> 500 GB
+                              <input type="radio" name="hdd" value="1000"> 1 TB
+                              <input type="radio" name="hdd" value="2000"> 2 TB
+                              <input type="radio" name="hdd" value="5000"> 5 TB
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="label">Select Applications:</td>
+                            <td class="apps-list">
+                              <label><input type="checkbox" name="apps" value="7zip"> 7-Zip</label>
+                              <label><input type="checkbox" name="apps" value="acrobat"> Adobe Acrobat Professional</label>
+                              <label><input type="checkbox" name="apps" value="reader"> Adobe Reader</label>
+                              <label><input type="checkbox" name="apps" value="chrome"> Google Chrome</label>
+                              <label><input type="checkbox" name="apps" value="office"> Microsoft Office</label>
+                              <label><input type="checkbox" name="apps" value="sql"> Microsoft SQL Server</label>
+                              <label><input type="checkbox" name="apps" value="teams"> MS Teams</label>
+                              <label><input type="checkbox" name="apps" value="maxima"> Maxima</label>
+                              <label><input type="checkbox" name="apps" value="putty"> PuTTY</label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" style="text-align: center;">
+                              <button type="submit">Create Server</button>
+                            </td>
+                          </tr>
+                        </table>
+                      </form>
 
-                          <label for="team-code">AREA OF PRACTICE</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Area of Practice" required>
 
-                          <label for="court-name">District</label>
-                          <select id="court-name" name="court_name">
-                            <option value="Dribble Football">Vizianagaram</option>
-                          </select>
-
-                          <button type="submit">Submit Notary</button>
-                        </form>
-                      </div>
                 </div>
             </div>
         </div>
-
     </section>
     <footer>
         <div class="container">
@@ -773,21 +780,6 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
-    <script>
-        const buttons = document.querySelectorAll(".tab-btn");
-        const tabs = document.querySelectorAll(".tab-pane");
-
-        buttons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                buttons.forEach(b => b.classList.remove("active"));
-                tabs.forEach(tab => tab.classList.remove("active"));
-
-                btn.classList.add("active");
-                const target = btn.getAttribute("data-tab");
-                document.getElementById(target).classList.add("active");
-            });
-        });
-    </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 
