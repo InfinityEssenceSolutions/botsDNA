@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Notary Services</title>
+    <title>BotsDNA - Thanks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -45,7 +46,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
+            }
+
+            .center-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; /* Optional: makes it responsive */
+            height: auto;
+            }
 
         .btn {
             display: inline-block;
@@ -673,39 +681,15 @@
       color: #888;
     }
 
-    #myProgress {
-      width: 100%;
-      background-color: #ddd;
-      display: none;
-      margin-top: 10px;
-    }
-
-    #myBar {
-      width: 1%;
-      height: 20px;
-      background-color: #4CAF50;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      box-sizing: border-box;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
+    #TransNo{
+        color: var(--primary);
+        font-size: 20px;
+        text-align: center;
     }
 
     </style>
 </head>
-<body onload="hideProgressBar()">
+<body onload="GenerateTransactionNumber()">
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -730,62 +714,13 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Notary Services <i class="fas fa-stamp"></i></h2>
-            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
+          <img src="images/thanks.jpg" class="center-image" />
+          <h2 style="text-align: center;">Booking Number</h2>
+          <p id="TransNo"></p>
         </div>
-        <br>
-        <div class="tabs-container">
-            <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=wVPvum68JNE" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=fQ0cK4Y7MUA&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=9" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/active-loans/5" target = "_blank">End2End(Source Code)</a>
-            </div>
+      </section>
 
-            <div class="tabs-content">
-
-                <!-- Assign Courts Tab -->
-                <div class="tab-pane active" id="assign-courts">
-                    <div class="form-card">
-                        <h2>FILL NOTARY ADVOCATE Details</h2>
-                        <form onsubmit="opensubmissionpage(event)">
-                            <label for="notary">NOTARY ADVOCATE NAME</label>
-                            <input type="text" id="notary" placeholder="Enter Advocate Name">
-
-                            <label for="area">AREA OF PRACTICE</label>
-                            <input type="text" id="area" placeholder="Enter Area of Practice">
-
-                            <label for="court-name">District</label>
-                            <select name="DIST" id="DIST">
-                              <option>VIZIANAGARAM</option>
-                              <option>VISAKHAPATNAM</option>
-                              <option>EAST GODAVARI</option>
-                              <option>WEST GODAVARI</option>
-                              <option>KRISHNA</option>
-                              <option>GUNTUR</option>
-                              <option>PRAKASAM</option>
-                              <option>NELLORE</option>
-                              <option>CHITTOOR</option>
-                              <option>ANANTHAPURAM</option>
-                              <option>KADAPA</option>
-                              <option>KURNOOL</option>
-                              <option>DONE BY GOVT</option>
-                            </select>
-
-                            <button type="submit">Submit Notary</button>
-                          </form>
-
-                          <div id="myProgress">
-                            <div id="myBar"></div>
-                          </div>
-                          <p id="today"></p>
-                      </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <footer>
+    <!-- <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
@@ -808,7 +743,7 @@
                 <p>&copy; 2025 BotsDNA. All rights reserved.Designed By IES</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- WhatsApp Icon -->
     <a href="https://wa.me/919705435277" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
         <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
@@ -821,45 +756,12 @@
         </svg>
     </a>
     <script>
-        function move() {
-          var elem = document.getElementById("myBar");
-          var width = 1;
-          var id = setInterval(frame, 10);
-          function frame() {
-            if (width >= 100) {
-              clearInterval(id);
-            } else {
-              width++;
-              elem.style.width = width + "%";
-            }
-          }
+        function GenerateTransactionNumber()
+        {
+            let x = Math.floor((Math.random() * 100000000) + 10000000);
+            document.getElementById("TransNo").innerHTML = x;
         }
-
-        function hideProgressBar() {
-          const n = new Date();
-          const y = n.getFullYear();
-          const m = n.getMonth() + 1;
-          const d = n.getDate();
-          document.getElementById("today").innerHTML = `${m}/${d}/${y}`;
-          document.getElementById("myProgress").style.display = 'none';
-        }
-
-        function opensubmissionpage(event) {
-          event.preventDefault(); // Prevent form from reloading the page
-          move();
-          document.getElementById("myProgress").style.display = 'block';
-
-          // Clear form fields
-          document.getElementById("notary").value = "";
-          document.getElementById("area").value = "";
-          document.getElementById("DIST").value = "VIZIANAGARAM";
-
-          // Redirect after delay
-          setTimeout(() => {
-            window.location.href = "Thanks.html";
-          }, 1000);
-        }
-      </script>
+    </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");
@@ -929,3 +831,4 @@
     </script>
 </body>
 </html>
+

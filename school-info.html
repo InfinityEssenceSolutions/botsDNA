@@ -720,9 +720,9 @@
                         <h2>School Databse</h2>
                         <form>
                           <label for="team-code">School Code</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter School Code" required>
+                          <input type="text" id=SchoolCode name="team_code" placeholder="Enter School Code" required>
 
-                          <button type="submit">Search</button>
+                          <button type="submit" id=SearchSchool onclick="openSchool()">Search</button>
                         </form>
                       </div>
                 </div>
@@ -765,6 +765,16 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+
+        function openSchool()
+        {
+
+        var a = document.getElementById("SchoolCode").value;
+         window.open(a+".html", "_blank");
+
+        }
+    </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

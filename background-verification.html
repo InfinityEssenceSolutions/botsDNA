@@ -684,36 +684,36 @@
             <div class="tabs-content">
                 <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
-
+                    <h5 ><span id='CurrentValue'>1</span> of 10 emploees</h5>
                     <form action = "#" method = "POST">
                         <table class = "data-table">
                           <tr>
                             <td class="label">Employee ID:</td>
                             <td>
-                                <span>BDNA73892</span>
+                                <span><input type = "text" id="CurrentEmpID" disabled></span>
                             </td>
                           </tr>
                           <tr>
                             <td class="label">Employe Name:</td>
                             <td>
-                                <span>Chejala Surendra</span>
+                                <span><input type=text id="CurrentEmpName" disabled /></span>
                             </td>
                           </tr>
                           <tr>
                             <td class="label">Missing Documents:</td>
                             <td class="value">
-                              <span style = "color: red;">SSC MarkList / INTER MarkList</span>
+                              <span style = "color: red;"><textarea rows=6 id=MissingDocs disabled>SSC MarkList / INTER MarkList</textarea></span>
                             </td>
                           </tr>
                           <tr>
                             <td class="label">Upload Zip File:</td>
                             <td class="apps-list">
-                              <label><input type="file" name="apps" value="7zip"></label>
+                              <label><input type="file" id=uploadedFile  accept=".zip"></label>
                             </td>
                           </tr>
                           <tr>
                             <td colspan="2" style="text-align: center;">
-                              <button type="submit">Submit</button>
+                                <input type=button id="Submit" onclick='SubmitBGV()' value="Submit" />
                             </td>
                           </tr>
                         </table>
@@ -723,6 +723,10 @@
                 </div>
             </div>
         </div>
+    </div><div id="snackbar">Successfully Submitted Missing Documents..</div>
+    <div id=Congrats>
+    <h1>Congratulations</h1><br/><h3> All Missing Documents Submitted Successfully...</H3>
+    </div>
     </section>
     <footer>
         <div class="container">
@@ -759,6 +763,81 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        document.getElementById("Congrats").style.display = "none";
+        document.getElementById("CurrentEmpID").value=TenEmployee[0].EmployeeID;
+        document.getElementById("CurrentEmpName").value=TenEmployee[0].EmployeeName;
+        </script>
+    <script>
+
+        var EmployeeId =[{   EmployeeID : 'BDNA12336',   EmployeeName  : 'Jada Vishuvardhan Rao', UG : 'B.A' , PG : 'M.A' , OfferLetter : 'Wipro' , ExperienceLetter : 'Wipro'},
+        {   EmployeeID : 'BDNA12921',   EmployeeName  : 'Palagiri Mohan', UG : 'B.Sc' , PG : 'M.Sc' , OfferLetter : 'Infosys' , ExperienceLetter : 'Infosys'},
+        {   EmployeeID : 'BDNA15275',   EmployeeName  : 'Parre Sudheer Babu', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'HCL Technologies' , ExperienceLetter : 'HCL Technologies'},
+        {   EmployeeID : 'BDNA15515',   EmployeeName  : 'Malli.Shanthi', UG : 'B.Pharmacy' , PG : 'M.Pharmacy' , OfferLetter : 'HP' , ExperienceLetter : 'HP'},
+        {   EmployeeID : 'BDNA17253',   EmployeeName  : 'Bandi Sanjay', UG : 'BCA' , PG : 'MCA' , OfferLetter : 'Tech Mahindra' , ExperienceLetter : 'Tech Mahindra'},
+        {   EmployeeID : 'BDNA24725',   EmployeeName  : 'Bandaru Monohar ', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : '3i Infotech ' , ExperienceLetter : '3i Infotech '},
+        {   EmployeeID : 'BDNA37485',   EmployeeName  : 'Darsi Avaneeth Kumar', UG : 'B.B.M' , PG : 'MBA' , OfferLetter : 'KPIT Technologies' , ExperienceLetter : 'KPIT Technologies'},
+        {   EmployeeID : 'BDNA43354',   EmployeeName  : 'Sudarsi Vamsi', UG : 'B.Sc' , PG : 'M.Sc' , OfferLetter : 'Zensar Technologies' , ExperienceLetter : 'Zensar Technologies'},
+        {   EmployeeID : 'BDNA48192',   EmployeeName  : 'Devarapalli Lokesh', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'Tata Group' , ExperienceLetter : 'Tata Group'},
+        {   EmployeeID : 'BDNA48542',   EmployeeName  : 'Gokaraju RangaRaju', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : 'Sonata Software' , ExperienceLetter : 'Sonata Software'},
+        {   EmployeeID : 'BDNA63736',   EmployeeName  : 'Garnepudi Deelip Kumar', UG : 'B.Com' , PG : 'M.Com' , OfferLetter : 'NIIT Limited' , ExperienceLetter : 'NIIT Limited'},
+        {   EmployeeID : 'BDNA73892',   EmployeeName  : 'Chejala Surendra', UG : 'BCA' , PG : 'MCA' , OfferLetter : 'Mphasis Limited' , ExperienceLetter : 'Mphasis Limited'},
+        {   EmployeeID : 'BDNA82981',   EmployeeName  : 'Gumma Gopi ', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'Mindtree' , ExperienceLetter : 'Mindtree'},
+        {   EmployeeID : 'BDNA91252',   EmployeeName  : 'Kummagiri Karthik', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : 'Mastek' , ExperienceLetter : 'Mastek'},
+        {   EmployeeID : 'BDNA98283',   EmployeeName  : 'Kunchala Ravindra', UG : 'B.A' , PG : 'M.A' , OfferLetter : 'Rolta' , ExperienceLetter : 'Rolta'}];
+
+
+        var TenEmployee = [];
+
+        for(var i = 0; i <= 11; i++) {
+        var newEmp=EmployeeId[Math.floor((Math.random() * 14) + 1)];
+        while (TenEmployee.includes(newEmp)) {
+          newEmp=EmployeeId[Math.floor((Math.random() * 14) + 1)];
+        }
+
+        TenEmployee.push(newEmp);
+
+        }
+
+        function SubmitBGV()
+        {
+        var cv=document.getElementById("CurrentValue").innerText;
+
+
+        document.getElementById("CurrentEmpID").value=TenEmployee[parseInt(cv)].EmployeeID;
+        document.getElementById("CurrentEmpName").value=TenEmployee[parseInt(cv)].EmployeeName;
+
+        if(cv==10)
+        {
+        document.getElementById("dataEntry").style.display = "none";
+         document.getElementById("Congrats").style.display = "block";
+        }else{
+        var h=Math.floor((Math.random() * 5) + 2);
+        var MissingDocs="";
+        for(let k=1;k<=h;k++)
+        {
+        var p=Math.floor((Math.random() * 6) + 1);
+        if(p==1 && !MissingDocs.includes("SSC MarkList")){ MissingDocs=MissingDocs+" SSC MarkList / ";}
+        if(p==2 && !MissingDocs.includes("INTER MarkList")){ MissingDocs=MissingDocs+" INTER MarkList / ";}
+        if(p==3 && !MissingDocs.includes("Certificate")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].UG+" Certificate / ";}
+        if(p==4 && !MissingDocs.includes("Certificate")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].PG+" Certificate / ";}
+        if(p==5 && !MissingDocs.includes("Offer Letter")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].OfferLetter+" Offer Letter / ";}
+        if(p==6 && !MissingDocs.includes("Experience Letter")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].ExperienceLetter+" Experience Letter / ";}
+        }
+        MissingDocs=MissingDocs.substring(0,MissingDocs.length-2);
+        document.getElementById("MissingDocs").innerText=MissingDocs;
+         var x = document.getElementById("snackbar");
+        document.getElementById("snackbar").innerText="Successfully Submitted ["+TenEmployee[parseInt(cv)-1].EmployeeName+"] Missing Documents";
+          x.className = "show";
+          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        cv=parseInt(cv)+1;
+        document.getElementById("CurrentValue").innerText=cv;
+        document.getElementById("uploadedFile").value="";
+        }
+
+        }
+
+        </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 

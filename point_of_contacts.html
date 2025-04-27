@@ -649,7 +649,7 @@
                 <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
                     <h3 style="text-align: center;">Locator List</h3>
-                    <form action="#" method="post">
+                    <form id="pocForm">
                         <table class="data-table">
                             <thead>
                                 <tr>
@@ -665,7 +665,7 @@
                                     <td>+917892534672</td>
                                     <td>+918542344534</td>
                                     <td>
-                                        <select name="contact_TZNE3245">
+                                        <select name="contact_TZNE3245" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -677,7 +677,7 @@
                                     <td>7835628922</td>
                                     <td>9248534765</td>
                                     <td>
-                                        <select name="contact_DGSJ1264">
+                                        <select name="contact_DGSJ1264" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -689,7 +689,7 @@
                                     <td>+919848514867</td>
                                     <td>+918967345623</td>
                                     <td>
-                                        <select name="contact_HDES7289">
+                                        <select name="contact_HDES7289" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -701,7 +701,7 @@
                                     <td></td>
                                     <td>+919951193825</td>
                                     <td>
-                                        <select name="contact_BGDY8925">
+                                        <select name="contact_BGDY8925" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -713,7 +713,7 @@
                                     <td>9542775583</td>
                                     <td>9542678675</td>
                                     <td>
-                                        <select name="contact_ASEF2687">
+                                        <select name="contact_ASEF2687" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -725,7 +725,7 @@
                                     <td>7895262782</td>
                                     <td>6285123478</td>
                                     <td>
-                                        <select name="contact_ESTK1924">
+                                        <select name="contact_ESTK1924" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -737,7 +737,7 @@
                                     <td>+919878324252</td>
                                     <td>+917892424563</td>
                                     <td>
-                                        <select name="contact_DGSJ4592">
+                                        <select name="contact_DGSJ4592" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -749,7 +749,7 @@
                                     <td></td>
                                     <td>9989272987</td>
                                     <td>
-                                        <select name="contact_DESW3724">
+                                        <select name="contact_DESW3724" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -761,7 +761,7 @@
                                     <td>9924187192</td>
                                     <td></td>
                                     <td>
-                                        <select name="contact_DEST9478">
+                                        <select name="contact_DEST9478" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -773,7 +773,7 @@
                                     <td>9848324567</td>
                                     <td>9959946789</td>
                                     <td>
-                                        <select name="contact_QAES4353">
+                                        <select name="contact_QAES4353" id = "ContactType">
                                             <option value="Manager">Manager</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Both">Both</option>
@@ -783,7 +783,7 @@
                                 <!-- Additional rows would continue here in the same format -->
                             </tbody>
                         </table>
-                        <button type="submit">Submit</button>
+                        <button type="submit" id="poc">Submit</button>
                     </form>
 
 
@@ -826,6 +826,12 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        document.getElementById("pocForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent actual form submission
+          window.location.href = "pocthanks.html"; // Redirect to thanks page
+        });
+      </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 

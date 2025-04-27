@@ -643,66 +643,74 @@
                 <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
                     <h3 style="text-align: center;">Locator List</h3>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Customer Name</th>
-                                <th>South Africa</th>
-                                <th>Spain</th>
-                                <th>Sri Lanka</th>
-                                <th>Switzerland</th>
-                                <th>United Kingdom</th>
-                            </tr>
-                        </thead>
+                    <table class="data-table" id=tbl1 ng-controller="myController">
                         <tbody>
-                            <tr><td>ARUNACHAL PRADESH RURAL BANK</td><td>2</td><td>5</td><td>0</td><td>6</td><td>5</td></tr>
-                            <tr><td>CENTRAL BANK OF INDIA</td><td>1</td><td>7</td><td>6</td><td>3</td><td>9</td></tr>
-                            <tr><td>UNION BANK OF INDIA</td><td>6</td><td>6</td><td>3</td><td>4</td><td>5</td></tr>
-                            <tr><td>ANDRA PRAGHATHI GRAMEENA BANK</td><td>8</td><td>4</td><td>2</td><td>6</td><td>3</td></tr>
-                            <tr><td>MAHARASHTRA GRAMIN BANK</td><td>3</td><td>2</td><td>4</td><td>0</td><td>0</td></tr>
-                            <tr><td>PUNJAB NATIONAL BANK</td><td>4</td><td>3</td><td>6</td><td>3</td><td>8</td></tr>
-                            <tr><td>UCO BANK</td><td>1</td><td>6</td><td>7</td><td>5</td><td>0</td></tr>
-                            <tr><td>PUNJAB & SIND BANK</td><td>2</td><td>0</td><td>9</td><td>8</td><td>8</td></tr>
-                            <tr><td>MAHINDRA</td><td>7</td><td>4</td><td>1</td><td>4</td><td>3</td></tr>
-                            <tr><td>ROLLS ROYCE</td><td>9</td><td>2</td><td>2</td><td>5</td><td>5</td></tr>
-                            <tr><td>NISSAN</td><td>3</td><td>5</td><td>5</td><td>8</td><td>9</td></tr>
-                            <tr><td>BMW</td><td>2</td><td>9</td><td>2</td><td>0</td><td>5</td></tr>
-                            <tr><td>KIA</td><td>9</td><td>2</td><td>7</td><td>8</td><td>3</td></tr>
-                            <tr><td>HYUNDAI</td><td>6</td><td>7</td><td>9</td><td>3</td><td>5</td></tr>
-                            <tr><td>RENAULT</td><td>3</td><td>1</td><td>5</td><td>1</td><td>8</td></tr>
-                            <tr><td>BENZ</td><td>6</td><td>3</td><td>2</td><td>2</td><td>9</td></tr>
-                            <tr><td>MARUTHI SUZUKI</td><td>0</td><td>5</td><td>5</td><td>8</td><td>5</td></tr>
-                            <tr><td>SCODA</td><td>7</td><td>9</td><td>7</td><td>6</td><td>0</td></tr>
-                            <tr><td>LAND ROVER</td><td>3</td><td>8</td><td>0</td><td>4</td><td>1</td></tr>
-                            <tr><td>MIZORAM RURAL BANK</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
-                            <tr><td>CHAITANYA GODAVARI GRAMEENA BANK</td><td>4</td><td>3</td><td>8</td><td>1</td><td>8</td></tr>
-                            <tr><td>MEGHALAYA RURAL BANK</td><td>7</td><td>6</td><td>3</td><td>2</td><td>4</td></tr>
-                            <tr><td>INDIAN BANK</td><td>9</td><td>7</td><td>2</td><td>4</td><td>6</td></tr>
-                            <tr><td>BANK OF BARODA</td><td>6</td><td>4</td><td>2</td><td>7</td><td>8</td></tr>
-                            <tr><td>MADHYA PRADESH GRAMIN BANK</td><td>3</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
-                            <tr><td>BANK OF MAHARASHTRA</td><td>2</td><td>3</td><td>1</td><td>3</td><td>3</td></tr>
-                            <tr><td>BARODA RAJASTHAN KSHETRIYA GRAMIN BANK</td><td>3</td><td>7</td><td>5</td><td>4</td><td>5</td></tr>
-                            <tr><td>STATE BANK OF INDIA</td><td>6</td><td>5</td><td>2</td><td>0</td><td>0</td></tr>
-                            <tr><td>ELLAQUAI DEHATI BANK</td><td>8</td><td>3</td><td>5</td><td>5</td><td>3</td></tr>
-                            <tr><td>CANARA BANK</td><td>9</td><td>1</td><td>7</td><td>8</td><td>5</td></tr>
-                            <tr><td>ANDHRA PRADESH GRAMEENA VIKAS BANK</td><td>5</td><td>7</td><td>8</td><td>6</td><td>0</td></tr>
-                            <tr><td>MANIPUR RURAL BANK</td><td>3</td><td>3</td><td>5</td><td>5</td><td>7</td></tr>
-                            <tr><td>KARNATAKA GRAMIN BANK</td><td>2</td><td>0</td><td>3</td><td>3</td><td>5</td></tr>
-                            <tr><td>MADHYANCHAL GRAMIN BANK</td><td>1</td><td>5</td><td>2</td><td>7</td><td>0</td></tr>
-                            <tr><td>BANK OF INDIA</td><td>6</td><td>0</td><td>7</td><td>3</td><td>1</td></tr>
-                            <tr><td>NAGALAND RURAL BANK</td><td>8</td><td>8</td><td>8</td><td>4</td><td>2</td></tr>
-                            <tr><td>KARNATAKA VIKAS GRAMEENA BANK</td><td>0</td><td>3</td><td>9</td><td>7</td><td>5</td></tr>
-                            <tr><td>KERALA GRAMIN BANK</td><td>5</td><td>2</td><td>5</td><td>4</td><td>2</td></tr>
-                            <tr><td>ASSAM GRAMIN VIKASH BANK</td><td>0</td><td>9</td><td>0</td><td>2</td><td>1</td></tr>
-                            <tr><td>J & K GRAMEEN BANK</td><td>7</td><td>8</td><td>2</td><td>0</td><td>3</td></tr>
-                            <tr><td>BARODA GUJARAT GRAMIN BANK</td><td>1</td><td>6</td><td>6</td><td>4</td><td>5</td></tr>
-                            <tr><td>BANGIYA GRAMIN VIKASH BANK</td><td>3</td><td>1</td><td>3</td><td>8</td><td>7</td></tr>
-                            <tr><td>JHARKHAND RAJYA GRAMIN BANK</td><td>0</td><td>2</td><td>6</td><td>6</td><td>8</td></tr>
-                            <tr><td>DAKSHIN BIHAR GRAMIN BANK</td><td>7</td><td>7</td><td>8</td><td>7</td><td>0</td></tr>
-                            <tr><td>HIMACHAL PRADESH GRAMIN BANK</td><td>8</td><td>5</td><td>0</td><td>6</td><td>4</td></tr>
-                            <tr><td>BARODA UP BANK</td><td>0</td><td>2</td><td>1</td><td>5</td><td>3</td></tr>
-                            <tr><td>CHHATTISGARH RAJYA GRAMIN BANK</td><td>8</td><td>4</td><td>3</td><td>4</td><td>0</td></tr>
-                            <tr><td>ARYAVART BANK</td><td>6</td><td>0</td><td>8</td><td>9</td><td>7</td></tr>
+                            <tr>
+                                <th ng-repeat="(key, val) in myArray1[0]">{{ key }}</th>
+                            </tr>
+                            <tr>
+                                <tr ng-repeat="row in myArray1">
+                                    <td ng-repeat="column in row">
+                                      {{ column }}
+                                    </td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="data-table" id=tbl2 ng-controller="myController">
+                        <tbody>
+                            <tr>
+                                <th ng-repeat="(key, val) in myArray2[0]">{{ key }}</th>
+                            </tr>
+                            <tr>
+                                <tr ng-repeat="row in myArray2">
+                                    <td ng-repeat="column in row">
+                                      {{ column }}
+                                    </td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="data-table" id=tbl3 ng-controller="myController">
+                        <tbody>
+                            <tr>
+                                <th ng-repeat="(key, val) in myArray3[0]">{{ key }}</th>
+                            </tr>
+                            <tr>
+                                <tr ng-repeat="row in myArray3">
+                                    <td ng-repeat="column in row">
+                                      {{ column }}
+                                    </td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="data-table" id=tbl4 ng-controller="myController">
+                        <tbody>
+                            <tr>
+                                <th ng-repeat="(key, val) in myArray4[0]">{{ key }}</th>
+                            </tr>
+                            <tr>
+                                <tr ng-repeat="row in myArray4">
+                                    <td ng-repeat="column in row">
+                                      {{ column }}
+                                    </td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="data-table" id=tbl5 ng-controller="myController">
+                        <tbody>
+                            <tr>
+                                <th ng-repeat="(key, val) in myArray5[0]">{{ key }}</th>
+                            </tr>
+                            <tr>
+                                <tr ng-repeat="row in myArray5">
+                                    <td ng-repeat="column in row">
+                                      {{ column }}
+                                    </td>
+                                </tr>
+                            </tr>
                         </tbody>
                     </table>
 
@@ -745,6 +753,280 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+    $("#tbl1").hide();
+    $("#tbl2").hide();
+    $("#tbl3").hide();
+    $("#tbl4").hide();
+    $("#tbl5").hide();
+
+    let rand;
+    rand= Math.floor(Math.random() * (6 - 1) + 1);
+    $("#tbl"+rand).show();
+    });
+
+    angular.module('myApp', [])
+    .controller('myController', function($scope
+    ) {
+        $scope.myArray1 = [
+        { "CustomerName": "FORD", "Australia": 0, "China": 2, "India": 0, "South Korea": 0 },
+        { "CustomerName": "ICICI PRUDENTIAL", "Australia": 0, "China": 0, "India": 5, "South Korea": 0 },
+        { "CustomerName": "Kimberly Clark", "Australia": 0, "China": 0, "India": 0, "South Korea": 1 },
+        { "CustomerName": "McDonalds", "Australia": 1, "China": 0, "India": 0, "South Korea": 0 },
+        { "CustomerName": "Novartis", "Australia": 1, "China": 0, "India": 0, "South Korea": 0 },
+    { "CustomerName": "MARUTHI SUZUKI", "Australia": 5, "China": 9, "India": 4, "South Korea": 0 },
+    { "CustomerName": "HYUNDAI", "Australia": 3, "China": 1, "India": 9, "South Korea": 2 },
+    { "CustomerName": "NISSAN", "Australia": 2, "China": 3, "India": 5, "South Korea": 0 },
+    { "CustomerName": "MAHINDRA", "Australia": 6, "China": 2, "India": 0, "South Korea": 3 },
+    { "CustomerName": "SCODA", "Australia": 7, "China": 8, "India": 2, "South Korea": 9 },
+    { "CustomerName": "RENAULT", "Australia": 8, "China": 0, "India": 4, "South Korea": 6 },
+    { "CustomerName": "BMW", "Australia": 3, "China": 5, "India": 0, "South Korea": 8 },
+    { "CustomerName": "ROLLS ROYCE", "Australia": 2, "China": 9, "India": 1, "South Korea": 6 },
+    { "CustomerName": "LAND ROVER", "Australia": 6, "China": 8, "India": 0, "South Korea": 2 },
+    { "CustomerName": "BENZ", "Australia": 7, "China": 2, "India": 6, "South Korea": 3 },
+    { "CustomerName": "KIA", "Australia": 9, "China": 1, "India": 8, "South Korea": 0 },
+    { "CustomerName": "UNION BANK OF INDIA", "Australia": 0, "China": 5, "India": 5, "South Korea": 8 },
+    { "CustomerName": "STATE BANK OF INDIA", "Australia": 1, "China": 4, "India": 7, "South Korea": 0 },
+    { "CustomerName": "BANK OF BARODA", "Australia": 5, "China": 9, "India": 3, "South Korea": 4 },
+    { "CustomerName": "BANK OF MAHARASHTRA", "Australia": 6, "China": 8, "India": 5, "South Korea": 7 },
+    { "CustomerName": "CANARA BANK", "Australia": 3, "China": 4, "India": 2, "South Korea": 4 },
+    { "CustomerName": "ANDRA PRAGHATHI GRAMEENA BANK", "Australia": 7, "China": 2, "India": 8, "South Korea": 6 },
+    { "CustomerName": "BANK OF INDIA", "Australia": 8, "China": 6, "India": 0, "South Korea": 2 },
+    { "CustomerName": "CENTRAL BANK OF INDIA", "Australia": 9, "China": 4, "India": 1, "South Korea": 5 },
+    { "CustomerName": "INDIAN BANK", "Australia": 5, "China": 6, "India": 9, "South Korea": 0 },
+    { "CustomerName": "INDIAN OVERSEAS BANK", "Australia": 0, "China": 9, "India": 2, "South Korea": 4 },
+    { "CustomerName": "PUNJAB NATIONAL BANK", "Australia": 8, "China": 7, "India": 3, "South Korea": 2 },
+    { "CustomerName": "PUNJAB & SIND BANK", "Australia": 3, "China": 8, "India": 5, "South Korea": 0 },
+    { "CustomerName": "UCO BANK", "Australia": 2, "China": 3, "India": 1, "South Korea": 6 },
+    { "CustomerName": "ANDHRA PRADESH GRAMEENA VIKAS BANK", "Australia": 7, "China": 2, "India": 7, "South Korea": 5 },
+    { "CustomerName": "CHAITANYA GODAVARI GRAMEENA BANK", "Australia": 4, "China": 9, "India": 0, "South Korea": 1 },
+    { "CustomerName": "ARUNACHAL PRADESH RURAL BANK", "Australia": 0, "China": 1, "India": 7, "South Korea": 8 },
+    { "CustomerName": "ARYAVART BANK", "Australia": 3, "China": 2, "India": 8, "South Korea": 2 },
+    { "CustomerName": "ASSAM GRAMIN VIKASH BANK", "Australia": 6, "China": 0, "India": 9, "South Korea": 9 },
+    { "CustomerName": "BANGIYA GRAMIN VIKASH BANK", "Australia": 0, "China": 4, "India": 5, "South Korea": 7 },
+    { "CustomerName": "BARODA GUJARAT GRAMIN BANK", "Australia": 2, "China": 7, "India": 2, "South Korea": 0 },
+    { "CustomerName": "BARODA RAJASTHAN KSHETRIYA GRAMIN BANK", "Australia": 1, "China": 3, "India": 0, "South Korea": 1 },
+    { "CustomerName": "BARODA UP BANK", "Australia": 5, "China": 4, "India": 3, "South Korea": 6 },
+    { "CustomerName": "CHHATTISGARH RAJYA GRAMIN BANK", "Australia": 3, "China": 9, "India": 0, "South Korea": 2 },
+    { "CustomerName": "DAKSHIN BIHAR GRAMIN BANK ", "Australia": 0, "China": 8, "India": 5, "South Korea": 5 },
+    { "CustomerName": "ELLAQUAI DEHATI BANK", "Australia": 3, "China": 7, "India": 0, "South Korea": 8 },
+    { "CustomerName": "HIMACHAL PRADESH GRAMIN BANK", "Australia": 7, "China": 1, "India": 8, "South Korea": 9 },
+    { "CustomerName": "J & K GRAMEEN BANK", "Australia": 8, "China": 2, "India": 1, "South Korea": 0 },
+    { "CustomerName": "JHARKHAND RAJYA GRAMIN BANK", "Australia": 4, "China": 7, "India": 2, "South Korea": 2 },
+    { "CustomerName": "KARNATAKA GRAMIN BANK", "Australia": 0, "China": 3, "India": 7, "South Korea": 3 },
+    { "CustomerName": "KARNATAKA VIKAS GRAMEENA BANK", "Australia": 3, "China": 9, "India": 4, "South Korea": 9 },
+    { "CustomerName": "KERALA GRAMIN BANK", "Australia": 0, "China": 7, "India": 9, "South Korea": 7 },
+    { "CustomerName": "MADHYA PRADESH GRAMIN BANK", "Australia": 2, "China": 2, "India": 7, "South Korea": 3 },
+    { "CustomerName": "MADHYANCHAL GRAMIN BANK", "Australia": 5, "China": 4, "India": 4, "South Korea": 1 },
+    { "CustomerName": "MAHARASHTRA GRAMIN BANK", "Australia": 8, "China": 0, "India": 5, "South Korea": 7 },
+    { "CustomerName": "MANIPUR RURAL BANK", "Australia": 1, "China": 6, "India": 3, "South Korea": 6 },
+    { "CustomerName": "MEGHALAYA RURAL BANK", "Australia": 9, "China": 3, "India": 2, "South Korea": 5 },
+    { "CustomerName": "MIZORAM RURAL BANK", "Australia": 2, "China": 4, "India": 7, "South Korea": 0 },
+    { "CustomerName": "NAGALAND RURAL BANK", "Australia": 5, "China": 8, "India": 5, "South Korea": 9 },
+
+        { "CustomerName": "Origin Energy", "Australia": 3, "China": 0, "India": 0, "South Korea": 0 }
+        ];
+
+    $scope.myArray2 = [
+    { "CustomerName": "PUNJAB NATIONAL BANK", "Brazil": 2, "Canada": 4, "Egypt": 5 },
+    { "CustomerName": "NAGALAND RURAL BANK", "Brazil": 7, "Canada": 7, "Egypt": 8 },
+    { "CustomerName": "KARNATAKA GRAMIN BANK", "Brazil": 4, "Canada": 5, "Egypt": 2 },
+    { "CustomerName": "BANK OF MAHARASHTRA", "Brazil": 2, "Canada": 6, "Egypt": 5 },
+    { "CustomerName": "MANIPUR RURAL BANK", "Brazil": 4, "Canada": 5, "Egypt": 7 },
+    { "CustomerName": "CENTRAL BANK OF INDIA", "Brazil": 7, "Canada": 3, "Egypt": 8 },
+    { "CustomerName": "KERALA GRAMIN BANK", "Brazil": 8, "Canada": 1, "Egypt": 4 },
+    { "CustomerName": "INDIAN OVERSEAS BANK", "Brazil": 4, "Canada": 0, "Egypt": 2 },
+    { "CustomerName": "HIMACHAL PRADESH GRAMIN BANK", "Brazil": 7, "Canada": 9, "Egypt": 5 },
+    { "CustomerName": "PUNJAB & SIND BANK", "Brazil": 8, "Canada": 7, "Egypt": 3 },
+    { "CustomerName": "JHARKHAND RAJYA GRAMIN BANK", "Brazil": 0, "Canada": 0, "Egypt": 6 },
+    { "CustomerName": "STATE BANK OF INDIA", "Brazil": 5, "Canada": 9, "Egypt": 8 },
+    { "CustomerName": "J & K GRAMEEN BANK", "Brazil": 8, "Canada": 7, "Egypt": 9 },
+    { "CustomerName": "INDIAN BANK", "Brazil": 3, "Canada": 6, "Egypt": 7 },
+    { "CustomerName": "MEGHALAYA RURAL BANK", "Brazil": 9, "Canada": 3, "Egypt": 5 },
+    { "CustomerName": "MIZORAM RURAL BANK", "Brazil": 4, "Canada": 6, "Egypt": 4 },
+    { "CustomerName": "BARODA UP BANK", "Brazil": 2, "Canada": 0, "Egypt": 3 },
+    { "CustomerName": "BANK OF BARODA", "Brazil": 7, "Canada": 6, "Egypt": 5 },
+    { "CustomerName": "BARODA GUJARAT GRAMIN BANK", "Brazil": 8, "Canada": 0, "Egypt": 6 },
+    { "CustomerName": "UCO BANK", "Brazil": 1, "Canada": 9, "Egypt": 4 },
+    { "CustomerName": "MADHYA PRADESH GRAMIN BANK", "Brazil": 4, "Canada": 3, "Egypt": 8 },
+    { "CustomerName": "BANK OF INDIA", "Brazil": 7, "Canada": 2, "Egypt": 4 },
+    { "CustomerName": "CANARA BANK", "Brazil": 5, "Canada": 3, "Egypt": 8 },
+    { "CustomerName": "MADHYANCHAL GRAMIN BANK", "Brazil": 2, "Canada": 4, "Egypt": 9 },
+    { "CustomerName": "ARYAVART BANK", "Brazil": 5, "Canada": 6, "Egypt": 8 },
+    { "CustomerName": "ANDRA PRAGHATHI GRAMEENA BANK", "Brazil": 2, "Canada": 9, "Egypt": 6 },
+    { "CustomerName": "KARNATAKA VIKAS GRAMEENA BANK", "Brazil": 9, "Canada": 8, "Egypt": 5 },
+    { "CustomerName": "UNION BANK OF INDIA", "Brazil": 7, "Canada": 7, "Egypt": 3 },
+    { "CustomerName": "BMW", "Brazil": 4, "Canada": 6, "Egypt": 2 },
+    { "CustomerName": "NISSAN", "Brazil": 3, "Canada": 5, "Egypt": 1 },
+    { "CustomerName": "MAHINDRA", "Brazil": 1, "Canada": 8, "Egypt": 6 },
+    { "CustomerName": "ROLLS ROYCE", "Brazil": 2, "Canada": 0, "Egypt": 8 },
+    { "CustomerName": "LAND ROVER", "Brazil": 8, "Canada": 7, "Egypt": 9 },
+    { "CustomerName": "RENAULT", "Brazil": 3, "Canada": 6, "Egypt": 0 },
+    { "CustomerName": "BENZ", "Brazil": 1, "Canada": 5, "Egypt": 8 },
+    { "CustomerName": "HYUNDAI", "Brazil": 7, "Canada": 4, "Egypt": 6 },
+    { "CustomerName": "MARUTHI SUZUKI", "Brazil": 9, "Canada": 3, "Egypt": 0 },
+    { "CustomerName": "SCODA", "Brazil": 0, "Canada": 1, "Egypt": 4 },
+    { "CustomerName": "KIA", "Brazil": 5, "Canada": 3, "Egypt": 5 },
+    { "CustomerName": "ANDHRA PRADESH GRAMEENA VIKAS BANK", "Brazil": 2, "Canada": 2, "Egypt": 0 },
+    { "CustomerName": "CHAITANYA GODAVARI GRAMEENA BANK", "Brazil": 1, "Canada": 2, "Egypt": 2 },
+    { "CustomerName": "ARUNACHAL PRADESH RURAL BANK", "Brazil": 3, "Canada": 0, "Egypt": 4 },
+    { "CustomerName": "ELLAQUAI DEHATI BANK", "Brazil": 4, "Canada": 9, "Egypt": 5 },
+    { "CustomerName": "ASSAM GRAMIN VIKASH BANK", "Brazil": 7, "Canada": 3, "Egypt": 0 },
+    { "CustomerName": "BANGIYA GRAMIN VIKASH BANK", "Brazil": 6, "Canada": 8, "Egypt": 8 },
+    { "CustomerName": "MAHARASHTRA GRAMIN BANK", "Brazil": 1, "Canada": 6, "Egypt": 7 },
+    { "CustomerName": "BARODA RAJASTHAN KSHETRIYA GRAMIN BANK", "Brazil": 8, "Canada": 7, "Egypt": 5 },
+    { "CustomerName": "DAKSHIN BIHAR GRAMIN BANK ", "Brazil": 6, "Canada": 5, "Egypt": 0 },
+    { "CustomerName": "CHHATTISGARH RAJYA GRAMIN BANK", "Brazil": 4, "Canada": 4, "Egypt": 3 }
+
+    ];
+
+    $scope.myArray3 = [
+    { "CustomerName": "BANK OF MAHARASHTRA", "France": 8, "Italy": 7 },
+    { "CustomerName": "CHHATTISGARH RAJYA GRAMIN BANK", "France": 6, "Italy": 0 },
+    { "CustomerName": "CENTRAL BANK OF INDIA", "France": 8, "Italy": 3 },
+    { "CustomerName": "PUNJAB & SIND BANK", "France": 6, "Italy": 5 },
+    { "CustomerName": "CHAITANYA GODAVARI GRAMEENA BANK", "France": 9, "Italy": 7 },
+    { "CustomerName": "HIMACHAL PRADESH GRAMIN BANK", "France": 5, "Italy": 4 },
+    { "CustomerName": "ANDHRA PRADESH GRAMEENA VIKAS BANK", "France": 0, "Italy": 2 },
+    { "CustomerName": "MANIPUR RURAL BANK", "France": 2, "Italy": 7 },
+    { "CustomerName": "KERALA GRAMIN BANK", "France": 5, "Italy": 4 },
+    { "CustomerName": "J & K GRAMEEN BANK", "France": 6, "Italy": 3 },
+    { "CustomerName": "INDIAN BANK", "France": 7, "Italy": 2 },
+    { "CustomerName": "JHARKHAND RAJYA GRAMIN BANK", "France": 4, "Italy": 9 },
+    { "CustomerName": "MIZORAM RURAL BANK", "France": 0, "Italy": 6 },
+    { "CustomerName": "BARODA GUJARAT GRAMIN BANK", "France": 8, "Italy": 4 },
+    { "CustomerName": "BANK OF BARODA", "France": 5, "Italy": 4 },
+    { "CustomerName": "MEGHALAYA RURAL BANK", "France": 7, "Italy": 6 },
+    { "CustomerName": "KARNATAKA GRAMIN BANK", "France": 1, "Italy": 8 },
+    { "CustomerName": "BARODA UP BANK", "France": 2, "Italy": 9 },
+    { "CustomerName": "INDIAN OVERSEAS BANK", "France": 4, "Italy": 5 },
+    { "CustomerName": "BANGIYA GRAMIN VIKASH BANK", "France": 2, "Italy": 4 },
+    { "CustomerName": "NAGALAND RURAL BANK", "France": 5, "Italy": 5 },
+    { "CustomerName": "ARUNACHAL PRADESH RURAL BANK", "France": 7, "Italy": 3 },
+    { "CustomerName": "ANDRA PRAGHATHI GRAMEENA BANK", "France": 8, "Italy": 8 },
+    { "CustomerName": "PUNJAB NATIONAL BANK", "France": 5, "Italy": 5 },
+    { "CustomerName": "ELLAQUAI DEHATI BANK", "France": 3, "Italy": 0 },
+    { "CustomerName": "UCO BANK", "France": 2, "Italy": 6 },
+    { "CustomerName": "MADHYA PRADESH GRAMIN BANK", "France": 5, "Italy": 8 },
+    { "CustomerName": "MADHYANCHAL GRAMIN BANK", "France": 8, "Italy": 2 },
+    { "CustomerName": "CANARA BANK", "France": 4, "Italy": 4 },
+    { "CustomerName": "BARODA RAJASTHAN KSHETRIYA GRAMIN BANK", "France": 5, "Italy": 5 },
+    { "CustomerName": "ARYAVART BANK", "France": 9, "Italy": 3 },
+    { "CustomerName": "DAKSHIN BIHAR GRAMIN BANK ", "France": 6, "Italy": 6 },
+    { "CustomerName": "KARNATAKA VIKAS GRAMEENA BANK", "France": 5, "Italy": 0 },
+    { "CustomerName": "MAHARASHTRA GRAMIN BANK", "France": 0, "Italy": 6 },
+    { "CustomerName": "LAND ROVER", "France": 2, "Italy": 5 },
+    { "CustomerName": "BENZ", "France": 6, "Italy": 0 },
+    { "CustomerName": "MAHINDRA", "France": 4, "Italy": 8 },
+    { "CustomerName": "NISSAN", "France": 7, "Italy": 6 },
+    { "CustomerName": "HYUNDAI", "France": 8, "Italy": 7 },
+    { "CustomerName": "ROLLS ROYCE", "France": 9, "Italy": 8 },
+    { "CustomerName": "SCODA", "France": 1, "Italy": 9 },
+    { "CustomerName": "RENAULT", "France": 3, "Italy": 4 },
+    { "CustomerName": "KIA", "France": 7, "Italy": 0 },
+    { "CustomerName": "BMW", "France": 9, "Italy": 2 },
+    { "CustomerName": "MARUTHI SUZUKI", "France": 0, "Italy": 1 },
+    { "CustomerName": "BANK OF INDIA", "France": 9, "Italy": 5 },
+    { "CustomerName": "ASSAM GRAMIN VIKASH BANK", "France": 2, "Italy": 7 },
+    { "CustomerName": "STATE BANK OF INDIA", "France": 4, "Italy": 8 },
+    { "CustomerName": "UNION BANK OF INDIA", "France": 2, "Italy": 7 }
+
+    ];
+
+
+    $scope.myArray4 = [
+    { "CustomerName": "ARUNACHAL PRADESH RURAL BANK", "South Africa": 2, "Spain": 5, "SriLanka": 0 , "Swizerland": 6, "United Kingdom": 5},
+    { "CustomerName": "CENTRAL BANK OF INDIA", "South Africa": 1, "Spain": 7, "SriLanka": 6 , "Swizerland": 3, "United Kingdom": 9},
+    { "CustomerName": "UNION BANK OF INDIA", "South Africa": 6, "Spain": 6, "SriLanka": 3 , "Swizerland": 4, "United Kingdom": 5},
+    { "CustomerName": "ANDRA PRAGHATHI GRAMEENA BANK", "South Africa": 8, "Spain": 4, "SriLanka": 2 , "Swizerland": 6, "United Kingdom": 3},
+    { "CustomerName": "MAHARASHTRA GRAMIN BANK", "South Africa": 3, "Spain": 2, "SriLanka": 4 , "Swizerland": 0, "United Kingdom": 0},
+    { "CustomerName": "PUNJAB NATIONAL BANK", "South Africa": 4, "Spain": 3, "SriLanka": 6 , "Swizerland": 3, "United Kingdom": 8},
+    { "CustomerName": "UCO BANK", "South Africa": 1, "Spain": 6, "SriLanka": 7 , "Swizerland": 5, "United Kingdom": 0},
+    { "CustomerName": "PUNJAB & SIND BANK", "South Africa": 2, "Spain": 0, "SriLanka": 9 , "Swizerland": 8, "United Kingdom": 8},
+    { "CustomerName": "MAHINDRA", "South Africa": 7, "Spain": 4, "SriLanka": 1 , "Swizerland": 4, "United Kingdom": 3},
+    { "CustomerName": "ROLLS ROYCE", "South Africa": 9, "Spain": 2, "SriLanka": 2 , "Swizerland": 5, "United Kingdom": 5},
+    { "CustomerName": "NISSAN", "South Africa": 3, "Spain": 5, "SriLanka": 5 , "Swizerland": 8, "United Kingdom": 9},
+    { "CustomerName": "BMW", "South Africa": 2, "Spain": 9, "SriLanka": 2 , "Swizerland": 0, "United Kingdom": 5},
+    { "CustomerName": "KIA", "South Africa": 9, "Spain": 2, "SriLanka": 7 , "Swizerland": 8, "United Kingdom": 3},
+    { "CustomerName": "HYUNDAI", "South Africa": 6, "Spain": 7, "SriLanka": 9 , "Swizerland": 3, "United Kingdom": 5},
+    { "CustomerName": "RENAULT", "South Africa": 3, "Spain": 1, "SriLanka": 5 , "Swizerland": 1, "United Kingdom": 8},
+    { "CustomerName": "BENZ", "South Africa": 6, "Spain": 3, "SriLanka": 2 , "Swizerland": 2, "United Kingdom": 9},
+    { "CustomerName": "MARUTHI SUZUKI", "South Africa": 0, "Spain": 5, "SriLanka": 5 , "Swizerland": 8, "United Kingdom": 5},
+    { "CustomerName": "SCODA", "South Africa": 7, "Spain": 9, "SriLanka": 7 , "Swizerland": 6, "United Kingdom": 0},
+    { "CustomerName": "LAND ROVER", "South Africa": 3, "Spain": 8, "SriLanka": 0 , "Swizerland": 4, "United Kingdom": 1},
+    { "CustomerName": "MIZORAM RURAL BANK", "South Africa": 2, "Spain": 2, "SriLanka": 6 , "Swizerland": 3, "United Kingdom": 2},
+    { "CustomerName": "CHAITANYA GODAVARI GRAMEENA BANK", "South Africa": 4, "Spain": 3, "SriLanka": 8 , "Swizerland": 1, "United Kingdom": 8},
+    { "CustomerName": "MEGHALAYA RURAL BANK", "South Africa": 7, "Spain": 6, "SriLanka": 3 , "Swizerland": 2, "United Kingdom": 4},
+    { "CustomerName": "INDIAN BANK", "South Africa": 9, "Spain": 7, "SriLanka": 2 , "Swizerland": 4, "United Kingdom": 6},
+    { "CustomerName": "BANK OF BARODA", "South Africa": 6, "Spain": 4, "SriLanka": 2 , "Swizerland": 7, "United Kingdom": 8},
+    { "CustomerName": "MADHYA PRADESH GRAMIN BANK", "South Africa": 3, "Spain": 2, "SriLanka": 3 , "Swizerland": 5, "United Kingdom": 0},
+    { "CustomerName": "BANK OF MAHARASHTRA", "South Africa": 2, "Spain": 3, "SriLanka": 1 , "Swizerland": 3, "United Kingdom": 3},
+    { "CustomerName": "BARODA RAJASTHAN KSHETRIYA GRAMIN BANK", "South Africa": 3, "Spain": 7, "SriLanka": 5 , "Swizerland": 4, "United Kingdom": 5},
+    { "CustomerName": "STATE BANK OF INDIA", "South Africa": 6, "Spain": 5, "SriLanka": 2 , "Swizerland": 0, "United Kingdom": 0},
+    { "CustomerName": "ELLAQUAI DEHATI BANK", "South Africa": 8, "Spain": 3, "SriLanka": 5 , "Swizerland": 5, "United Kingdom": 3},
+    { "CustomerName": "CANARA BANK", "South Africa": 9, "Spain": 1, "SriLanka": 7 , "Swizerland": 8, "United Kingdom": 5},
+    { "CustomerName": "ANDHRA PRADESH GRAMEENA VIKAS BANK", "South Africa": 5, "Spain": 7, "SriLanka": 8 , "Swizerland": 6, "United Kingdom": 0},
+    { "CustomerName": "MANIPUR RURAL BANK", "South Africa": 3, "Spain": 3, "SriLanka": 5 , "Swizerland": 5, "United Kingdom": 7},
+    { "CustomerName": "KARNATAKA GRAMIN BANK", "South Africa": 2, "Spain": 0, "SriLanka": 3 , "Swizerland": 3, "United Kingdom": 5},
+    { "CustomerName": "MADHYANCHAL GRAMIN BANK", "South Africa": 1, "Spain": 5, "SriLanka": 2 , "Swizerland": 7, "United Kingdom": 0},
+    { "CustomerName": "BANK OF INDIA", "South Africa": 6, "Spain": 0, "SriLanka": 7 , "Swizerland": 3, "United Kingdom": 1},
+    { "CustomerName": "NAGALAND RURAL BANK", "South Africa": 8, "Spain": 8, "SriLanka": 8 , "Swizerland": 4, "United Kingdom": 2},
+    { "CustomerName": "KARNATAKA VIKAS GRAMEENA BANK", "South Africa": 0, "Spain": 3, "SriLanka": 9 , "Swizerland": 7, "United Kingdom": 5},
+    { "CustomerName": "KERALA GRAMIN BANK", "South Africa": 5, "Spain": 2, "SriLanka": 5 , "Swizerland": 4, "United Kingdom": 2},
+    { "CustomerName": "ASSAM GRAMIN VIKASH BANK", "South Africa": 0, "Spain": 9, "SriLanka": 0 , "Swizerland": 2, "United Kingdom": 1},
+    { "CustomerName": "J & K GRAMEEN BANK", "South Africa": 7, "Spain": 8, "SriLanka": 2 , "Swizerland": 0, "United Kingdom": 3},
+    { "CustomerName": "BARODA GUJARAT GRAMIN BANK", "South Africa": 1, "Spain": 6, "SriLanka": 6 , "Swizerland": 4, "United Kingdom": 5},
+    { "CustomerName": "BANGIYA GRAMIN VIKASH BANK", "South Africa": 3, "Spain": 1, "SriLanka": 3 , "Swizerland": 8, "United Kingdom": 7},
+    { "CustomerName": "JHARKHAND RAJYA GRAMIN BANK", "South Africa": 0, "Spain": 2, "SriLanka": 6 , "Swizerland": 6, "United Kingdom": 8},
+    { "CustomerName": "DAKSHIN BIHAR GRAMIN BANK ", "South Africa": 7, "Spain": 7, "SriLanka": 8 , "Swizerland": 7, "United Kingdom": 0},
+    { "CustomerName": "HIMACHAL PRADESH GRAMIN BANK", "South Africa": 8, "Spain": 5, "SriLanka": 0 , "Swizerland": 6, "United Kingdom": 4},
+    { "CustomerName": "BARODA UP BANK", "South Africa": 0, "Spain": 2, "SriLanka": 1 , "Swizerland": 5, "United Kingdom": 3},
+    { "CustomerName": "CHHATTISGARH RAJYA GRAMIN BANK", "South Africa": 8, "Spain": 4, "SriLanka": 3 , "Swizerland": 4, "United Kingdom": 0},
+    { "CustomerName": "ARYAVART BANK", "South Africa": 6, "Spain": 0, "SriLanka": 8 , "Swizerland": 9, "United Kingdom": 7}
+    ];
+
+
+
+    $scope.myArray5 = [
+    { "CustomerName": "ANDHRA PRADESH GRAMEENA VIKAS BANK", "Germany": 4, "Mexico": 5, "Netherlands": 2 , "New Zealand": 3, "Nigeria": 2, "Russia": 1},
+    { "CustomerName": "PUNJAB NATIONAL BANK", "Germany": 6, "Mexico": 6, "Netherlands": 5 , "New Zealand": 4, "Nigeria": 0, "Russia": 9},
+    { "CustomerName": "CHAITANYA GODAVARI GRAMEENA BANK", "Germany": 8, "Mexico": 8, "Netherlands": 5 , "New Zealand": 7, "Nigeria": 4, "Russia": 8},
+    { "CustomerName": "PUNJAB & SIND BANK", "Germany": 3, "Mexico": 0, "Netherlands": 7 , "New Zealand": 9, "Nigeria": 6, "Russia": 5},
+    { "CustomerName": "ARUNACHAL PRADESH RURAL BANK", "Germany": 3, "Mexico": 7, "Netherlands": 6 , "New Zealand": 5, "Nigeria": 4, "Russia": 7},
+    { "CustomerName": "MAHARASHTRA GRAMIN BANK", "Germany": 7, "Mexico": 9, "Netherlands": 0 , "New Zealand": 5, "Nigeria": 8, "Russia": 3},
+    { "CustomerName": "CENTRAL BANK OF INDIA", "Germany": 8, "Mexico": 4, "Netherlands": 7 , "New Zealand": 4, "Nigeria": 4, "Russia": 2},
+    { "CustomerName": "UCO BANK", "Germany": 9, "Mexico": 0, "Netherlands": 5 , "New Zealand": 7, "Nigeria": 2, "Russia": 7},
+    { "CustomerName": "ANDRA PRAGHATHI GRAMEENA BANK", "Germany": 5, "Mexico": 6, "Netherlands": 7 , "New Zealand": 9, "Nigeria": 2, "Russia": 8},
+    { "CustomerName": "UNION BANK OF INDIA", "Germany": 0, "Mexico": 7, "Netherlands": 5 , "New Zealand": 3, "Nigeria": 3, "Russia": 3},
+    { "CustomerName": "CANARA BANK", "Germany": 6, "Mexico": 6, "Netherlands": 9 , "New Zealand": 2, "Nigeria": 9, "Russia": 5},
+    { "CustomerName": "INDIAN BANK", "Germany": 4, "Mexico": 5, "Netherlands": 7 , "New Zealand": 9, "Nigeria": 6, "Russia": 7},
+    { "CustomerName": "BANK OF BARODA", "Germany": 0, "Mexico": 0, "Netherlands": 4 , "New Zealand": 0, "Nigeria": 8, "Russia": 5},
+    { "CustomerName": "STATE BANK OF INDIA", "Germany": 3, "Mexico": 9, "Netherlands": 3 , "New Zealand": 7, "Nigeria": 9, "Russia": 3},
+    { "CustomerName": "BANK OF MAHARASHTRA", "Germany": 2, "Mexico": 3, "Netherlands": 8 , "New Zealand": 0, "Nigeria": 4, "Russia": 2},
+    { "CustomerName": "MEGHALAYA RURAL BANK", "Germany": 5, "Mexico": 4, "Netherlands": 0 , "New Zealand": 1, "Nigeria": 3, "Russia": 0},
+    { "CustomerName": "MADHYANCHAL GRAMIN BANK", "Germany": 6, "Mexico": 3, "Netherlands": 4 , "New Zealand": 0, "Nigeria": 6, "Russia": 8},
+    { "CustomerName": "BANK OF INDIA", "Germany": 2, "Mexico": 4, "Netherlands": 9 , "New Zealand": 2, "Nigeria": 0, "Russia": 6},
+    { "CustomerName": "NAGALAND RURAL BANK", "Germany": 7, "Mexico": 9, "Netherlands": 0 , "New Zealand": 3, "Nigeria": 7, "Russia": 0},
+    { "CustomerName": "MIZORAM RURAL BANK", "Germany": 8, "Mexico": 7, "Netherlands": 6 , "New Zealand": 6, "Nigeria": 3, "Russia": 3},
+    { "CustomerName": "INDIAN OVERSEAS BANK", "Germany": 5, "Mexico": 0, "Netherlands": 3 , "New Zealand": 4, "Nigeria": 2, "Russia": 8},
+    { "CustomerName": "MANIPUR RURAL BANK", "Germany": 1, "Mexico": 3, "Netherlands": 7 , "New Zealand": 5, "Nigeria": 8, "Russia": 7},
+    { "CustomerName": "LAND ROVER", "Germany": 9, "Mexico": 2, "Netherlands": 1 , "New Zealand": 9, "Nigeria": 3, "Russia": 3},
+    { "CustomerName": "SCODA", "Germany": 6, "Mexico": 4, "Netherlands": 2 , "New Zealand": 3, "Nigeria": 4, "Russia": 5},
+    { "CustomerName": "RENAULT", "Germany": 8, "Mexico": 8, "Netherlands": 8 , "New Zealand": 0, "Nigeria": 6, "Russia": 4}
+
+    ];
+
+
+    });
+
+    angular.element(document).ready(function() {
+    angular.bootstrap(document, ['myApp']);
+    });
+    </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 

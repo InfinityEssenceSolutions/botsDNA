@@ -685,7 +685,7 @@
                 <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
 
-                    <form action = "#" method = "POST">
+                    <form action = "#" method = "POST" id = "serverForm">
                         <table class = "data-table">
                           <tr>
                             <td class="label">Choose Operating System (OS):</td>
@@ -711,30 +711,30 @@
                           <tr>
                             <td class="label">HDD Size:</td>
                             <td class="value">
-                              <input type="radio" name="hdd" value="250"> 250 GB
-                              <input type="radio" name="hdd" value="500"> 500 GB
-                              <input type="radio" name="hdd" value="1000"> 1 TB
-                              <input type="radio" name="hdd" value="2000"> 2 TB
-                              <input type="radio" name="hdd" value="5000"> 5 TB
+                              <input type="radio" name="hddApp" value="hddName"> 250 GB
+                              <input type="radio" name="hddApp" value="hddName"> 500 GB
+                              <input type="radio" name="hddApp" value="hddName"> 1 TB
+                              <input type="radio" name="hddApp" value="hddName"> 2 TB
+                              <input type="radio" name="hddApp" value="hddName"> 5 TB
                             </td>
                           </tr>
                           <tr>
                             <td class="label">Select Applications:</td>
                             <td class="apps-list">
-                              <label><input type="checkbox" name="apps" value="7zip"> 7-Zip</label>
-                              <label><input type="checkbox" name="apps" value="acrobat"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" name="apps" value="reader"> Adobe Reader</label>
-                              <label><input type="checkbox" name="apps" value="chrome"> Google Chrome</label>
-                              <label><input type="checkbox" name="apps" value="office"> Microsoft Office</label>
-                              <label><input type="checkbox" name="apps" value="sql"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" name="apps" value="teams"> MS Teams</label>
-                              <label><input type="checkbox" name="apps" value="maxima"> Maxima</label>
-                              <label><input type="checkbox" name="apps" value="putty"> PuTTY</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
+                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
                             </td>
                           </tr>
                           <tr>
                             <td colspan="2" style="text-align: center;">
-                              <button type="submit">Create Server</button>
+                              <button type="submit" id="CreateServer">Create Server</button>
                             </td>
                           </tr>
                         </table>
@@ -780,6 +780,15 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $("#serverForm").on("submit", function (e) {
+            e.preventDefault(); // Prevent actual form submission
+            window.location.href = "createserver.html"; // Redirect
+        });
+        });
+    </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 

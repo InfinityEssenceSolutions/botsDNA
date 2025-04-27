@@ -749,15 +749,15 @@
                 <br>
                 <div class="tab-pane active" id="assign-courts">
                     <div class="form-card">
-                        <form>
-                          <label for="team-code">Plot No</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Plot Number" required>
+                        <form id="plotForm">
+                            <label for="plot-no">Plot No</label>
+                            <input type="text" id="plot-no" name="plot_no" placeholder="Enter Plot Number" required>
 
-                          <label for="team-code">Sqft</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Square Feet" required>
+                            <label for="sqft">Sqft</label>
+                            <input type="text" id="sqft" name="sqft" placeholder="Enter Square Feet" required>
 
-                          <button type="submit">Submit</button>
-                        </form>
+                            <button type="button" onclick="myFunction()">Submit</button>
+                          </form>
                       </div>
                 </div>
             </div>
@@ -799,6 +799,19 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        function myFunction() {
+          const plotNo = document.getElementById('plot-no').value;
+          const sqft = document.getElementById('sqft').value;
+
+          if (plotNo.trim() !== "" && sqft.trim() !== "") {
+            // You can store or process values here if needed
+            window.location.href = "virtualplotthanks.html";
+          } else {
+            alert("Please fill out all required fields.");
+          }
+        }
+    </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");
