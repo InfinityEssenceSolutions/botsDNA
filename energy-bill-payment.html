@@ -673,6 +673,57 @@
       color: #888;
     }
 
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 220px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"], input[type="number"], input[type="datetime-local"], select {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #mathExp {
+      padding: 10px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #000;
+    }
+
     </style>
 </head>
 <body>
@@ -718,30 +769,51 @@
                 <div class="tab-pane active" id="assign-courts">
                     <div class="form-card">
                         <h2>Fill & Pay</h2>
-                        <form>
-                          <label for="team-code">Installment</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Installment Number" required>
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="myFunction()">PAYMENTS
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                              <a href="#" onclick="generateCaptcha('DAE.html')">DAE BILL PAYMENT</a>
+                              <a href="DN.html">DEMAND NOTE BILL PAYMENT</a>
+                              <a href="index.html">ENERGY BILL PAYMENT</a>
+                            </div>
+                          </div>
 
-                          <label for="team-code">Transaction ID</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter Transaction ID" required>
+                          <!-- Payment Form -->
+                          <form onsubmit="event.preventDefault(); payment();">
+                            <label for="installment">Installment</label>
+                            <input type="text" id="installment" name="installment" placeholder="Enter Installment Number" required>
 
-                          <label for="team-code">Amount</label>
-                          <input type="number" id="team-code" name="team_code" placeholder="Enter Amount" required>
+                            <label for="transaction_id">Transaction ID</label>
+                            <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter Transaction ID" required>
 
-                          <label for="team-code">Paid On:</label>
-                          <input type="datetime-local" id="team-code" name="team_code" placeholder="Enter Amount" required>
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
 
-                          <label for="court-name">Bill Collector</label>
-                          <select id="court-name" name="court_name">
-                            <option value="Charan Teja">Charan Teja</option>
-                            <option value="Kiran Kumar">Kiran Kumar</option>
-                            <option value="Ravi Rao">Ravi Rao</option>
-                            <option value="Rama Krishna">Rama Krishna</option>
-                            <option value="Suhas Babu">Suhas Babu</option>
-                          </select>
-                          <span>6+7 = </span>
-                          <button type="submit">Pay Now</button>
-                        </form>
+                            <label for="paid_on">Paid On:</label>
+                            <input type="datetime-local" id="paid_on" name="paid_on" required>
+
+                            <label for="bill_collector">Bill Collector</label>
+                            <select id="bill_collector" name="bill_collector">
+                              <option value="Charan Teja">Charan Teja</option>
+                              <option value="Kiran Kumar">Kiran Kumar</option>
+                              <option value="Ravi Rao">Ravi Rao</option>
+                              <option value="Rama Krishna">Rama Krishna</option>
+                              <option value="Suhas Babu">Suhas Babu</option>
+                            </select>
+
+                            <!-- CAPTCHA Section -->
+                            <label id="mathExp">6 + 7 =</label>
+                            <input type="text" id="mathResult" placeholder="Enter Result" required>
+
+                            <p>
+                              <input type="checkbox" id="tCheck" />
+                              By Clicking Pay Now, you agree to our <span style="color:blue;">terms & Conditions</span>
+                            </p>
+
+                            <button type="submit">Pay Now</button>
+                          </form>
                       </div>
                 </div>
             </div>
@@ -783,6 +855,69 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+
+    <script>
+        // Dropdown toggle
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close dropdown on outside click
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+            const dropdown = document.getElementById("myDropdown");
+            if (dropdown.classList.contains('show')) {
+              dropdown.classList.remove('show');
+            }
+          }
+        }
+
+        // Global captcha variables
+        let a, b;
+
+        function generateCaptcha(redirectUrl = null) {
+          // Random numbers and colors
+          a = Math.floor(Math.random() * 10);
+          b = Math.floor(Math.random() * 10);
+          const colors = ["yellow", "lime", "red", "aqua", "cadetblue"];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+          // Set captcha expression and background
+          const mathExp = document.getElementById("mathExp");
+          mathExp.textContent = `${a} + ${b} =`;
+          mathExp.style.backgroundColor = randomColor;
+
+          // Clear input field
+          document.getElementById("mathResult").value = "";
+
+          // Optional redirect
+          if (redirectUrl) {
+            window.location.href = redirectUrl;
+          }
+        }
+
+        // Payment validation
+        function payment() {
+          const result = parseInt(document.getElementById("mathResult").value, 10);
+          const isChecked = document.getElementById("tCheck").checked;
+
+          if (!isChecked) {
+            alert("Please read and agree to the terms & conditions.");
+            return;
+          }
+
+          if (a + b === result) {
+            window.location.href = "Thanks.html";
+          } else {
+            alert("Error: Captcha - Math Expression Result is Wrong");
+          }
+        }
+
+        // Initialize captcha on page load
+        window.onload = function() {
+          generateCaptcha();
+        };
+      </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

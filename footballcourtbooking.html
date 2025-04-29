@@ -822,26 +822,26 @@
                 <div class="tab-pane" id="assign-courts">
                     <div class="form-card">
                         <h2>Assign Court</h2>
-                        <form>
-                          <label for="team-code">Team Code</label>
-                          <input type="text" id="team-code" name="team_code" placeholder="Enter team code" required>
+                        <form onsubmit="myFunction(event)">
+                            <label for="team-code">Team Code</label>
+                            <input type="text" id="TeamCode" name="team_code" placeholder="Enter team code" required>
 
-                          <label for="court-name">Court Name</label>
-                          <select id="court-name" name="court_name">
-                            <option value="Dribble Football">Dribble Football</option>
-                            <option value="Thunder Arena">Thunder Arena</option>
-                            <option value="Goal Masters">Goal Masters</option>
-                          </select>
+                            <label for="court-name">Court Name</label>
+                            <select id="CourtName" name="court_name">
+                              <option value="Dribble Football">Dribble Football</option>
+                              <option value="Thunder Arena">Thunder Arena</option>
+                              <option value="Goal Masters">Goal Masters</option>
+                            </select>
 
-                          <label for="hours">Number of Hours</label>
-                          <select id="hours" name="hours">
-                            <option value="1">ONE HOUR</option>
-                            <option value="2">TWO HOURS</option>
-                            <option value="3">THREE HOURS</option>
-                          </select>
+                            <label for="hours">Number of Hours</label>
+                            <select id="NoOfHours" name="hours">
+                              <option value="1">ONE HOUR</option>
+                              <option value="2">TWO HOURS</option>
+                              <option value="3">THREE HOURS</option>
+                            </select>
 
-                          <button type="submit">Book Now</button>
-                        </form>
+                            <button type="submit">Book Now</button>
+                          </form>
                       </div>
                 </div>
             </div>
@@ -883,6 +883,22 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        function myFunction(event) {
+            event.preventDefault(); // prevent the normal form submission
+
+            var noof = document.getElementById("NoOfHours").selectedIndex + 1;
+            var teamCode = document.getElementById("TeamCode").value;
+            var courtName = document.getElementById("CourtName").value;
+
+            // You can send all values as query parameters if you want
+            var url = "booking.html?id=" + noof
+                    + "&team_code=" + encodeURIComponent(teamCode)
+                    + "&court_name=" + encodeURIComponent(courtName);
+
+            window.location.href = url; // redirect with parameters
+        }
+        </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

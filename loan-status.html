@@ -672,6 +672,25 @@
       font-size: 13px;
       color: #888;
     }
+    .success-message {
+    display: none;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  .error-message {
+    display: none;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
 
     </style>
 </head>
@@ -714,6 +733,8 @@
 
             <div class="tabs-content">
                 <!-- Court Request Tab -->
+                <p id="successMessage" class="success-message">Report successfully uploaded!</p>
+                <p id="errorMessage" class="error-message">Invalid file format. Please upload a file with the name in 'dd_MM_yyyy.zip' format.</p>
                 <div class="tab-pane active" id="court-request">
 
                     <table class="data-table">
@@ -724,24 +745,28 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr><td>SBI</td><td>0999</td></tr>
-                          <tr><td>ICICI</td><td>0232</td></tr>
-                          <tr><td>AXIS</td><td>9988</td></tr>
-                          <tr><td>HDFC</td><td>9090</td></tr>
+                          <tr><td><a href = "sbi.html">SBI</a></td><td>0999</td></tr>
+                          <tr><td><a href = "icici.html">ICICI</a></td><td>0232</td></tr>
+                          <tr><td><a href = "axis.html">AXIS</a></td><td>9988</td></tr>
+                          <tr><td><a href = "hdfc.html">HDFC</a></td><td>9090</td></tr>
                         </tbody>
                       </table>
 
                 </div>
-                <div class="tab-pane active" id="assign-courts">
+                <div class="form-card">
+                    <form id="reportForm" onsubmit="submitReport(event)">
+                        <label for="reportFile">Upload Today's Report (in 'dd_MM_yyyy.zip' format):</label>
+                        <input type="file" id="reportFile" accept=".zip">
 
-                    <div class="form-card">
-                        <form>
-                            <label for="court-name">Upload Today's Report (in 'dd_MM_yyyy.zip' format):</label>
-                            <input type = "file">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
 
-                            <button type="submit">Submit</button>
-                        </form>
-                      </div>
+                <div id="progressContainer" style="width: 100%; background: #f1f1f1; margin-top: 10px; height: 20px; border-radius: 5px; overflow: hidden;">
+                    <div id="progressBar" style="width: 0%; height: 100%; background: #4caf50;"></div>
+                </div>
+
+
                 </div>
 
                 <br>
@@ -784,6 +809,55 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        function submitReport(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var fileInput = document.getElementById("reportFile");
+            var successMessage = document.getElementById("successMessage");
+            var errorMessage = document.getElementById("errorMessage");
+            var progressBar = document.getElementById("progressBar");
+
+            // Hide both messages first
+            successMessage.style.display = "none";
+            errorMessage.style.display = "none";
+
+            // Check if a file is selected
+            if (fileInput.files.length === 0) {
+                alert("Please select a file before submitting.");
+                return;
+            }
+
+            var fileName = fileInput.files[0].name;
+
+            // Validate file name
+            var regex = /^\d{2}_\d{2}_\d{4}\.zip$/;
+            if (!regex.test(fileName)) {
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            // Simulate upload progress
+            var uploadProgress = 0;
+            var uploadInterval = setInterval(function () {
+                uploadProgress += 10;
+                progressBar.style.width = uploadProgress + "%";
+
+                if (uploadProgress >= 100) {
+                    clearInterval(uploadInterval);
+                    // Reset the form and show success
+                    document.getElementById("reportForm").reset();
+                    successMessage.style.display = "block";
+                    progressBar.style.width = "0%";
+
+                    setTimeout(function () {
+                        successMessage.style.display = "none";
+                    }, 5000);
+                }
+            }, 200); // Faster interval for smoother animation
+        }
+        </script>
+
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

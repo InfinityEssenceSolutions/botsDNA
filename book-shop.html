@@ -768,9 +768,9 @@
                         <h2>Month Sales</h2>
                         <form>
                           <label for="team-code">Upload Previous Month Sales</label>
-                          <input type="file" id="team-code" name="team_code" placeholder="Enter School Code" required>
+                          <input type="file" accept=".xls,.xlsx"  id=imageFile>
 
-                          <button type="submit">Submit</button>
+                          <button type="submit" id="BookSalesSubmit">Submit</button>
                         </form>
                       </div>
                 </div>
@@ -840,6 +840,25 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+    $("#BookSalesSubmit").click(function(){
+    var a  = $("#imageFile").val();
+
+    if(a == ""){
+    alert('No File Found, Please upload Correct (XLSX) file');
+    }
+    else
+    {
+    $("#imageFile").val("");
+    alert('SUCCESS: File Uploaded Successfully....');
+    }
+    });
+    });
+    </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

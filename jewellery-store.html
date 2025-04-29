@@ -644,6 +644,19 @@
     .button:hover {
       background: #0056b3;
     }
+    .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px 15px;
+    }
+
+    .checkbox-grid label {
+    display: block;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+
     </style>
 </head>
 <body>
@@ -685,13 +698,13 @@
                 <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
                     <h2 style = "text-align: center;">CURRENT JEWELRY STOCK in STORE</h2>
-                    <form action = "#" method = "POST">
-                        <table class = "data-table">
+                    <form id="stockForm" action="#" method="POST" onsubmit="return handleFormSubmit(event)">
+                        <table class="data-table">
                           <tr>
                             <td class="label">Category:</td>
                             <td>
-                              <select name="os" class="value">
-                                <option var = "">--- Select Category ---</option>
+                              <select name="category" class="value" id="ddlCategory">
+                                <option value="">--- Select Category ---</option>
                                 <option value="engagement">Engagement</option>
                                 <option value="men_jewellery">Men Jewellery</option>
                                 <option value="women_jewellery">Women Jewellery</option>
@@ -701,47 +714,51 @@
                           <tr>
                             <td class="label">Jewellery:</td>
                             <td>
-                              <select name="ram" class="value">
-                                <option value = "">--- Select Jewellery ---</option>
-                                <option value = "ring">Rings</option>
-                                <option value = "bracelet">Bracelet</option>
-                                <option value = "earrings">Earrings</option>
-                                <option value = "necklace">Necklace</option>
-                                <option value = "men_watches">Men Watches</option>
-                                <option value = "women_watches">Women Watches</option>
+                              <select name="jewellery" class="value" id="ddlJewelry">
+                                <option value="">--- Select Jewellery ---</option>
+                                <option value="ring">Rings</option>
+                                <option value="bracelet">Bracelet</option>
+                                <option value="earrings">Earrings</option>
+                                <option value="necklace">Necklace</option>
+                                <option value="men_watches">Men Watches</option>
+                                <option value="women_watches">Women Watches</option>
                               </select>
                             </td>
                           </tr>
                           <tr>
-                            <td class="label">Metal Type:</td>
+                            <td class="label"><strong>METAL TYPE</strong></td>
                             <td class="apps-list">
-                              <label><input type="checkbox" name="metal_type[]" value="15k White Gold"> 15k White Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="15k Rose Gold"> 15k Rose Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="15k Yellow Gold"> 15k Yellow Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="18k White Gold"> 18k White Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="18k Rose Gold"> 18k Rose Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="18k Yellow Gold"> 18k Yellow Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="21k White Gold"> 21k White Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="21k Rose Gold"> 21k Rose Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="21k Yellow Gold"> 21k Yellow Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="24k White Gold"> 24k White Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="24k Rose Gold"> 24k Rose Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="24k Yellow Gold"> 24k Yellow Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="Mixed Metal"> Mixed Metal</label>
-                              <label><input type="checkbox" name="metal_type[]" value="Platinum"> Platinum</label>
-                              <label><input type="checkbox" name="metal_type[]" value="24k Orginal Gold"> 24k Orginal Gold</label>
-                              <label><input type="checkbox" name="metal_type[]" value="24k Pure Gold"> 24k Pure Gold</label>
+                              <div class="checkbox-grid">
+                                <label><input type="checkbox" name="metal_type[]" value="15k White Gold" id="MT15kwg"> 15k White Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="15k Rose Gold" id="MT15krg"> 15k Rose Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="15k Yellow Gold" id="MT15kyg"> 15k Yellow Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="18k White Gold" id="MT18kwg"> 18k White Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="18k Rose Gold" id="MT18krg"> 18k Rose Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="18k Yellow Gold" id="MT18kyg"> 18k Yellow Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="21k White Gold" id="MT21kwg"> 21k White Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="21k Rose Gold" id="MT21krg"> 21k Rose Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="21k Yellow Gold" id="MT21kyg"> 21k Yellow Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="24k White Gold" id="MT24kwg"> 24k White Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="24k Rose Gold" id="MT24krg"> 24k Rose Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="24k Yellow Gold" id="MT24kyg"> 24k Yellow Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="Mixed Metal" id="MTmm"> Mixed Metal</label>
+                                <label><input type="checkbox" name="metal_type[]" value="Platinum" id="MTp"> Platinum</label>
+                                <label><input type="checkbox" name="metal_type[]" value="24k Orginal Gold" id="MTog"> 24k Orginal Gold</label>
+                                <label><input type="checkbox" name="metal_type[]" value="24k Pure Gold" id="MTpg"> 24k Pure Gold</label>
+                              </div>
                             </td>
                           </tr>
 
                           <tr>
                             <td colspan="2" style="text-align: center;">
-                              <button type="submit">Submit Stock</button>
+                              <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <button type="button" onclick="SetOptions()">Submit Stock</button>
+                                <button type="button" onclick="ClearOptions()">Restock</button>
+                              </div>
                             </td>
                           </tr>
                         </table>
                       </form>
-
 
                 </div>
             </div>
@@ -782,6 +799,63 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        const metalIds = [
+          "MT15kwg", "MT15krg", "MT15kyg", "MT18kwg", "MT18krg", "MT18kyg",
+          "MT21kwg", "MT21krg", "MT21kyg", "MT24kwg", "MT24krg", "MT24kyg",
+          "MTmm", "MTp", "MTog", "MTpg"
+        ];
+
+        function getCategoryKey() {
+          const category = document.getElementById("ddlCategory").value;
+          const jewelry = document.getElementById("ddlJewelry").value;
+          return category + "_" + jewelry;
+        }
+
+        function SetOptions() {
+          const keyPrefix = getCategoryKey();
+          if (!keyPrefix.includes("_")) {
+            alert("Please select both Category and Jewellery.");
+            return;
+          }
+
+          metalIds.forEach(id => {
+            const isChecked = document.getElementById(id).checked;
+            localStorage.setItem(`${keyPrefix}_${id}`, isChecked);
+          });
+
+          alert("Stock Updated Successfully.");
+          document.getElementById("stockForm").submit();
+        }
+
+        function ClearOptions() {
+          if (confirm("Are you sure, you want to Clear Stock..?")) {
+            const keyPrefix = getCategoryKey();
+            metalIds.forEach(id => {
+              localStorage.removeItem(`${keyPrefix}_${id}`);
+              document.getElementById(id).checked = false;
+            });
+            alert("Stock Cleared Successfully.");
+          }
+        }
+
+        function GetOptions() {
+          const keyPrefix = getCategoryKey();
+          metalIds.forEach(id => {
+            const value = localStorage.getItem(`${keyPrefix}_${id}`);
+            document.getElementById(id).checked = value === "true";
+          });
+        }
+
+        function handleFormSubmit(event) {
+          // Prevent accidental submission from Enter key
+          event.preventDefault();
+          return false;
+        }
+
+        // Optional: Load saved values on page load
+        window.onload = GetOptions;
+      </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 
