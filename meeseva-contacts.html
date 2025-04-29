@@ -717,7 +717,25 @@
         width: 100%;
       }
     }
+    #ContactSubmit {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+#ContactSubmit:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
     </style>
 </head>
 <body>
@@ -818,10 +836,8 @@
                   <p><strong>Secondary Contact:</strong> <input type="text" value="9803540967" readonly></p>
                 </div>
               </div>
-              <button type="submit" id="ContactSubmit">Update Contact Info</button>
-
         </div>
-
+        <button type="submit" id="ContactSubmit">Update Contact Info</button>
     </section>
     <footer>
         <div class="container">
