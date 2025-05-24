@@ -644,6 +644,49 @@
     .button:hover {
       background: #0056b3;
     }
+
+    .show {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+
+    #snackbar {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 30px;
+      font-size: 17px;
+    }
+
+    #Congrats {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #result-message {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    .data-table td {
+      padding: 8px;
+    }
     </style>
 </head>
 <body>
@@ -676,57 +719,53 @@
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=aY_2O9fuS80" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=UaoiYTzH43U&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=5" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/locator/4" target = "_blank">Source Code</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=xKw_ouFUsrI" target = "_blank">Requirement</a>
+                <a class="tab-btn" href = "Employee Documents.zip">EmployeeDocuments.zip</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=YEeH3iWrsXQ" target = "_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/background-verification/10" target = "_blank">Buy complete step by step solution with source code</a>
             </div>
             <div class="tabs-content">
-                <!-- Customer List Tab -->
                 <div class="tab-pane active" id="customer-list">
-                    <h5 ><span id='CurrentValue'>1</span> of 10 emploees</h5>
-                    <form action = "#" method = "POST">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Employee ID:</td>
-                            <td>
-                                <span><input type = "text" id="CurrentEmpID" disabled></span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Employe Name:</td>
-                            <td>
-                                <span><input type=text id="CurrentEmpName" disabled /></span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Missing Documents:</td>
-                            <td class="value">
-                              <span style = "color: red;"><textarea rows=6 id=MissingDocs disabled>SSC MarkList / INTER MarkList</textarea></span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Upload Zip File:</td>
-                            <td class="apps-list">
-                              <label><input type="file" id=uploadedFile  accept=".zip"></label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                                <input type=button id="Submit" onclick='SubmitBGV()' value="Submit" />
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-
-
+                  <h5><span id='CurrentValue'>1</span> of 10 employees</h5>
+                  <div id="dataEntry">
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                      <table class="data-table">
+                        <tr>
+                          <td class="label">Employee ID:</td>
+                          <td><input type="text" id="CurrentEmpID" disabled></td>
+                        </tr>
+                        <tr>
+                          <td class="label">Employee Name:</td>
+                          <td><input type="text" id="CurrentEmpName" disabled></td>
+                        </tr>
+                        <tr>
+                          <td class="label">Missing Documents:</td>
+                          <td><textarea rows="6" id="MissingDocs" disabled style="color:red;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td class="label">Upload Zip File:</td>
+                          <td><input type="file" id="uploadedFile" accept=".zip"></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="text-align:center;">
+                            <input type="button" id="Submit" onclick="SubmitBGV()" value="Submit" />
+                          </td>
+                        </tr>
+                      </table>
+                    </form>
+                    <div id="result-message"></div>
+                  </div>
                 </div>
+
+                <div id="snackbar"></div>
+                <div id="Congrats">
+                  <h1>Congratulations!</h1>
+                  <h3>All Missing Documents Submitted Successfully...</h3>
+                </div>
+              </div>
             </div>
         </div>
-    </div><div id="snackbar">Successfully Submitted Missing Documents..</div>
-    <div id=Congrats>
-    <h1>Congratulations</h1><br/><h3> All Missing Documents Submitted Successfully...</H3>
-    </div>
+
     </section>
     <footer>
         <div class="container">
@@ -764,80 +803,89 @@
         </svg>
     </a>
     <script>
-        document.getElementById("Congrats").style.display = "none";
-        document.getElementById("CurrentEmpID").value=TenEmployee[0].EmployeeID;
-        document.getElementById("CurrentEmpName").value=TenEmployee[0].EmployeeName;
-        </script>
-    <script>
+        const EmployeeId = [
+          { EmployeeID: 'BDNA12336', EmployeeName: 'Jada Vishuvardhan Rao', UG: 'B.A', PG: 'M.A', OfferLetter: 'Wipro', ExperienceLetter: 'Wipro' },
+          { EmployeeID: 'BDNA12921', EmployeeName: 'Palagiri Mohan', UG: 'B.Sc', PG: 'M.Sc', OfferLetter: 'Infosys', ExperienceLetter: 'Infosys' },
+          { EmployeeID: 'BDNA15275', EmployeeName: 'Parre Sudheer Babu', UG: 'B.E', PG: 'M.Tech', OfferLetter: 'HCL Technologies', ExperienceLetter: 'HCL Technologies' },
+          { EmployeeID: 'BDNA15515', EmployeeName: 'Malli.Shanthi', UG: 'B.Pharmacy', PG: 'M.Pharmacy', OfferLetter: 'HP', ExperienceLetter: 'HP' },
+          { EmployeeID: 'BDNA17253', EmployeeName: 'Bandi Sanjay', UG: 'BCA', PG: 'MCA', OfferLetter: 'Tech Mahindra', ExperienceLetter: 'Tech Mahindra' },
+          { EmployeeID: 'BDNA24725', EmployeeName: 'Bandaru Monohar', UG: 'B.Tech', PG: 'M.Tech', OfferLetter: '3i Infotech', ExperienceLetter: '3i Infotech' },
+          { EmployeeID: 'BDNA37485', EmployeeName: 'Darsi Avaneeth Kumar', UG: 'B.B.M', PG: 'MBA', OfferLetter: 'KPIT Technologies', ExperienceLetter: 'KPIT Technologies' },
+          { EmployeeID: 'BDNA43354', EmployeeName: 'Sudarsi Vamsi', UG: 'B.Sc', PG: 'M.Sc', OfferLetter: 'Zensar Technologies', ExperienceLetter: 'Zensar Technologies' },
+          { EmployeeID: 'BDNA48192', EmployeeName: 'Devarapalli Lokesh', UG: 'B.E', PG: 'M.Tech', OfferLetter: 'Tata Group', ExperienceLetter: 'Tata Group' },
+          { EmployeeID: 'BDNA48542', EmployeeName: 'Gokaraju RangaRaju', UG: 'B.Tech', PG: 'M.Tech', OfferLetter: 'Sonata Software', ExperienceLetter: 'Sonata Software' },
+          { EmployeeID: 'BDNA63736', EmployeeName: 'Garnepudi Deelip Kumar', UG: 'B.Com', PG: 'M.Com', OfferLetter: 'NIIT Limited', ExperienceLetter: 'NIIT Limited' },
+          { EmployeeID: 'BDNA73892', EmployeeName: 'Chejala Surendra', UG: 'BCA', PG: 'MCA', OfferLetter: 'Mphasis Limited', ExperienceLetter: 'Mphasis Limited' },
+          { EmployeeID: 'BDNA82981', EmployeeName: 'Gumma Gopi', UG: 'B.E', PG: 'M.Tech', OfferLetter: 'Mindtree', ExperienceLetter: 'Mindtree' },
+          { EmployeeID: 'BDNA91252', EmployeeName: 'Kummagiri Karthik', UG: 'B.Tech', PG: 'M.Tech', OfferLetter: 'Mastek', ExperienceLetter: 'Mastek' },
+          { EmployeeID: 'BDNA98283', EmployeeName: 'Kunchala Ravindra', UG: 'B.A', PG: 'M.A', OfferLetter: 'Rolta', ExperienceLetter: 'Rolta' }
+        ];
 
-        var EmployeeId =[{   EmployeeID : 'BDNA12336',   EmployeeName  : 'Jada Vishuvardhan Rao', UG : 'B.A' , PG : 'M.A' , OfferLetter : 'Wipro' , ExperienceLetter : 'Wipro'},
-        {   EmployeeID : 'BDNA12921',   EmployeeName  : 'Palagiri Mohan', UG : 'B.Sc' , PG : 'M.Sc' , OfferLetter : 'Infosys' , ExperienceLetter : 'Infosys'},
-        {   EmployeeID : 'BDNA15275',   EmployeeName  : 'Parre Sudheer Babu', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'HCL Technologies' , ExperienceLetter : 'HCL Technologies'},
-        {   EmployeeID : 'BDNA15515',   EmployeeName  : 'Malli.Shanthi', UG : 'B.Pharmacy' , PG : 'M.Pharmacy' , OfferLetter : 'HP' , ExperienceLetter : 'HP'},
-        {   EmployeeID : 'BDNA17253',   EmployeeName  : 'Bandi Sanjay', UG : 'BCA' , PG : 'MCA' , OfferLetter : 'Tech Mahindra' , ExperienceLetter : 'Tech Mahindra'},
-        {   EmployeeID : 'BDNA24725',   EmployeeName  : 'Bandaru Monohar ', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : '3i Infotech ' , ExperienceLetter : '3i Infotech '},
-        {   EmployeeID : 'BDNA37485',   EmployeeName  : 'Darsi Avaneeth Kumar', UG : 'B.B.M' , PG : 'MBA' , OfferLetter : 'KPIT Technologies' , ExperienceLetter : 'KPIT Technologies'},
-        {   EmployeeID : 'BDNA43354',   EmployeeName  : 'Sudarsi Vamsi', UG : 'B.Sc' , PG : 'M.Sc' , OfferLetter : 'Zensar Technologies' , ExperienceLetter : 'Zensar Technologies'},
-        {   EmployeeID : 'BDNA48192',   EmployeeName  : 'Devarapalli Lokesh', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'Tata Group' , ExperienceLetter : 'Tata Group'},
-        {   EmployeeID : 'BDNA48542',   EmployeeName  : 'Gokaraju RangaRaju', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : 'Sonata Software' , ExperienceLetter : 'Sonata Software'},
-        {   EmployeeID : 'BDNA63736',   EmployeeName  : 'Garnepudi Deelip Kumar', UG : 'B.Com' , PG : 'M.Com' , OfferLetter : 'NIIT Limited' , ExperienceLetter : 'NIIT Limited'},
-        {   EmployeeID : 'BDNA73892',   EmployeeName  : 'Chejala Surendra', UG : 'BCA' , PG : 'MCA' , OfferLetter : 'Mphasis Limited' , ExperienceLetter : 'Mphasis Limited'},
-        {   EmployeeID : 'BDNA82981',   EmployeeName  : 'Gumma Gopi ', UG : 'B.E' , PG : 'M.Tech' , OfferLetter : 'Mindtree' , ExperienceLetter : 'Mindtree'},
-        {   EmployeeID : 'BDNA91252',   EmployeeName  : 'Kummagiri Karthik', UG : 'B.Tech' , PG : 'M.Tech' , OfferLetter : 'Mastek' , ExperienceLetter : 'Mastek'},
-        {   EmployeeID : 'BDNA98283',   EmployeeName  : 'Kunchala Ravindra', UG : 'B.A' , PG : 'M.A' , OfferLetter : 'Rolta' , ExperienceLetter : 'Rolta'}];
-
-
-        var TenEmployee = [];
-
-        for(var i = 0; i <= 11; i++) {
-        var newEmp=EmployeeId[Math.floor((Math.random() * 14) + 1)];
-        while (TenEmployee.includes(newEmp)) {
-          newEmp=EmployeeId[Math.floor((Math.random() * 14) + 1)];
+        const TenEmployee = [];
+        while (TenEmployee.length < 10) {
+          let randomEmp = EmployeeId[Math.floor(Math.random() * EmployeeId.length)];
+          if (!TenEmployee.includes(randomEmp)) {
+            TenEmployee.push(randomEmp);
+          }
         }
 
-        TenEmployee.push(newEmp);
+        // Set initial employee
+        let currentIndex = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+          updateEmployee(currentIndex);
+        });
 
+        function updateEmployee(index) {
+          document.getElementById("CurrentEmpID").value = TenEmployee[index].EmployeeID;
+          document.getElementById("CurrentEmpName").value = TenEmployee[index].EmployeeName;
+
+          const docTypes = [
+            "SSC MarkList",
+            "INTER MarkList",
+            `${TenEmployee[index].UG} Certificate`,
+            `${TenEmployee[index].PG} Certificate`,
+            `${TenEmployee[index].OfferLetter} Offer Letter`,
+            `${TenEmployee[index].ExperienceLetter} Experience Letter`
+          ];
+
+          let selectedDocs = [];
+          const docCount = Math.floor(Math.random() * 4) + 2;
+          while (selectedDocs.length < docCount) {
+            let doc = docTypes[Math.floor(Math.random() * docTypes.length)];
+            if (!selectedDocs.includes(doc)) {
+              selectedDocs.push(doc);
+            }
+          }
+
+          document.getElementById("MissingDocs").value = selectedDocs.join(" / ");
         }
 
-        function SubmitBGV()
-        {
-        var cv=document.getElementById("CurrentValue").innerText;
+        function SubmitBGV() {
+          const fileInput = document.getElementById("uploadedFile");
+          const resultMessage = document.getElementById("result-message");
+          const currentEmp = TenEmployee[currentIndex];
+          const currentDocs = document.getElementById("MissingDocs").value;
 
+          if (!fileInput.value) {
+            resultMessage.innerText = `Successfully Submitted [${currentEmp.EmployeeName}] Missing Documents: ${currentDocs}`;
+          } else {
+            document.getElementById("dataEntry").style.display = "none";
+            document.getElementById("Congrats").style.display = "block";
+            return;
+          }
 
-        document.getElementById("CurrentEmpID").value=TenEmployee[parseInt(cv)].EmployeeID;
-        document.getElementById("CurrentEmpName").value=TenEmployee[parseInt(cv)].EmployeeName;
+          currentIndex++;
 
-        if(cv==10)
-        {
-        document.getElementById("dataEntry").style.display = "none";
-         document.getElementById("Congrats").style.display = "block";
-        }else{
-        var h=Math.floor((Math.random() * 5) + 2);
-        var MissingDocs="";
-        for(let k=1;k<=h;k++)
-        {
-        var p=Math.floor((Math.random() * 6) + 1);
-        if(p==1 && !MissingDocs.includes("SSC MarkList")){ MissingDocs=MissingDocs+" SSC MarkList / ";}
-        if(p==2 && !MissingDocs.includes("INTER MarkList")){ MissingDocs=MissingDocs+" INTER MarkList / ";}
-        if(p==3 && !MissingDocs.includes("Certificate")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].UG+" Certificate / ";}
-        if(p==4 && !MissingDocs.includes("Certificate")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].PG+" Certificate / ";}
-        if(p==5 && !MissingDocs.includes("Offer Letter")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].OfferLetter+" Offer Letter / ";}
-        if(p==6 && !MissingDocs.includes("Experience Letter")){ MissingDocs=MissingDocs+TenEmployee[parseInt(cv)].ExperienceLetter+" Experience Letter / ";}
+          if (currentIndex < 10) {
+            document.getElementById("CurrentValue").innerText = currentIndex + 1;
+            document.getElementById("uploadedFile").value = "";
+            updateEmployee(currentIndex);
+          } else {
+            document.getElementById("dataEntry").style.display = "none";
+            document.getElementById("Congrats").style.display = "block";
+          }
         }
-        MissingDocs=MissingDocs.substring(0,MissingDocs.length-2);
-        document.getElementById("MissingDocs").innerText=MissingDocs;
-         var x = document.getElementById("snackbar");
-        document.getElementById("snackbar").innerText="Successfully Submitted ["+TenEmployee[parseInt(cv)-1].EmployeeName+"] Missing Documents";
-          x.className = "show";
-          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        cv=parseInt(cv)+1;
-        document.getElementById("CurrentValue").innerText=cv;
-        document.getElementById("uploadedFile").value="";
-        }
-
-        }
-
-        </script>
+      </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');
 

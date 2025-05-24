@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Server Setup</title>
+    <title>BotsDNA - IP Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         /* Global Styles */
         :root {
@@ -566,6 +567,11 @@
         color: #065f46;
     }
 
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -601,34 +607,51 @@
             overflow-x: auto;
         }
     }
-    select {
-            width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-        }
-        .label {
-      font-size: 20px;
-      color: var(--dark-gray);
-      font-weight: bold;
-      white-space: nowrap;
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
     }
-    .value {
-      font-size: 18px;
-      color: var(--dark-gray);
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
     }
-    input[type="submit"] {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    .apps-list label {
+
+    .form-card label {
       display: block;
-      font-size: 18px;
-      color: var(--dark-gray);
-      margin-bottom: 5px;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
     }
-    button {
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -641,9 +664,21 @@
       transition: background 0.3s;
     }
 
-    .button:hover {
+    .form-card button:hover {
       background: #0056b3;
     }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .data-table td:nth-child(2) {
+        font-weight: bold;
+    }
+
+
     </style>
 </head>
 <body>
@@ -671,79 +706,92 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
-            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
+            <h2 class="section-title">Ip Ticketing Tool <i class="fa fa-ticket-alt"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=dt2VSb16c-I&t=52s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=eOLvKy9LbM0&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=11" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/setup-server/7" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=zjChX-Y0fPk" target="_blank">Requirement</a>
+                <a class="tab-btn" href = "images/SampleSMS.jpeg" target="_blank">SMS Format.JPG</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=Ms0CQP_xQwk&t=5s" target="_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/ip-ticketing-tool/15" target="_blank">Complete step by step solution with source code Here</a>
             </div>
+        </div>
+        <br>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a href = "index.html" class = "tab-btn">Tickets</a>
+                <a href = "network.html" class = "tab-btn  ">Network</a>
+                <a href = "location.html" class = "tab-btn">Location</a>
+                <a href = "people_finder.html" class = "tab-btn active">People Finder</a>
+            </div>
+
             <div class="tabs-content">
-                <!-- Customer List Tab -->
-                <div class="tab-pane active" id="customer-list">
-
-                    <form action = "#" method = "POST" id = "serverForm">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Choose Operating System (OS):</td>
-                            <td>
-                              <select name="os" class="value">
-                                <option value="windows_nt">WINDOWS NT</option>
-                                <option value="windows_10">WINDOWS 10</option>
-                                <option value="linux">LINUX</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">RAM Size:</td>
-                            <td>
-                              <select name="ram" class="value">
-                                <option>4 GB</option>
-                                <option>8 GB</option>
-                                <option>16 GB</option>
-                                <option>32 GB</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">HDD Size:</td>
-                            <td class="value">
-                              <input type="radio" name="hddApp" value="hddName"> 250 GB
-                              <input type="radio" name="hddApp" value="hddName"> 500 GB
-                              <input type="radio" name="hddApp" value="hddName"> 1 TB
-                              <input type="radio" name="hddApp" value="hddName"> 2 TB
-                              <input type="radio" name="hddApp" value="hddName"> 5 TB
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Select Applications:</td>
-                            <td class="apps-list">
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                              <button type="submit" id="CreateServer">Create Server</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <h3 style="text-align: center;">People Finder</h3>
+                    <table><tr><td align=right style="font-family: Arial, sans-serif;color:#E59866;font-size:25px"> People  </td><td style="font-family: 'Courier New', monospace;color:#A569BD;font-size:35px" align=left>Finder</td></tr></table>
 
 
+<div ng-app="sample" >
+<table width=100%><tr><td valign=top>
+<table>
+<tr><td>
+
+  <div class="sample ten">
+    <input id=SearchInput type="text" name="search" ng-model="search.$" placeholder="search">
+    <button type="submit" class="btn btn-search">
+      <i class="fa fa-search"></i>
+    </button>
+    <button type="reset" class="btn btn-reset fa fa-times"></button>
+  </div>
+</td></tr><tr>
+<td>  <table ng-controller="sampleController"   >
+
+    <tbody>
+      <tr ng-repeat="user in users | filter:search">
+        <td><b><span onclick="SearchNow(this)" style="cursor:pointer" data-number={{user.Mobile}}>{{user.firstname}}</span></b><br/>&nbsp;&nbsp;<font style='color:gray;'>{{user.Company}}</font></td>
+      </tr>
+    </tbody>
+  </table>
+</td></tr></table>
+</td><td  width=80% valign=top>
+
+
+
+ <div class="row">
+    <div class="text">
+
+   <table width=60%  >
+
+<tr><td colspan=2 align=right><h2 id=SUser>Send Messages to Employees</h2></td></tr>
+<tr><td align=right>Send Message To:</td><td> <input type="text" value="" id=MobileNumber disabled style="width:100%" /></td></tr>
+    <tr><td valign=top align=right>Enter Your Message:</td><td>
+
+    <textarea rows=10 cols=30 id=msgBox  style="width:100%" ></textarea></td></tr>
+
+ <tr><td></td><td>
+<input type="button" value="Submit" class="button" id=SubmitButton />
+
+<input type="button" value="Reset" id=ReSetButton class="button button5" />
+
+<input type="button"  id=backButton value="Back" class="button button2" />
+</td></tr>
+<tr><td colspan=2>
+
+     <div class="menu">
+     Your Message was Sent Successfully!
+     </div>
+</td></tr>
+</table>
+   </div>
+  </div>
+</td></tr></table>
+</div>
                 </div>
             </div>
         </div>
+
     </section>
     <footer>
         <div class="container">
@@ -780,13 +828,181 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+function SearchNow(d)
+{
+document.getElementById("SUser").innerHTML="Send Message to "+d.innerHTML;
+document.getElementById("MobileNumber").value = "Mobile Phone:"+d.getAttribute("data-number");
+
+}
+
+$(document).ready(function(){
+
+
+
+$(".menu").hide();
+$("#backButton").hide();
+
+$("#SubmitButton").click(function(){
+
+if($("#msgBox").val() == "" || $("#MobileNumber").val() =="")
+{
+alert("Provide Message/MobileNumber, Error: Message & Mobile Number Should not be empty");
+}
+else{
+var dt=new Date();
+var sec = dt.getSeconds();
+if((sec > 1 && sec < 5) || (sec > 20 && sec < 25) || (sec > 40 && sec < 45) )
+{
+
+$(".menu").css("background-color", "red");
+$(".menu").css("color", "white");
+$(".menu").text("Error: There was a network error");
+}
+else
+{
+
+$(".menu").css("background-color", "#c2deb1");
+$(".menu").css("color", "green");
+$(".menu").text("Your Message was Sent Successfully!");
+}
+$(".menu").show();
+
+$("#backButton").show();
+
+$("#SubmitButton").hide();
+$("#msgBox").attr('disabled', 'disabled');
+$("#ReSetButton").hide();
+}
+});
+
+
+$("#backButton").click(function(){
+$("#SUser").text("Send Messages to Employees");
+$("#SubmitButton").show();
+$("#backButton").hide();
+$("#msgBox").removeAttr('disabled');
+$("#msgBox").val("");
+$(".menu").hide();
+$("#ReSetButton").show();
+$("#MobileNumber").val("");
+});
+
+
+$("#ReSetButton").click(function(){
+
+$("#MobileNumber").val("");
+$("#msgBox").val("");
+});
+});
+
+
+
+
+angular.module('sample', [])
+  .controller('sampleController', ['$scope', function($scope) {
+
+
+    $scope.users = [
+{ firstname: 'Malle Veeranjaneeyulu', Company:'Apple', Mobile:'(040)256-9441'},
+{ firstname: 'Vallepu Anjaneyulu', Company:'Samsung Electronics', Mobile:'(030)125-5422'},
+{ firstname: 'Kunchala Anji', Company:'Foxconn', Mobile:'(100)350-2351'},
+{ firstname: 'Thanneru Anjaiah', Company:'Microsoft', Mobile:'(745)654-6371'},
+{ firstname: 'Ballikuruva Prashanthi ', Company:'Huawei', Mobile:'(473)364-5547'},
+{ firstname: 'Kalaka Prashant', Company:'Dell Technologies', Mobile:'(234)282-3552'},
+{ firstname: 'Venupusa PrashantReddy', Company:'Hitachi', Mobile:'(382)152-5324'},
+{ firstname: 'Besam Prasanna', Company:'IBM', Mobile:'(353)434-9758'},
+{ firstname: 'Pulusa KaylanRam ', Company:'Sony', Mobile:'(374)815-3326'},
+{ firstname: 'Karre Ramaiah', Company:'Intel', Mobile:'(183)100-1216'},
+{ firstname: 'Chita Ramu', Company:'Facebook', Mobile:'(436)228-4577'},
+{ firstname: 'Gilanki RaghuRam', Company:'Panasonic', Mobile:'(438)937-7643'},
+{ firstname: 'Oguri Ramarao', Company:'HP', Mobile:'(263)858-5730'},
+{ firstname: 'Karnati Nagarjuna ', Company:'Tencent', Mobile:'(424)521-2674'},
+{ firstname: 'Konidala Nagababu', Company:'LG Electronics', Mobile:'(216)642-9755'},
+{ firstname: 'Dumpa NagarjunaReddy', Company:'Cisco Systems', Mobile:'(147)192-7833'},
+{ firstname: 'Linga NagarjunaChowdary', Company:'LenovoÂ ', Mobile:'(163)544-0956'},
+{ firstname: 'Marlapudi Raju', Company:'Microsoft', Mobile:'(537)795-8573'},
+{ firstname: 'Irruri RajaReddy', Company:'Apple', Mobile:'(427)150-3564'},
+{ firstname: 'Yarramsetti Rajasekhar', Company:'IBM', Mobile:'(742)452-3859'},
+{ firstname: 'Kurnool Rajesh', Company:'Sony', Mobile:'(835)975-6532'},
+{ firstname: 'Dondapati Rajubabu', Company:'Cisco Systems', Mobile:'(217)812-5433'},
+{ firstname: 'Thammestty Venkatesh', Company:'Tencent', Mobile:'(342)421-3558'},
+{ firstname: 'Thanneru VenkatRao', Company:'Microsoft', Mobile:'(723)485-8075'},
+{ firstname: 'Kunchala Venkat', Company:'Dell Technologies', Mobile:'(543)255-4053'},
+{ firstname: 'Palemsetty Venketshwarlu', Company:'HP', Mobile:'(213)936-5283'},
+{ firstname: 'Jadagam VenkatReddy', Company:'Samsung Electronics', Mobile:'(321)212-2503'},
+{ firstname: 'Daram VenkatLaxmi', Company:'Facebook', Mobile:'(739)125-3682'},
+{ firstname: 'Linga Satyanarayanarao', Company:'Foxconn', Mobile:'(654)585-9696'},
+{ firstname: 'Pallapu Satyadev', Company:'Intel', Mobile:'(879)121-2854'},
+{ firstname: 'Thella Satyananda', Company:'Dell Technologies', Mobile:'(564)405-5473'},
+{ firstname: 'Saretham Satyavathi', Company:'HP', Mobile:'(255)384-5321'},
+{ firstname: 'Tunga Kumaramma', Company:'LG Electronics', Mobile:'(647)867-4289'},
+{ firstname: 'Euppuri Kumaraiah', Company:'Microsoft', Mobile:'(936)854-9326'},
+{ firstname: 'Valesam Kumarvarma', Company:'Panasonic', Mobile:'(134)244-5733'},
+{ firstname: 'Paritham Kumarasangakara', Company:'LenovoÂ ', Mobile:'(283)094-5234'},
+{ firstname: 'Euppu Neelemma', Company:'Hitachi', Mobile:'(967)641-5355'},
+{ firstname: 'Gudduri Niranjan', Company:'Facebook', Mobile:'(846)484-9775'},
+{ firstname: 'Himakathula  Nilkamal', Company:'Huawei', Mobile:'(243)654-2482'},
+{ firstname: 'Dondakayula Nikitha', Company:'Samsung Electronics', Mobile:'(695)434-5654'},
+{ firstname: 'Suremsetty NirmalaDevi', Company:'Dell', Mobile:'(125)655-5864'},
+{ firstname: 'Kasuva Nirmala', Company:'hp', Mobile:'(254)445-4543'},
+{ firstname: 'Ballineni Vasantha ', Company:'tcs', Mobile:'(954)845-4512'},
+{ firstname: 'Dondapadu Vasubabu', Company:'Infosys', Mobile:'(152)915-9463'},
+{ firstname: 'Yanamala Vasudhara', Company:'HCL', Mobile:'(044)556-1573'},
+{ firstname: 'Kovvuri Vasudeva', Company:'wipro', Mobile:'(024)494-9646'},
+{ firstname: 'Chopuura Vasista', Company:'Microsoft', Mobile:'(022)674-5239'},
+{ firstname: 'Rebavarupu Vasanthamma', Company:'Cognizant', Mobile:'(124)344-4535'},
+{ firstname: 'Guvva Muralidhar', Company:'Filpkart', Mobile:'(555)443-2815'},
+{ firstname: 'Jadaki MuraliKrishna', Company:'accenture', Mobile:'(374)868-5244'},
+{ firstname: 'Kovvuri MuraliMohan', Company:'genpact', Mobile:'(255)452-4912'},
+{ firstname: 'Peletam MuraliReddy', Company:'smartdrive', Mobile:'(256)355-9827'},
+{ firstname: 'Namineni Murali', Company:'Tech Mahindra', Mobile:'(485)976-8468'},
+{ firstname: 'Pullala KrishnaReddy', Company:'Larsen & Toubro', Mobile:'(253)584-5266'},
+{ firstname: 'Dumpa KrishnaMohanReddy', Company:'Mphasis', Mobile:'(295)988-7352'},
+{ firstname: 'Venna KrishnaKumar', Company:'Mindtree', Mobile:'(356)894-1365'},
+{ firstname: 'Kovuri KrishnaVeni', Company:'CMC Limited', Mobile:'(227)534-9263'},
+{ firstname: 'Deveka KrishnaKumari', Company:'collabera', Mobile:'(425)673-5256'},
+{ firstname: 'Karnepati KrishnaDevi', Company:'godrej', Mobile:'(836)573-2362'},
+{ firstname: 'Ipputuri Koti', Company:'HSBC', Mobile:'(592)669-5257'},
+{ firstname: 'Lanka Koteshwari', Company:'Mastek', Mobile:'(422)563-5380'},
+{ firstname: 'Madduluri Koteshwaramma', Company:'MELSTAR', Mobile:'(215)567-6913'},
+{ firstname: 'Girikonda Kotlu', Company:'Mistral Solution', Mobile:'(341)384-6382'},
+{ firstname: 'Seretham Koteshwarao', Company:'QuEST Global', Mobile:'(241)569-5139'},
+{ firstname: 'Maripudi Kotaiah', Company:'SAMSUNG', Mobile:'(312)584-4198'},
+{ firstname: 'Mutluri RameshBabu', Company:'LG', Mobile:'(412)391-2724'},
+{ firstname: 'Dandi RameshReddy', Company:'PHILIPS', Mobile:'(422)585-5183'},
+{ firstname: 'Meda RameshKumar', Company:'UST global', Mobile:'(391)542-0261'},
+{ firstname: 'Chankipati RameshKrishna', Company:'WNS Global Services', Mobile:'(515)574-6382'},
+{ firstname: 'Eummagiri RameshRao', Company:'Thoughtworks', Mobile:'(621)963-7139'},
+{ firstname: 'Lingaraju Ramesh', Company:'Infosys', Mobile:'(225)568-0362'},
+{ firstname: 'Beejala  RaoRamesh', Company:'HCL Technologies', Mobile:'(512)532-2981'},
+{ firstname: 'Karre RaoGopalRao', Company:'HP', Mobile:'(822)251-3736'},
+{ firstname: 'Pullisetty RajGopalChary', Company:'Tech Mahindra', Mobile:'(484)145-8192'},
+{ firstname: 'Yandrapati GopalaKrishna', Company:'3i Infotech ', Mobile:'(189)251-7552'},
+{ firstname: 'Yalla KumaraGopalam', Company:'KPIT Technologies', Mobile:'(242)537-4241'},
+{ firstname: 'Kovuri GopalaSarma', Company:'Zensar Technologies', Mobile:'(222)558-6492'},
+{ firstname: 'Himakathula Nilkamal', Company:'HCL Technologies', Mobile:'(280)762-8573'},
+{ firstname: 'Chadrapati Sekhar', Company:'Tata Group', Mobile:'(050)249-8366'}
+    ];
+  }]);
+</script>
     <script>
-        $(document).ready(function () {
-        $("#serverForm").on("submit", function (e) {
-            e.preventDefault(); // Prevent actual form submission
-            window.location.href = "createserver.html"; // Redirect
-        });
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
         });
     </script>
     <script>

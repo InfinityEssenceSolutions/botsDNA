@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Server Setup</title>
+    <title>BotsDNA - Thanks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -40,12 +41,66 @@
             color: var(--primary-dark);
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
+        table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table td {
+    padding: 12px;
+    vertical-align: middle;
+    font-size: 16px;
+  }
+
+  table tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #00796b;
+    outline: none;
+  }
+
+  input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 4px;
+  }
+
+  input[type="button"] {
+    background-color: #4338ca;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="button"]:hover {
+    background-color: #4f46e5;
+  }
+
+  center p {
+    margin-top: 20px;
+  }
+
+            .center-image {
+            display: block;
             margin: 0 auto;
-            padding: 0 20px;
-        }
+            max-width: 100%; /* Optional: makes it responsive */
+            height: auto;
+            }
 
         .btn {
             display: inline-block;
@@ -566,6 +621,11 @@
         color: #065f46;
     }
 
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -601,34 +661,51 @@
             overflow-x: auto;
         }
     }
-    select {
-            width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-        }
-        .label {
-      font-size: 20px;
-      color: var(--dark-gray);
-      font-weight: bold;
-      white-space: nowrap;
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
     }
-    .value {
-      font-size: 18px;
-      color: var(--dark-gray);
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
     }
-    input[type="submit"] {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    .apps-list label {
+
+    .form-card label {
       display: block;
-      font-size: 18px;
-      color: var(--dark-gray);
-      margin-bottom: 5px;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
     }
-    button {
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -641,12 +718,25 @@
       transition: background 0.3s;
     }
 
-    .button:hover {
+    .form-card button:hover {
       background: #0056b3;
     }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    #TransNo{
+        color: var(--primary);
+        font-size: 20px;
+        text-align: center;
+    }
+
     </style>
 </head>
-<body>
+<body onload="GenerateTransactionNumber()">
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -671,104 +761,66 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
-            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
+          <h2 style="text-align: center;">Batch Process</h2>
+          <table border=2>
+
+            <tr>
+
+               <td>Batch Code : </td><td><input type="text" /></td></tr>
+
+             <tr>
+
+                 <td>Max Version : </td><td><select>
+                                                   <option>01</option>
+                               <option>02</option>
+                               <option>03</option>
+                               <option>04</option>
+                               <option>05</option>
+                               <option>06</option>
+                               <option>07</option>
+                               <option>08</option>
+                               <option>09</option>
+                               <option>10</option>
+                               <option>11</option>
+                               <option>12</option>
+                               <option>13</option>
+                               <option>14</option>
+                               <option>15</option></td></tr>
+
+             <tr>
+
+                  <td>Min Version : </td><td><select>
+                               <option>1</option>
+                               <option>2</option>
+                               <option>3</option>
+                               <option>4</option>
+                               <option>5</option>
+                               <option>6</option>
+                               <option>7</option>
+                               <option>8</option>
+                               <option>9</option>
+                               <option>10</option>
+                               <option>11</option>
+                               <option>12</option>
+                               <option>13</option>
+                               <option>14</option>
+                               <option>15</option></td></tr>
+
+              <tr>
+
+                    <td>Batch Run Date : </td><td><input type="date" /></td></tr>
+
+              <tr>
+
+                   <td>Order Type : </td><td>
+                                         <input type="radio"  name="AtomicName" />Dubnium<input type="radio" name="AtomicName" />Potassium</td></tr>
+
+
+           </table>
+
+                 <center><p><input type="button" value="Submit" onclick="opensubmission()" /></p></center>
         </div>
-        <div class="tabs-container">
-            <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=dt2VSb16c-I&t=52s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=eOLvKy9LbM0&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=11" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/setup-server/7" target = "_blank">Buy complete step by step solution with source code</a>
-            </div>
-            <div class="tabs-content">
-                <!-- Customer List Tab -->
-                <div class="tab-pane active" id="customer-list">
-
-                    <form action = "#" method = "POST" id = "serverForm">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Choose Operating System (OS):</td>
-                            <td>
-                              <select name="os" class="value">
-                                <option value="windows_nt">WINDOWS NT</option>
-                                <option value="windows_10">WINDOWS 10</option>
-                                <option value="linux">LINUX</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">RAM Size:</td>
-                            <td>
-                              <select name="ram" class="value">
-                                <option>4 GB</option>
-                                <option>8 GB</option>
-                                <option>16 GB</option>
-                                <option>32 GB</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">HDD Size:</td>
-                            <td class="value">
-                              <input type="radio" name="hddApp" value="hddName"> 250 GB
-                              <input type="radio" name="hddApp" value="hddName"> 500 GB
-                              <input type="radio" name="hddApp" value="hddName"> 1 TB
-                              <input type="radio" name="hddApp" value="hddName"> 2 TB
-                              <input type="radio" name="hddApp" value="hddName"> 5 TB
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Select Applications:</td>
-                            <td class="apps-list">
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                              <button type="submit" id="CreateServer">Create Server</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <img src ="images/logo.png" alt = "BotDNS" style = "width:250px">
-                    <p>Learn UiPath step by step with real projects, expert guidance, and job-focused training — all in one place.</p>
-                </div>
-
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="copyright">
-                <p>&copy; 2025 BotsDNA. All rights reserved.Designed By IES</p>
-            </div>
-        </div>
-    </footer>
+      </section>
     <!-- WhatsApp Icon -->
     <a href="https://wa.me/919705435277" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
         <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
@@ -780,13 +832,27 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-        $("#serverForm").on("submit", function (e) {
-            e.preventDefault(); // Prevent actual form submission
-            window.location.href = "createserver.html"; // Redirect
-        });
+
+        function opensubmission() {
+
+            location. href = "Thanks.html";
+
+        }
+    </script>
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
         });
     </script>
     <script>
@@ -843,3 +909,4 @@
     </script>
 </body>
 </html>
+

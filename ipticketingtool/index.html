@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Vegetable Basket</title>
+    <title>BotsDNA - Football Court Booking</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         /* Global Styles */
         :root {
@@ -673,6 +674,11 @@
       color: #888;
     }
 
+    .data-table td:nth-child(2) {
+        font-weight: bold;
+    }
+
+
     </style>
 </head>
 <body>
@@ -700,33 +706,276 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Vegetable Basket <i class="fa fa-shopping-basket"></i></h2>
+            <h2 class="section-title">Ip Ticketing Tool <i class="fa fa-ticket-alt"></i></h2>
             <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
+        </div>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=zjChX-Y0fPk" target="_blank">Requirement</a>
+                <a class="tab-btn" href = "images/SampleSMS.jpeg" target="_blank">SMS Format.JPG</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=Ms0CQP_xQwk&t=5s" target="_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/ip-ticketing-tool/15" target="_blank">Complete step by step solution with source code Here</a>
+            </div>
         </div>
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://youtu.be/_DFVZSQw6XU" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "TodaysPrice.zip">TodaysPrice.zip</a>
-                <a class="tab-btn" href = "https://youtu.be/cdpV6wac6wI" target = "_blank">Solution</a>
+                <a href = "index.html" class = "tab-btn active">Tickets</a>
+                <a href = "network.html" class = "tab-btn">Network</a>
+                <a href = "location.html" class = "tab-btn">Location</a>
+                <a href = "people_finder.html" class = "tab-btn">People Finder</a>
+                <button id="resetData" class = "tab-btn">Reset Data</button>
             </div>
 
             <div class="tabs-content">
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <h3 style="text-align: center;">Ticketing Tool</h3>
+                    <table class="data-table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" id=Tkt1 style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#4261 IP Info Requested By Malle Veeranjaneeyulu On <span id=Time1></span> 22:51:46
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#6783 IP Info Requested By Gilanki RaghuRam On <span id=Time2></span> 21:31:54
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#8172 IP Info Requested By Dondapati Rajubabu On <span id=Time3></span> 23:56:42
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#6254 IP Info Requested By Marlapudi Raju On <span id=Time4></span> 12:34:22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#2141 IP Info Requested By Ballikuruva Prashanthi  On <span id=Time5></span> 17:13:45
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#9546 IP Info Requested By Oguri Ramarao On <span id=Time6></span> 05:52:21
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5325 IP Info Requested By Venupusa PrashantReddy On <span id=Time7></span> 15:33:12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#4313 IP Info Requested By Chita Ramu On <span id=Time8></span> 23:22:52
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#9504 IP Info Requested By Pulusa KaylanRam  On <span id=Time9></span> 10:47:17
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#6326 IP Info Requested By Dumpa NagarjunaReddy On <span id=Time10></span> 13:41:25
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#8943 IP Info Requested By Kunchala Anji On <span id=Time11></span> 07:11:32
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#4132 IP Info Requested By Irruri RajaReddy On <span id=Time12></span> 21:57:11
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#8460 IP Info Requested By Kunchala Venkat On <span id=Time13></span> 08:37:54
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5173 IP Info Requested By Kurnool Rajesh On <span id=Time14></span> 13:54:58
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#9271 IP Info Requested By Konidala Nagababu On <span id=Time15></span> 15:25:35
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5367 IP Info Requested By Euppuri Kumaraiah On <span id=Time16></span> 12:37:33
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#2126 IP Info Requested By Linga NagarjunaChowdary On <span id=Time17></span> 09:21:10
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#9293 IP Info Requested By Dondakayula Nikitha On <span id=Time18></span> 07:15:59
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#9309 IP Info Requested By Jadagam VenkatReddy On <span id=Time19></span> 23:44:37
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5324 IP Info Requested By Yarramsetti Rajasekhar On <span id=Time20></span> 11:05:12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#7328 IP Info Requested By Ballineni Vasantha On <span id=Time21></span> 19:17:21
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>Ticket#4152 IP Info Requested By Thella Satyananda On <span id=Time22></span> 12:21:29
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#8297 IP Info Requested By Valesam Kumarvarma On <span id=Time23></span> 22:23:46
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#4316 IP Info Requested By Thammestty Venkatesh  On <span id=Time24></span> 15:25:52
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5212 IP Info Requested By Euppu Neelemma On <span id=Time25></span> 19:17:27
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#2122 IP Info Requested By Deveka KrishnaKumari On <span id=Time26></span> 22:54:16
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#7365 IP Info Requested By Himakathula Nilkamal  On <span id=Time27></span> 21:11:35
+                                </td>
+                            </tr>
 
-                <!-- Assign Courts Tab -->
-                <div class="tab-pane active" id="assign-courts">
-                    <div class="form-card">
-                        <form>
-                            <label for="team-code">Search By VEG CODE:</label>
-                            <input type="text" id="team-code" name="team_code" placeholder="Enter Vegetable Code" required>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#5286 IP Info Requested By Kovvuri MuraliMohan On <span id=Time28></span> 05:21:25
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#4271 IP Info Requested By Chankipati RameshKrishna On <span id=Time29></span> 17:24:45
+                                </td>
+                            </tr>
 
-                            <div style="display: flex; gap: 10px; margin-top: 10px;">
-                              <button type="submit">Search</button>
-                              <button type="submit">Update</button>
-                            </div>
-                          </form>
-
-                      </div>
+                            <tr>
+                                <td>
+                                    <i class="fa fa-envelope-o" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    Ticket#8497 IP Info Requested By Ipputuri Koti On <span id=Time30></span> 23:19:15
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -767,6 +1016,95 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function download(filename) {
+          var element = document.createElement('a');
+          element.setAttribute('href', filename);
+          element.setAttribute('download', filename);
+          element.setAttribute('target', '_blank');
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        }
+
+        $(document).ready(function () {
+          // Restore previous state from localStorage
+          $("i").each(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (localStorage.getItem(ticketNumber)) {
+              icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+              textCell.css("font-weight", "normal");
+            }
+          });
+
+          // Icon click behavior
+          $("i").click(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (icon.hasClass("fa-envelope-open-o") || icon.hasClass("fa-video-camera") || icon.hasClass("fa-comment") || icon.hasClass("fa-youtube")) {
+              return;
+            }
+
+            icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+            textCell.css("font-weight", "normal");
+
+            if (typeof(Storage) !== "undefined") {
+              localStorage.setItem(ticketNumber, "fa fa-envelope-open-o");
+            }
+
+            download(ticketNumber + ".zip");
+          });
+
+          // Reset button behavior
+          $("#resetData").click(function () {
+            $("i").each(function () {
+              const icon = $(this);
+              const row = icon.closest("tr");
+              const textCell = row.find("td:nth-child(2)");
+              const ticketText = textCell.text();
+              const ticketNumber = ticketText.substring(7, 11);
+
+              if (!icon.hasClass("fa-video-camera") && !icon.hasClass("fa-comment") && !icon.hasClass("fa-youtube")) {
+                icon.removeClass("fa-envelope-open-o").addClass("fa-envelope-o");
+                textCell.css("font-weight", "bold");
+                if (ticketNumber in localStorage) {
+                  localStorage.removeItem(ticketNumber);
+                }
+              }
+            });
+
+            alert("Data Reset Successfully!");
+          });
+        });
+        </script>
+
+    <script>
+        function myFunction(event) {
+            event.preventDefault(); // prevent the normal form submission
+
+            var noof = document.getElementById("NoOfHours").selectedIndex + 1;
+            var teamCode = document.getElementById("TeamCode").value;
+            var courtName = document.getElementById("CourtName").value;
+
+            // You can send all values as query parameters if you want
+            var url = "booking.html?id=" + noof
+                    + "&team_code=" + encodeURIComponent(teamCode)
+                    + "&court_name=" + encodeURIComponent(courtName);
+
+            window.location.href = url; // redirect with parameters
+        }
+        </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

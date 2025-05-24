@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Server Setup</title>
+    <title>BotsDNA - Sports Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -566,6 +566,11 @@
         color: #065f46;
     }
 
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -601,34 +606,51 @@
             overflow-x: auto;
         }
     }
-    select {
-            width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-        }
-        .label {
-      font-size: 20px;
-      color: var(--dark-gray);
-      font-weight: bold;
-      white-space: nowrap;
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
     }
-    .value {
-      font-size: 18px;
-      color: var(--dark-gray);
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
     }
-    input[type="submit"] {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    .apps-list label {
+
+    .form-card label {
       display: block;
-      font-size: 18px;
-      color: var(--dark-gray);
-      margin-bottom: 5px;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
     }
-    button {
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -641,9 +663,71 @@
       transition: background 0.3s;
     }
 
-    .button:hover {
+    .form-card button:hover {
       background: #0056b3;
     }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: calc(33.333% - 20px); /* 3 per row */
+      background-color: #7b5eff33;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .product-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    .product-details {
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .product-details div {
+      margin-bottom: 5px;
+    }
+
+    .product-link {
+      color: purple;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .product-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .product-card {
+        width: calc(50% - 20px); /* 2 per row */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        width: 100%; /* 1 per row */
+      }
+    }
+
     </style>
 </head>
 <body>
@@ -671,79 +755,63 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
-            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
+            <h2 class="section-title">Sports Shop <i class="fa fa-dumbbell"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=dt2VSb16c-I&t=52s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=eOLvKy9LbM0&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=11" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/setup-server/7" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab-btn" href = "https://youtu.be/e2HLbfaLGnM" target="_blank">Requirements</a>
+                <a class="tab-btn" href = "SportsTemplet.docx" target="_blank">Sports Template</a>
+                <a class="tab-btn" href = "SchoolOfferMail.JPG" target="_blank">Email Sample Output</a>
+                <a class="tab-btn" href = "EmailsDatabase.xlsx" target="_blank">School Email Database</a>
+                <a class="tab-btn" href = "SportsTemplet.pdf" target="_blank">Sample Email PDF Attachment</a>
+                <a class="tab-btn" href = "SportShop-SourceCode.zip" target="_blank">Download Source Code</a>
+                <a class="tab-btn" href = "https://youtu.be/M3Fo9nZziP4" target="_blank">Solution, Step by Step Explonation</a>
             </div>
-            <div class="tabs-content">
-                <!-- Customer List Tab -->
-                <div class="tab-pane active" id="customer-list">
-
-                    <form action = "#" method = "POST" id = "serverForm">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Choose Operating System (OS):</td>
-                            <td>
-                              <select name="os" class="value">
-                                <option value="windows_nt">WINDOWS NT</option>
-                                <option value="windows_10">WINDOWS 10</option>
-                                <option value="linux">LINUX</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">RAM Size:</td>
-                            <td>
-                              <select name="ram" class="value">
-                                <option>4 GB</option>
-                                <option>8 GB</option>
-                                <option>16 GB</option>
-                                <option>32 GB</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">HDD Size:</td>
-                            <td class="value">
-                              <input type="radio" name="hddApp" value="hddName"> 250 GB
-                              <input type="radio" name="hddApp" value="hddName"> 500 GB
-                              <input type="radio" name="hddApp" value="hddName"> 1 TB
-                              <input type="radio" name="hddApp" value="hddName"> 2 TB
-                              <input type="radio" name="hddApp" value="hddName"> 5 TB
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Select Applications:</td>
-                            <td class="apps-list">
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                              <button type="submit" id="CreateServer">Create Server</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-
-
-                </div>
+            <div class="tabs-header">
+                <a href = "index.html" class = "tab-btn active">Products</a>
+                <a href = "school.html" class = "tab-btn">Schools</a>
             </div>
         </div>
+        <br>
+        <div class="product-container">
+
+            <div class="product-card">
+              <img src="images/DG64575.jpg" alt="Badminton Cock">
+              <div class="product-details">
+                <a href="#" class="product-link">Badminton Cock</a>
+                <div>Product Name : Badminton Cock</div>
+                <div>Product Code : DG64575</div>
+                <div>Price : 80/-</div>
+                <div>Stock Arrived From : Chennai</div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="images/DG51534.jpg" alt="Badminton Kit Bag">
+              <div class="product-details">
+                <a href="#" class="product-link">Badminton Kit Bag</a>
+                <div>Product Name : Badminton Kit Bag</div>
+                <div>Product Code : DG51534</div>
+                <div>Price : 2550/-</div>
+                <div>Stock Arrived From : Hyderabad</div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="images/DG82712.jpg" alt="Badminton Net">
+              <div class="product-details">
+                <a href="#" class="product-link">Badminton Net</a>
+                <div>Product Name : Badminton Net</div>
+                <div>Product Code : DG82712</div>
+                <div>Price : 1050/-</div>
+                <div>Stock Arrived From : Trivandrum</div>
+              </div>
+            </div>
+
+            <!-- Add more product-card blocks as needed -->
+          </div>
+
     </section>
     <footer>
         <div class="container">
@@ -780,13 +848,19 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-        $("#serverForm").on("submit", function (e) {
-            e.preventDefault(); // Prevent actual form submission
-            window.location.href = "createserver.html"; // Redirect
-        });
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
         });
     </script>
     <script>

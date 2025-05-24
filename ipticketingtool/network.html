@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotsDNA - IP Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ed 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-desc {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            /* color: white; */
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 115px 0;
+            }
+
+            .hero {
+                padding: 140px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+        .testimonials {
+        background-color: #f8fafc;
+        padding: 80px 0;
+    }
+
+
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-up {
+        position: fixed;
+        bottom: 80px;
+        right: 28px;
+        z-index: 999;
+        display: none; /* Hidden by default */
+        cursor: pointer;
+    }
+
+    .scroll-up svg {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.2s ease;
+    }
+
+    .scroll-up:hover svg {
+        transform: translateY(-3px);
+    }
+    .watch-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4f46e5;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .watch-more-btn:hover {
+        background-color: #fff;
+    }
+
+     /* Tabs Styles */
+     .tabs-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .tabs-header {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+.tabs-header::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tabs-header::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 4px;
+}
+
+.tabs-header::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+    .tab-btn {
+        flex: 1;
+        padding: 15px 20px;
+        text-align: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .tab-btn:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .tab-btn.active {
+        color: var(--primary);
+    }
+
+    .tab-btn.active:after {
+        transform: scaleX(1);
+    }
+
+    .tab-btn:hover:not(.active) {
+        color: var(--dark);
+        background-color: #f8fafc;
+    }
+
+    .tabs-content {
+        padding: 30px;
+    }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Table Styles */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .data-table th {
+        background-color: var(--primary);
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-weight: 600;
+    }
+
+    .data-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e2e8f0;
+        vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    .data-table tr:hover {
+        background-color: #f0f4ff;
+    }
+
+    .data-table .status {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .data-table .status.active {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
+    .data-table .status.inactive {
+        background-color: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .data-table .status.pending {
+        background-color: #fef3c7;
+        color: #92400e;
+    }
+
+    .data-table .action-btn {
+        padding: 6px 12px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+    }
+
+    .data-table .action-btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-1px);
+    }
+
+
+
+    /* Responsive Tables */
+    @media (max-width: 768px) {
+        .data-table {
+            display: block;
+            overflow-x: auto;
+        }
+    }
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
+    }
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
+    }
+
+    .form-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary-dark);
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form-card button:hover {
+      background: #0056b3;
+    }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .data-table td:nth-child(2) {
+        font-weight: bold;
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src = "images/logo.png" alt ="BotsDNA" style = "width: 200px">
+                <!-- <i class="fas fa-robot"></i>
+                BotsDNA -->
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://docs.google.com/forms/d/1FHzTZ1L0yI2JlHcLhsT4cCsEUxhx83B5qZnpoPc0Wr4/viewform?edit_requested=true" target="_blank">Mock interview Request</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Ip Ticketing Tool <i class="fa fa-ticket-alt"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
+        </div>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=zjChX-Y0fPk" target="_blank">Requirement</a>
+                <a class="tab-btn" href = "images/SampleSMS.jpeg" target="_blank">SMS Format.JPG</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=Ms0CQP_xQwk&t=5s" target="_blank">Solution</a>
+                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/ip-ticketing-tool/15" target="_blank">Complete step by step solution with source code Here</a>
+            </div>
+        </div>
+        <br>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a href = "index.html" class = "tab-btn">Tickets</a>
+                <a href = "network.html" class = "tab-btn active">Network</a>
+                <a href = "location.html" class = "tab-btn">Location</a>
+                <a href = "people_finder.html" class = "tab-btn">People Finder</a>
+            </div>
+
+            <div class="tabs-content">
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <h3 style="text-align: center;">IP Network</h3>
+                    <table class="data-table">
+                          <tbody>
+                            <tr>
+
+                                <th><b>S.No</b></th><th><b>IP Address</b></th><th><b>IP Owner</b></th><b><th><b>Provider</b></th><th><b>ASN</b></th></tr>
+
+                             <tr>
+
+
+                                <td>1</td><td>127.726.775.21</td><td>Adapa Durgaprasad</td><td>Hostinger</td><td>36785</td></tr>
+
+
+                             <tr>
+
+
+                                <td>2</td><td>175.537.927.5</td><td>Aluri Sasikumar</td><td>Bluehost</td><td>73643</td></tr>
+
+                             <tr>
+
+
+                                <td>3</td><td>122.923.512.821</td><td>Amudalapalli Vishutej</td><td>HostGator</td><td>32652</td></tr>
+
+                             <tr>
+
+
+                                <td>4</td><td>192.672.921.742</td><td>Annavarapu Rajendra</td><td>A2 Hosting</td><td>16773</td></tr>
+
+                             <tr>
+
+
+                                <td>5</td><td>173.983.492.38</td><td>Pardarthi Naveen</td><td>Siteground</td><td>93765</td></tr>
+
+
+                             <tr>
+
+
+                                <td>6</td><td>142.932.492.42</td><td>Bollineni Tejkumar</td><td>GoDaddy</td><td>32741</td></tr>
+
+
+                             <tr>
+
+
+                                <td>7</td><td>121.427.062.112</td><td>Paritala Nageswarao</td><td>Yahoo-BF1</td><td>17262</td></tr>
+
+
+                             <tr>
+
+
+                                <td>8</td><td>191.612.492.513</td><td>Bathula Rajesh</td><td>Hostinger</td><td>95783</td></tr>
+
+                             <tr>
+
+
+                                <td>9</td><td>151.283.514.5</td><td>Batcha sreenu</td><td>A2 Hosting</td><td>63846</td></tr>
+
+
+                            <tr>
+
+
+                                <td>10</td><td>191.932.772.592</td><td>Birudala Ashok</td><td>Siteground</td><td>32513</td></tr>
+
+                             <tr>
+
+
+                                <td>11</td><td>71.628.935.182</td><td>Gali Ramarao</td><td>HostGator</td><td>26251</td></tr>
+
+
+                             <tr>
+
+
+                                <td>12</td><td>54.657.922.621</td><td>Gangisety Charan</td><td>GoDaddy</td><td>97384</td></tr>
+
+
+                            <tr>
+
+
+                                <td>13</td><td>621.927.271.83</td><td>Gorremachu Anandbabu</td><td>Bluehost</td><td>81152</td></tr>
+
+
+                             <tr>
+
+
+                                <td>14</td><td>171.612.372.822</td><td>Upputala Chanti</td><td>Yahoo-BF1</td><td>74716</td></tr>
+
+
+
+                            <tr>
+
+
+                                <td>15</td><td>151.321.832.87</td><td>Gurram Satish</td><td>Hostinger</td><td>42751</td></tr>
+
+
+                             <tr>
+
+
+                                <td>16</td><td>41.73.826.191</td><td>Jajula Praneetha</td><td>Yahoo-BF1</td><td>65855</td></tr>
+
+
+
+                             <tr>
+
+
+                                <td>17</td><td>181.71.721.771</td><td>Sami Raju</td><td>Siteground</td><td>52651</td></tr>
+
+
+                             <tr>
+
+
+                                <td>18</td><td>141.212.17.291</td><td>Kaki VenkataPranadeepvarma</td><td>Bluehost</td><td>43524</td></tr>
+
+
+
+                             <tr>
+
+
+                                <td>19</td><td>129.672.392.712</td><td>Totamsetty Prudhvi</td><td>HostGator</td><td>97867</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>20</td><td>191.712.514.212</td><td>Kayasiri Eknath</td><td>A2 Hosting</td><td>79864</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>21</td><td>166.821.61.19</td><td>Dodamala Raju</td><td>Siteground</td><td>21224</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>22</td><td>27.731.141.291</td><td>Kola Ramesh</td><td>HostGator</td><td>53133</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>23</td><td>112.829.191.212</td><td>Jommu Pavankalyan</td><td>Bluehost</td><td>98876</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>24</td><td>53.92.162.129</td><td>Kodapi Satyadev</td><td>A2 Hosting</td><td>92584</td></tr>
+
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>25</td><td>72.781.36.17</td><td>Bottu Narendra</td><td>GoDaddy</td><td>96674</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>26</td><td>24.753.19.152</td><td>Pettuboina Shivasankar</td><td>HostGator</td><td>21241</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>27</td><td>181.972.51.28</td><td>Lingala Bhanutej</td><td>Hostinger</td><td>95637</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>28</td><td>93.769.28.954</td><td>Maddala Hithesh</td><td>Bluehost</td><td>62432</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>29</td><td>176.219.812.811</td><td>Vallavarapu Victorbabu</td><td>GoDaddy</td><td>83548</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>30</td><td>194.30.61.292</td><td>Chanda Raju</td><td>A2 Hosting</td><td>49342</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>31</td><td>192.751.517.921</td><td>Marm Vishuvardhan</td><td>HostGator</td><td>92723</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>32</td><td>52.91.251.82</td><td>Menta Muniraju</td><td>Siteground</td><td>87964</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>33</td><td>76.187.63.571</td><td>Nukathoti Vamsikumar</td><td>GoDaddy</td><td>27852</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>34</td><td>83.17.532.25</td><td>Punna Sanny</td><td>Bluehost</td><td>52657</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>35</td><td>182.52.39.1</td><td>Palipaka Thimothi</td><td>A2 Hosting</td><td>42731</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>36</td><td>122.912.78.921</td><td>Pasupuleti Rambabu</td><td>GoDaddy</td><td>93039</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>37</td><td>111.891.622.928</td><td>Pulikam Eswar</td><td>HostGator</td><td>64565</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>38</td><td>198.72.553.891</td><td>Rayani Likith</td><td>Siteground</td><td>43542</td></tr>
+
+
+
+                             <tr>
+
+
+                                <td>39</td><td>167.627.96.45</td><td>Shaik Jaffer</td><td>Bluehost</td><td>83454</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>40</td><td>121.22.982.638</td><td>Sanneboyina Mahendrakumar</td><td>Hostinger</td><td>64855</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>41</td><td>165.522.52.73</td><td>Bodapatam Subrahmanyam</td><td>HostGator</td><td>16878</td></tr>
+
+
+
+
+                             <tr>
+
+
+                                <td>42</td><td>161.82.732.3</td><td>Seerla Rajamahesh</td><td>GoDaddy</td><td>21624</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>43</td><td>193.751.28.211</td><td>Shaik Abdulwajid</td><td>Siteground</td><td>82436</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>44</td><td>21.78.752.98</td><td>Sankarakoti Suryakalyan</td><td>Hostinger</td><td>95954</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>45</td><td>83.732.89.631</td><td>Syed Abeed</td><td>HostGator</td><td>96865</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>46</td><td>167.826.943.83</td><td>Thaneeru Raju</td><td>A2 Hosting</td><td>92627</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>47</td><td>62.75.839.62</td><td>Throvagunta Avinash</td><td>GoDaddy</td><td>28242</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>48</td><td>93.78.293.22</td><td>Vaka Venkatesh</td><td>HostGator</td><td>53261</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>49</td><td>171.829.476.212</td><td>Vathala Ratnakumar</td><td>Siteground</td><td>21389</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>50</td><td>27.832.644.9</td><td>Yedlapudi Paramesh</td><td>Yahoo-BF1</td><td>82923</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>51</td><td>69.926.73.992</td><td>Yeerla Satyanarayana</td><td>Bluehost</td><td>89254</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>52</td><td>139.253.358.378</td><td>Yerramkonda Pavankumar</td><td>A2 Hosting</td><td>95784</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>53</td><td>192.722.621.9</td><td>Annapureddy Nageshwarao</td><td>Hostinger</td><td>94083</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>54</td><td>191.82.611.821</td><td>Sappineni Mallikarjuna</td><td>Siteground</td><td>85954</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>55</td><td>39.37.14.2</td><td>Nerboina Vamsikrishna</td><td>HostGator</td><td>31545</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>56</td><td>152.437.22.1</td><td>Batupalii Yohan</td><td>Bluehost</td><td>89251</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>57</td><td>121.22.483.37</td><td>Kathula Kasiah</td><td>Siteground</td><td>93918</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>58</td><td>151.238.271.1</td><td>Bellam ChandraSekhar</td><td>HostGator</td><td>83922</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>59</td><td>71.37.81.223</td><td>Daggumati Narashima</td><td>Hostinger</td><td>64532</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>60</td><td>112.33.74.284</td><td>Gajala Anilkumar</td><td>GoDaddy</td><td>32424</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>61</td><td>71.78.63.9</td><td>Gunji Nagaraju</td><td>A2 Hosting</td><td>43542</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>62</td><td>21.27.392.552</td><td>Jellada Gowtham</td><td>Siteground</td><td>63825</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>63</td><td>141.12.28.645</td><td>Kandukuri Nagasubrahmayam</td><td>Hostinger</td><td>96087</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>64</td><td>42.92.51.2</td><td>Kavuri Nagendrababu</td><td>Bluehost</td><td>53721</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>65</td><td>63.51.39.1</td><td>Ponduri Rambabu</td><td>Yahoo-BF1</td><td>93282</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>66</td><td>57.824.85.53</td><td>Madhala Rushikumar</td><td>Hostinger</td><td>48363</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>67</td><td>82.27.394.715</td><td>Rathipalem Naveen</td><td>A2 Hosting</td><td>54436</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>68</td><td>62.373.623.836</td><td>Nagubamu Ebineyjaru</td><td>HostGator</td><td>12862</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>69</td><td>65.83.31.1</td><td>Balaram Krishnavarma</td><td>Yahoo-BF1</td><td>33243</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>70</td><td>92.484.73.928</td><td>Nellore Venumadhav</td><td>Bluehost</td><td>67382</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>71</td><td>33.93.745.785</td><td>Padala Chandu</td><td>Siteground</td><td>86935</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>72</td><td>11.26.29.165</td><td>Paleti Immaniyelu</td><td>HostGator</td><td>43674</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>73</td><td>52.72.95.657</td><td>Palla Jayanthbabu</td><td>A2 Hosting</td><td>26523</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>74</td><td>118.372.64.833</td><td>Gelli Ajaybabu</td><td>Hostinger</td><td>52617</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>75</td><td>61.722.729.731</td><td>Parla Venkatavamsi</td><td>Bluehost</td><td>12214</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>76</td><td>161.37.938.467</td><td>Pulagarla Sureshbabu</td><td>Siteground</td><td>95684</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>77</td><td>117.373.73.1</td><td>Sandhu Srinivas</td><td>HostGator</td><td>36467</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>78</td><td>161.26.363.565</td><td>Lanke Charan</td><td>Siteground</td><td>12526</td></tr>
+
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>79</td><td>113.735.73.733</td><td>Swarna Rakesh</td><td>Hostinger</td><td>07984</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>80</td><td>73.645.181.21</td><td>Veera Ramakrishna</td><td>Siteground</td><td>89521</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>81</td><td>111.272.392.645</td><td>Thota Sureshgopi</td><td>A2 Hosting</td><td>21241</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>82</td><td>124.73.17.382</td><td>Thumati Srinivas</td><td>GoDaddy</td><td>11631</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>83</td><td>171.37.46.5</td><td>Ummadisetty Vishnuteja</td><td>HostGator</td><td>10912</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>84</td><td>156.47.85.732</td><td>Muthyala Sumanth</td><td>Yahoo-BF1</td><td>05843</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>85</td><td>183.92.75.4</td><td>Suri Srikanth</td><td>Siteground</td><td>81246</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>86</td><td>25.648.53.332</td><td>Gada Chaitanya</td><td>GoDaddy</td><td>17161</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>87</td><td>167.48.35.3</td><td>Chimaladinne Koteswararao</td><td>A2 Hosting</td><td>27198</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>88</td><td>119.23.59.758</td><td>Chirithoti Prabhakar</td><td>Bluehost</td><td>86785</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>89</td><td>194.254.745.956</td><td>Dharanikota Hemanth</td><td>HostGator</td><td>36872</td></tr>
+
+
+
+
+
+                             <tr>
+
+                                <td>90</td><td>174.64.53.5</td><td>Danduporlu Thirupathi</td><td>Yahoo-BF1</td><td>64787</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>91</td><td>112.365.74.2</td><td>Gangireddy Manikanta</td><td>A2 Hosting</td><td>76382</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>92</td><td>165.63.85.4</td><td>Chapidi Rajareddy</td><td>Siteground</td><td>53627</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>93</td><td>163.57.63.367</td><td>Kalluri Karthik</td><td>HostGator</td><td>93783</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>94</td><td>26.475.36.3</td><td>Peeka Vinaykumar</td><td>A2 Hosting</td><td>92643</td></tr>
+
+
+
+
+
+
+                             <tr>
+
+
+                                <td>95</td><td>143.73.52.441</td><td>Kommarasapu Vamsi</td><td>Yahoo-BF1</td><td>26531</td></tr>
+
+
+                            <tr>
+
+
+                                <td>96</td><td>135.832.432.28</td><td>Parabhattina Venkateshwarlu</td><td>Siteground</td><td>93278</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>97</td><td>115.347.458.533</td><td>Ponnarasapu Surya</td><td>HostGator</td><td>21562</td></tr>
+
+
+
+
+
+                             <tr>
+
+
+                                <td>98</td><td>142.84.52.8</td><td>Surapureddy Venkatajagadeesh</td><td>Hostinger</td><td>26187</td></tr>
+
+
+
+                             <tr>
+
+
+                                <td>99</td><td>121.368.894.537</td><td>Sangam Srinivasrao</td><td>GoDaddy</td><td>52753</td></tr>
+
+
+                             <tr>
+
+
+                                <td>100</td><td>194.526.378.532</td><td>Sudarthi Madhu</td><td>Siteground</td><td>73632</td></tr>
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <img src ="images/logo.png" alt = "BotDNS" style = "width:250px">
+                    <p>Learn UiPath step by step with real projects, expert guidance, and job-focused training — all in one place.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 BotsDNA. All rights reserved.Designed By IES</p>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/919705435277" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <!-- SVG Up Arrow Icon -->
+    <a href="#" class="scroll-up" id="scrollUp" title="Go to Top">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function download(filename) {
+          var element = document.createElement('a');
+          element.setAttribute('href', filename);
+          element.setAttribute('download', filename);
+          element.setAttribute('target', '_blank');
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        }
+
+        $(document).ready(function () {
+          // Restore previous state from localStorage
+          $("i").each(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (localStorage.getItem(ticketNumber)) {
+              icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+              textCell.css("font-weight", "normal");
+            }
+          });
+
+          // Icon click behavior
+          $("i").click(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (icon.hasClass("fa-envelope-open-o") || icon.hasClass("fa-video-camera") || icon.hasClass("fa-comment") || icon.hasClass("fa-youtube")) {
+              return;
+            }
+
+            icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+            textCell.css("font-weight", "normal");
+
+            if (typeof(Storage) !== "undefined") {
+              localStorage.setItem(ticketNumber, "fa fa-envelope-open-o");
+            }
+
+            download(ticketNumber + ".zip");
+          });
+
+          // Reset button behavior
+          $("#resetData").click(function () {
+            $("i").each(function () {
+              const icon = $(this);
+              const row = icon.closest("tr");
+              const textCell = row.find("td:nth-child(2)");
+              const ticketText = textCell.text();
+              const ticketNumber = ticketText.substring(7, 11);
+
+              if (!icon.hasClass("fa-video-camera") && !icon.hasClass("fa-comment") && !icon.hasClass("fa-youtube")) {
+                icon.removeClass("fa-envelope-open-o").addClass("fa-envelope-o");
+                textCell.css("font-weight", "bold");
+                if (ticketNumber in localStorage) {
+                  localStorage.removeItem(ticketNumber);
+                }
+              }
+            });
+
+            alert("Data Reset Successfully!");
+          });
+        });
+        </script>
+
+    <script>
+        function myFunction(event) {
+            event.preventDefault(); // prevent the normal form submission
+
+            var noof = document.getElementById("NoOfHours").selectedIndex + 1;
+            var teamCode = document.getElementById("TeamCode").value;
+            var courtName = document.getElementById("CourtName").value;
+
+            // You can send all values as query parameters if you want
+            var url = "booking.html?id=" + noof
+                    + "&team_code=" + encodeURIComponent(teamCode)
+                    + "&court_name=" + encodeURIComponent(courtName);
+
+            window.location.href = url; // redirect with parameters
+        }
+        </script>
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
+        });
+    </script>
+    <script>
+        const scrollUp = document.getElementById('scrollUp');
+
+        // Show/hide the up arrow based on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollUp.style.display = 'block';
+            } else {
+                scrollUp.style.display = 'none';
+            }
+        });
+
+        // Scroll to top on click
+        scrollUp.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

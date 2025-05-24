@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Server Setup</title>
+    <title>BotsDNA - Food Factory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -566,6 +566,11 @@
         color: #065f46;
     }
 
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -601,34 +606,51 @@
             overflow-x: auto;
         }
     }
-    select {
-            width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-        }
-        .label {
-      font-size: 20px;
-      color: var(--dark-gray);
-      font-weight: bold;
-      white-space: nowrap;
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
     }
-    .value {
-      font-size: 18px;
-      color: var(--dark-gray);
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
     }
-    input[type="submit"] {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    .apps-list label {
+
+    .form-card label {
       display: block;
-      font-size: 18px;
-      color: var(--dark-gray);
-      margin-bottom: 5px;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
     }
-    button {
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -641,9 +663,92 @@
       transition: background 0.3s;
     }
 
-    .button:hover {
+    .form-card button:hover {
       background: #0056b3;
     }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+    .book-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+
+  .book-container h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .book-card {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .book-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-card:hover {
+    transform: scale(1.05);
+  }
+
+  .data-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: #fdfdfd;
+  }
+
+  .data-table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .data-table .label {
+    font-weight: 600;
+    color: #34495e;
+    width: 40%;
+  }
+
+  .data-table a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .data-table a:hover {
+    text-decoration: underline;
+    color: #1c5980;
+  }
+
+  @media (max-width: 768px) {
+    .book-card {
+      width: 100px;
+      height: 140px;
+    }
+
+    .data-table td {
+      font-size: 14px;
+    }
+  }
     </style>
 </head>
 <body>
@@ -671,79 +776,57 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
-            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
+            <h2 class="section-title">Food Factory <i class="fa fa-cookie-bite"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
+        <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=dt2VSb16c-I&t=52s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=eOLvKy9LbM0&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=11" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/setup-server/7" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=kZbOsRidppw&t=95s" target = "_blank">Requirement</a>
+                <a class="tab-btn" href = "https://youtu.be/5gc_FsVlSjE">Run Bot</a>
+                <a class="tab-btn" href = "https://youtu.be/BDmqtlT1rc8" target = "_blank">Solution</a>
             </div>
-            <div class="tabs-content">
-                <!-- Customer List Tab -->
-                <div class="tab-pane active" id="customer-list">
-
-                    <form action = "#" method = "POST" id = "serverForm">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Choose Operating System (OS):</td>
-                            <td>
-                              <select name="os" class="value">
-                                <option value="windows_nt">WINDOWS NT</option>
-                                <option value="windows_10">WINDOWS 10</option>
-                                <option value="linux">LINUX</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">RAM Size:</td>
-                            <td>
-                              <select name="ram" class="value">
-                                <option>4 GB</option>
-                                <option>8 GB</option>
-                                <option>16 GB</option>
-                                <option>32 GB</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">HDD Size:</td>
-                            <td class="value">
-                              <input type="radio" name="hddApp" value="hddName"> 250 GB
-                              <input type="radio" name="hddApp" value="hddName"> 500 GB
-                              <input type="radio" name="hddApp" value="hddName"> 1 TB
-                              <input type="radio" name="hddApp" value="hddName"> 2 TB
-                              <input type="radio" name="hddApp" value="hddName"> 5 TB
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Select Applications:</td>
-                            <td class="apps-list">
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                              <button type="submit" id="CreateServer">Create Server</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-
-
+            <div class="book-container">
+                <h3 style = "text-align: center;">Return Item Entry</h3><br>
+                <div class="book-card">
+                  <img src="images/red_lays.jpg" alt="Lays">
                 </div>
-            </div>
+                <div class="book-card">
+                  <img src="images/bingo_red.jpg" alt="Bingo Tangles">
+                </div>
+                <div class="book-card">
+                  <img src="images/bingo_green.jpg" alt="Bingo">
+                </div>
+                <!-- Add more book cards here -->
+                <table class = "data-table">
+                    <tr>
+                      <td class="label">Download Indput File:</td>
+                      <td>
+                        <a href = "Andhra Pradesh.xlsx" target="_blank">Andhra Pradesh.xlsx</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="label">Download Template:</td>
+                      <td>
+                        <a href = "Template.docx" target="_blank">Andhra Pradesh.xlsx</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="label">Download District Distributor List:</td>
+                      <td class="value">
+                        <a href = "DistrictDistibutor List.xlsx" target="_blank">Distibutor List</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="label">Download sample output file:</td>
+                      <td class="apps-list">
+                        <a href = "Nellore.pdf" target="_blank">Nellore.pdf</a>
+                      </td>
+                    </tr>
+                  </table>
+              </div>
         </div>
+
     </section>
     <footer>
         <div class="container">
@@ -782,11 +865,36 @@
     </a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-        $("#serverForm").on("submit", function (e) {
-            e.preventDefault(); // Prevent actual form submission
-            window.location.href = "createserver.html"; // Redirect
-        });
+
+    $(document).ready(function(){
+
+    $("#BookSalesSubmit").click(function(){
+    var a  = $("#imageFile").val();
+
+    if(a == ""){
+    alert('No File Found, Please upload Correct (XLSX) file');
+    }
+    else
+    {
+    $("#imageFile").val("");
+    alert('SUCCESS: File Uploaded Successfully....');
+    }
+    });
+    });
+    </script>
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
         });
     </script>
     <script>

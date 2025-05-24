@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotsDNA - UiPath స్పెషలిస్ట్ కోర్స్ (తెలుగు)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ed 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-desc {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            /* color: white; */
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 115px 0;
+            }
+
+            .hero {
+                padding: 140px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+        .testimonials {
+        background-color: #f8fafc;
+        padding: 80px 0;
+    }
+
+
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-up {
+        position: fixed;
+        bottom: 80px;
+        right: 28px;
+        z-index: 999;
+        display: none; /* Hidden by default */
+        cursor: pointer;
+    }
+
+    .scroll-up svg {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.2s ease;
+    }
+
+    .scroll-up:hover svg {
+        transform: translateY(-3px);
+    }
+    .watch-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4f46e5;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .watch-more-btn:hover {
+        background-color: #fff;
+    }
+
+     /* Tabs Styles */
+     .tabs-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .tabs-header {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+.tabs-header::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tabs-header::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 4px;
+}
+
+.tabs-header::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+    .tab-btn {
+        flex: 1;
+        padding: 15px 20px;
+        text-align: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .tab-btn:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .tab-btn.active {
+        color: var(--primary);
+    }
+
+    .tab-btn.active:after {
+        transform: scaleX(1);
+    }
+
+    .tab-btn:hover:not(.active) {
+        color: var(--dark);
+        background-color: #f8fafc;
+    }
+
+    .tabs-content {
+        padding: 30px;
+    }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Table Styles */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .data-table th {
+        background-color: var(--primary);
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-weight: 600;
+    }
+
+    .data-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e2e8f0;
+        vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    .data-table tr:hover {
+        background-color: #f0f4ff;
+    }
+
+    .data-table .status {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .data-table .status.active {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
+    .data-table .status.inactive {
+        background-color: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .data-table .status.pending {
+        background-color: #fef3c7;
+        color: #92400e;
+    }
+
+    .data-table .action-btn {
+        padding: 6px 12px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+    }
+
+    .data-table .action-btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-1px);
+    }
+
+
+
+    /* Responsive Tables */
+    @media (max-width: 768px) {
+        .data-table {
+            display: block;
+            overflow-x: auto;
+        }
+    }
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
+    }
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
+    }
+
+    .form-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary-dark);
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form-card button:hover {
+      background: #0056b3;
+    }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .data-table td:nth-child(2) {
+        font-weight: bold;
+    }
+    .topic {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topic:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+  }
+  .topic .title {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: #fff; /* Professional background color for descriptions */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .expanded {
+    max-height: 1000px; /* Adjust to fit the content */
+    transition: max-height 0.5s ease-in;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Center align the main heading */
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src = "images/logo.png" alt ="BotsDNA" style = "width: 200px">
+                <!-- <i class="fas fa-robot"></i>
+                BotsDNA -->
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://docs.google.com/forms/d/1FHzTZ1L0yI2JlHcLhsT4cCsEUxhx83B5qZnpoPc0Wr4/viewform?edit_requested=true" target="_blank">Mock interview Request</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">UiPath స్పెషలిస్ట్ కోర్స్ (తెలుగు)</h2>
+        </div>
+        <div class="tabs-container">
+
+            <div class="tabs-content">
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <div class="topic" onclick="toggleTopic('topic1')">
+                        <div class="title"><i class="fas fa-robot"></i>Topic 1: Explore Automation Development with UiPath Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic1">
+                        <p>Learn the basics of creating automation using UiPath Studio. Understand how to build software robots that can perform tasks like data entry, document processing, and more, all through a visual interface.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic2')">
+                        <div class="title"><i class="fas fa-cogs"></i>Topic 2: Build Your First Process with Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic2">
+                        <p>Create your initial automation process step-by-step using UiPath Studio. This topic guides you through setting up your first automated task, from defining actions to testing and refining your workflow.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic3')">
+                        <div class="title"><i class="fas fa-database"></i>Topic 3: Variables, Constants, and Arguments in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic3">
+                        <p>Understand how to store and manage data within your automation projects. Variables hold temporary data, constants store fixed values, and arguments enable passing data between different parts of your automation.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic4')">
+                        <div class="title"><i class="fas fa-code-branch"></i>Topic 4: Control Flow in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic4">
+                        <p>Control flow in UiPath Studio is fundamental for directing the automation process through various activities. Sequences act as a basic container for grouping activities, executing them in a linear fashion, making them ideal for simple, straightforward workflows. For more complex workflows with multiple decision points, flowcharts provide a visual representation of the process flow and are suitable for this purpose. They utilize Flow Decision and Flow Switch for effective branching logic.
+
+                    Control flow activities include several essential components. The If activity is a conditional statement that executes activities based on a Boolean condition. The Switch activity selects one out of multiple branches depending on the value of a variable. The While activity repeats activities as long as a specified condition is true, while the Do While activity is similar but evaluates the condition after executing the activities. The For Each activity iterates through collections such as arrays and lists, performing actions on each element. Additionally, the Parallel activity executes multiple sequences or activities simultaneously, and the Parallel For Each activity executes a series of iterations in parallel, enhancing the efficiency and performance of the automation process</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic35')">
+                        <div class="title"><i class="fas fa-table"></i>Topic 5: Table Extractor / Semi-structured / Pattern-based data extractor</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic35">
+                        <p>Extract structured or semi-structured data from tables, forms, or pattern-based documents using UiPath. Table Extractor and similar activities enable robots to accurately extract data by recognizing predefined patterns or structures within documents.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic5')">
+                        <div class="title"><i class="fas fa-text-width"></i>Topic 6: Data Manipulation with Strings & DateTime in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic5">
+                        <p>Learn how to handle and manipulate text data effectively in UiPath Studio. You'll explore techniques for searching, replacing, and formatting text strings within your automation processes.</p>
+                      </div>
+                    <div class="topic" onclick="toggleTopic('topic37')">
+                      <div class="title"><i class="fas fa-code"></i>Topic 7: Regular Expression 'Regex' in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic37">
+                      <p>Utilize regular expressions ('Regex') in UiPath to efficiently search, match, and manipulate text based on patterns:</p>
+                      <ul>
+                        <li>Extract specific data patterns from strings and documents.</li>
+                        <li>Validate and format input data using predefined patterns.</li>
+                        <li>Implement advanced text processing and validation rules.</li>
+                        <li>Integrate Regex activities into automation workflows for data extraction and validation.</li>
+                      </ul>
+                    </div>
+                      <div class="topic" onclick="toggleTopic('topic6')">
+                        <div class="title"><i class="fas fa-list"></i>Topic 8: Data Manipulation with Lists and Dictionaries in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic6">
+                        <p>Manage structured data using lists and dictionaries in your automation projects. These data structures help organize and process information in a structured format, essential for complex data handling.</p>
+                      </div>
+
+
+
+                      <div class="topic" onclick="toggleTopic('topic8')">
+                        <div class="title"><i class="fas fa-crosshairs"></i>Topic 9: UI Automation Selectors and Descriptors with UiExplorer in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic8">
+                        <p>Master techniques to accurately identify and interact with UI elements in your automation projects. Selectors are unique identifiers used to locate and manipulate specific UI elements within applications or web pages.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic9')">
+                        <div class="title"><i class="fas fa-bug"></i>Topic 10: Debugging in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic9">
+                        <p>Identify and resolve issues in your automation workflows efficiently. Debugging tools in UiPath Studio help you trace errors, step through code, and pinpoint issues to ensure your automation runs smoothly.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic10')">
+                        <div class="title"><i class="fas fa-exclamation-circle"></i>Topic 11: Error and Exception Handling in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic10">
+                        <p>Implement strategies to manage and recover from errors during automation execution. Exception handling activities allow your robots to respond to unexpected situations, ensuring robust and reliable automation.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic11')">
+                        <div class="title"><i class="fas fa-file-excel"></i>Topic 12: Excel Automation with the Modern Experience in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic11">
+                        <p>Automate tasks involving Excel files using the latest tools in UiPath Studio. This includes actions like reading data from spreadsheets, updating information, and generating reports automatically.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic12')">
+                        <div class="title"><i class="fas fa-window-maximize"></i>Topic 13: User Interface Automation with the Modern Experience in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic12">
+                        <p>Automate interactions with software applications and websites using UiPath Studio. This topic covers capturing user interface actions such as clicks, text inputs, and selections to automate repetitive tasks.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic13')">
+                        <div class="title"><i class="fas fa-folder"></i>Topic 14: Working with Local Files and Folders in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic13">
+                        <p>Automate tasks involving file and folder management on your local machine. This includes actions like creating, deleting, copying, and moving files as part of your automation processes.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic14')">
+                        <div class="title"><i class="fas fa-envelope"></i>Topic 15: Email Automation in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic14">
+                        <p>Automate email-related tasks such as sending, receiving, and processing emails. UiPath Studio provides activities to integrate email functionalities into your automation workflows.</p>
+                      </div>
+                    <div class="topic" onclick="toggleTopic('topic31')">
+                      <div class="title"><i class="fas fa-font"></i>Topic 16: Optical Character Recognition (OCR) in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic31">
+                      <p>Utilize Optical Character Recognition (OCR) capabilities in UiPath to extract text from images, PDFs, and scanned documents. OCR activities enable robots to interpret and process text content from non-editable sources, enhancing automation capabilities.</p>
+                    </div>
+
+
+                      <div class="topic" onclick="toggleTopic('topic15')">
+                        <div class="title"><i class="fas fa-file-pdf"></i>Topic 17: PDF Automation with Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic15">
+                        <p>Automate tasks involving PDF documents, such as extraction and manipulation. You can extract text, images, and data from PDF files or automate processes like merging, splitting, and editing PDFs.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic16')">
+                        <div class="title"><i class="fas fa-table"></i>Topic 18: Data Manipulation with DataTables in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic16">
+                        <p>Utilize DataTables to work with tabular data effectively in UiPath Studio. DataTables allow you to store, retrieve, and manipulate structured data from various sources within your automation projects.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic17')">
+                        <div class="title"><i class="fas fa-file-alt"></i>Topic 19: Introduction to Logging in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic17">
+                        <p>Learn how to log messages and events for debugging and auditing purposes. Logging activities in UiPath Studio help you track the execution of your automation processes and troubleshoot issues.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic18')">
+                        <div class="title"><i class="fas fa-cube"></i>Topic 20: Object Repository in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic18">
+                        <p>Create and manage reusable components for UI elements across multiple automation projects. Object repositories help streamline automation development by centralizing and standardizing UI element definitions.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic19')">
+                        <div class="title"><i class="fas fa-chart-line"></i>Topic 21: Workflow Analyzer in Studio</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic19">
+                        <p>Use tools to analyze, optimize, and maintain your automation workflows. The Workflow Analyzer in UiPath Studio helps you identify best practices, performance bottlenecks, and potential improvements in your automation projects.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic28')">
+                        <div class="title"><i class="fas fa-key"></i>Topic 22: Assets in Orchestrator</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic28">
+                        <p>Store and manage sensitive data such as credentials and configurations securely in UiPath Orchestrator. Assets provide a centralized repository for managing and securely accessing information needed for automation processes.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic33')">
+                        <div class="title"><i class="fas fa-user-lock"></i>Topic 23: Credentials in UiPath</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic33">
+                        <p>Manage and securely store credentials such as usernames, passwords, and API keys in UiPath. Credentials activities enable you to securely authenticate and access systems, applications, and services during automation execution.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic29')">
+                        <div class="title"><i class="fas fa-tasks"></i>Topic 24: Queues in Orchestrator</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic29">
+                        <p>Manage work items and prioritize automation tasks using Queues in UiPath Orchestrator. Queues enable efficient processing, tracking, and management of transactions and tasks across automation projects.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic30')">
+                        <div class="title"><i class="fas fa-file-word"></i>Topic 25: Word Automation</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic30">
+                        <p>Automate tasks involving Microsoft Word documents using UiPath. Word automation activities allow you to create, edit, format, and manipulate text and content within Word documents programmatically.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic70')">
+                      <div class="title"><i class="fas fa-eye"></i>Topic 26: Computer Vision (CV) Activities in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic70">
+                      <p>Utilize Computer Vision activities in UiPath to automate interactions with virtualized or remote desktop environments. CV activities enable robots to recognize and interact with UI elements that traditional selectors may not be able to identify, enhancing automation capabilities across various applications.</p>
+                    </div>
+
+
+                    <div class="topic" onclick="toggleTopic('topic32')">
+                        <div class="title"><i class="fas fa-play-circle"></i>Topic 27: Triggers in UiPath</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic32">
+                        <p>Automate the execution of your automation processes based on predefined conditions or events using Triggers in UiPath. Triggers enable you to schedule tasks, respond to system events, or start processes based on specific triggers.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic20')">
+                        <div class="title"><i class="fas fa-layer-group"></i>Topic 28: Introduction to Robotic Enterprise Framework</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic20">
+                        <p>Learn about the framework for developing scalable and robust automation solutions. The Robotic Enterprise Framework provides a structured approach to automation development, enhancing reliability and scalability.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic21')">
+                        <div class="title"><i class="fas fa-tasks"></i>Topic 29: Build a REFramework Project with Orchestrator Queues</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic21">
+                        <p>Implement a project using the Robotic Enterprise Framework and integrate with Orchestrator Queues. Queues in Orchestrator manage and prioritize work items for automation processes, ensuring efficient task execution.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic22')">
+                        <div class="title"><i class="fas fa-table"></i>Topic 30: Build a REFramework Project with Tabular Data</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic22">
+                        <p>Implement a project using the Robotic Enterprise Framework and manage tabular data efficiently. This involves using DataTables and other data handling techniques within the framework to process and manipulate structured data.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic23')">
+                        <div class="title"><i class="fas fa-hands-helping"></i>Topic 31: Practice with REFramework</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic23">
+                        <p>Gain hands-on experience using the Robotic Enterprise Framework for developing automation projects. Practice sessions help reinforce concepts and skills related to building robust and scalable automation solutions.</p>
+                      </div>
+                    <div class="topic" onclick="toggleTopic('topic36')">
+                        <div class="title"><i class="fas fa-check-circle"></i>Topic 32: Best Practices in UiPath Development</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic36">
+                        <p>Ensure scalability and maintainability of your automation projects with best practices in UiPath development:</p>
+                        <ul>
+                          <li>Use reusable components and libraries to minimize redundancy.</li>
+                          <li>Implement error handling and exception management for robust automation.</li>
+                          <li>Follow naming conventions and documentation standards for clarity.</li>
+                          <li>Optimize workflows for performance by reducing unnecessary actions and delays.</li>
+                          <li>Secure sensitive data using assets and encrypted credentials in Orchestrator.</li>
+                          <li>Regularly review and optimize automation processes for efficiency.</li>
+                        </ul>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic24')">
+                        <div class="title"><i class="fas fa-database"></i>Topic 33: Database Integration with UiPath</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic24">
+                        <p>Learn how to connect and interact with databases to automate data operations. UiPath provides activities to query databases, insert, update, and delete records, and handle data seamlessly within automation workflows.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic25')">
+                        <div class="title"><i class="fas fa-code"></i>Topic 34: JSON with API Integration</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic25">
+                        <p>Understand how to work with JSON data formats and integrate with APIs for data exchange. JSON activities in UiPath enable you to interact with APIs, parse JSON responses, and manipulate data structures for seamless integration.</p>
+                      </div>
+                      <div class="topic" onclick="toggleTopic('topic27')">
+                        <div class="title"><i class="fas fa-th-large"></i>Topic 35: Apps in Orchestrator</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic27">
+                        <p>Manage and deploy automation projects as Apps in UiPath Orchestrator. Apps allow you to package and distribute automation solutions with predefined settings and configurations for easy deployment and management.</p>
+                      </div>
+
+                      <div class="topic" onclick="toggleTopic('topic26')">
+                        <div class="title"><i class="fas fa-file-alt"></i>Topic 36: Document Understanding in UiPath</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic26">
+                        <p>Explore tools and techniques for extracting and processing data from documents using UiPath. Document Understanding capabilities enable robots to analyze, classify, and extract data from various document types, enhancing automation capabilities.</p>
+                      </div>
+
+
+                      <div class="topic" onclick="toggleTopic('topic34')">
+                        <div class="title"><i class="fas fa-database"></i>Topic 37: Data Services in UiPath</div>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="description" id="topic34">
+                        <p>Utilize Data Services in UiPath for integrating with external data sources and services. Data Services activities enable you to retrieve, update, and synchronize data between UiPath automation processes and external systems or databases.</p>
+                      </div>
+                    <div class="topic" onclick="toggleTopic('topic38')">
+                      <div class="title"><i class="fas fa-plug"></i>Topic 38: Integration Service in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic38">
+                      <p>Integrate external systems, applications, and services with UiPath using Integration Service. This service provides connectors, APIs, and activities to facilitate seamless data exchange, process automation, and communication between UiPath workflows and external systems.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic39')">
+                      <div class="title"><i class="fas fa-tasks"></i>Topic 39: Action Center in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic39">
+                      <p>Utilize Action Center in UiPath to manage and prioritize human-in-the-loop automation tasks. Action Center provides a centralized interface where users can view, act upon, and manage pending tasks that require human intervention within automated processes.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic40')">
+                      <div class="title"><i class="fas fa-file-alt"></i>Topic 40:  SDD & PDD in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic40">
+                      <p>Develop Solution Design Documents (SDD) and Process Design Documents (PDD) in UiPath to outline and document the architecture, functionality, and specifications of automation projects.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic41')">
+                      <div class="title"><i class="fas fa-cogs"></i>Topic 41:  Create Custom Activities in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic41">
+                      <p>Develop custom activities in UiPath to extend automation capabilities beyond built-in functionalities. Custom activities allow you to encapsulate reusable automation logic or integrate with external services, enhancing the flexibility and scalability of UiPath workflows.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic43')">
+                      <div class="title"><i class="fas fa-brain"></i>Topic 42:  AI Center in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic43">
+                      <p>Explore AI Center in UiPath for managing and deploying AI models within automation workflows. AI Center provides tools and infrastructure to integrate artificial intelligence capabilities, enabling robots to perform intelligent decision-making and data analysis tasks.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic44')">
+                      <div class="title"><i class="fas fa-plane"></i>Topic 43: AutoPilot in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic44">
+                      <p>Discover AutoPilot in UiPath, an automation feature that uses AI and machine learning to automatically generate automation workflows. AutoPilot accelerates the automation development process by suggesting actions, sequences, and activities based on observed user behavior and patterns.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic42')">
+                      <div class="title"><i class="fas fa-clipboard"></i>Topic 44: Clipboard AI in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic42">
+                      <p>Utilize Clipboard AI capabilities in UiPath to automate tasks involving clipboard operations. Clipboard AI enables robots to interact with and manipulate clipboard content, facilitating seamless data exchange and processing within automation workflows.</p>
+                    </div>
+
+                    <div class="topic" onclick="toggleTopic('topic45')">
+                      <div class="title"><i class="fas fa-hdd"></i>Topic 45: Storage Buckets in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic45">
+                      <p>Manage and utilize storage buckets in UiPath for storing and organizing files, data, and artifacts used in automation projects. Storage buckets provide a scalable and secure way to store and access resources required for automation processes.</p>
+                    </div>
+
+                    <div class="topic" onclick="toggleTopic('topic48')">
+                      <div class="title"><i class="fas fa-cogs"></i>Topic 46: State Machine in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic48">
+                      <p>Learn about State Machines in UiPath, which allow you to model complex workflows by defining states, transitions, and actions. State Machines help manage and control the flow of automation processes based on different states or conditions, providing a structured approach to handling complex scenarios.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic49')">
+                      <div class="title"><i class="fas fa-tasks"></i>Topic 47: Dispatcher & Performer in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic49">
+                      <p>Understand the roles of Dispatcher and Performer in UiPath automation projects. The Dispatcher is responsible for reading input data and adding tasks to Orchestrator queues, while the Performer processes these tasks by executing automation workflows. This separation of roles facilitates efficient task distribution and execution in large-scale automation implementations.</p>
+                    </div>
+                    <div class="topic" onclick="toggleTopic('topic50')">
+                      <div class="title"><i class="fas fa-tasks"></i>Topic 48: LINQ Queries in UiPath for Advanced Data Manipulation</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic50">
+                      <p>LINQ (Language Integrated Query) in UiPath. This session provides a comprehensive guide to crafting and modifying LINQ queries, enabling you to efficiently manipulate, filter, and query data collections. Ideal for automating complex data processing tasks, you'll learn techniques to join multiple data sources, apply advanced filtering criteria, and optimize your data handling for superior performance in your RPA projects.</p>
+                    </div>
+
+                    <div class="topic" onclick="toggleTopic('topic52')">
+                      <div class="title"><i class="fas fa-tasks"></i>Topic 49: Using Recorders in UiPath</div>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="description" id="topic52">
+                      <p>Learn how to use UiPath's recorders to make automation easier and faster. This topic covers the different types of recorders: Basic, Desktop, Web, and Citrix. You'll see how to capture user actions, create automation steps, and improve recorded tasks for better results. By mastering these tools, you can quickly build and refine automation workflows, saving time and increasing efficiency in your projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <img src ="images/logo.png" alt = "BotDNS" style = "width:250px">
+                    <p>Learn UiPath step by step with real projects, expert guidance, and job-focused training — all in one place.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 BotsDNA. All rights reserved.Designed By IES</p>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/919705435277" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <!-- SVG Up Arrow Icon -->
+    <a href="#" class="scroll-up" id="scrollUp" title="Go to Top">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function toggleTopic(id) {
+          var element = document.getElementById(id);
+          element.classList.toggle("expanded");
+
+          var topics = document.querySelectorAll('.description');
+          topics.forEach(function(topic) {
+            if (topic.id !== id) {
+              topic.classList.remove('expanded');
+            }
+          });
+        }
+        </script>
+    <script>
+        function download(filename) {
+          var element = document.createElement('a');
+          element.setAttribute('href', filename);
+          element.setAttribute('download', filename);
+          element.setAttribute('target', '_blank');
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        }
+
+        $(document).ready(function () {
+          // Restore previous state from localStorage
+          $("i").each(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (localStorage.getItem(ticketNumber)) {
+              icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+              textCell.css("font-weight", "normal");
+            }
+          });
+
+          // Icon click behavior
+          $("i").click(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (icon.hasClass("fa-envelope-open-o") || icon.hasClass("fa-video-camera") || icon.hasClass("fa-comment") || icon.hasClass("fa-youtube")) {
+              return;
+            }
+
+            icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+            textCell.css("font-weight", "normal");
+
+            if (typeof(Storage) !== "undefined") {
+              localStorage.setItem(ticketNumber, "fa fa-envelope-open-o");
+            }
+
+            download(ticketNumber + ".zip");
+          });
+
+          // Reset button behavior
+          $("#resetData").click(function () {
+            $("i").each(function () {
+              const icon = $(this);
+              const row = icon.closest("tr");
+              const textCell = row.find("td:nth-child(2)");
+              const ticketText = textCell.text();
+              const ticketNumber = ticketText.substring(7, 11);
+
+              if (!icon.hasClass("fa-video-camera") && !icon.hasClass("fa-comment") && !icon.hasClass("fa-youtube")) {
+                icon.removeClass("fa-envelope-open-o").addClass("fa-envelope-o");
+                textCell.css("font-weight", "bold");
+                if (ticketNumber in localStorage) {
+                  localStorage.removeItem(ticketNumber);
+                }
+              }
+            });
+
+            alert("Data Reset Successfully!");
+          });
+        });
+        </script>
+
+    <script>
+        function myFunction(event) {
+            event.preventDefault(); // prevent the normal form submission
+
+            var noof = document.getElementById("NoOfHours").selectedIndex + 1;
+            var teamCode = document.getElementById("TeamCode").value;
+            var courtName = document.getElementById("CourtName").value;
+
+            // You can send all values as query parameters if you want
+            var url = "booking.html?id=" + noof
+                    + "&team_code=" + encodeURIComponent(teamCode)
+                    + "&court_name=" + encodeURIComponent(courtName);
+
+            window.location.href = url; // redirect with parameters
+        }
+        </script>
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
+        });
+    </script>
+    <script>
+        const scrollUp = document.getElementById('scrollUp');
+
+        // Show/hide the up arrow based on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollUp.style.display = 'block';
+            } else {
+                scrollUp.style.display = 'none';
+            }
+        });
+
+        // Scroll to top on click
+        scrollUp.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

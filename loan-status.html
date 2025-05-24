@@ -725,10 +725,9 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=wVPvum68JNE" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=fQ0cK4Y7MUA&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=9" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/active-loans/5" target = "_blank">End2End(Source Code)</a>
+                <a class="tab-btn" href = "TodayLoans.xlsx" target = "_blank"><span id="yesterdayDate"></span></a>
+                <a class="tab-btn" href = "TodayLoans.xlsx" target = "_blank"><span id="currentDate"></span></a>
+                <a class="tab-btn" href = "https://youtu.be/x_WXKq6BFUA" target = "_blank">Requirement &amp; Solutions</a>
             </div>
 
             <div class="tabs-content">
@@ -810,6 +809,19 @@
         </svg>
     </a>
     <script>
+        var currentDateElement = document.getElementById("currentDate");
+  var yesterdayDateElement = document.getElementById("yesterdayDate");
+
+//Today
+  var today = new Date();
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  currentDateElement.textContent = today.toLocaleDateString('en-US', options);
+
+ // Get yesterday's date
+  var yesterday = new Date();
+  yesterday.setDate(today.getDate() - 1);
+  yesterdayDateElement.textContent = yesterday.toLocaleDateString('en-US', options);
+
         function submitReport(event) {
             event.preventDefault(); // Prevent default form submission
 

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Server Setup</title>
+    <title>BotsDNA - IP Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         /* Global Styles */
         :root {
@@ -566,6 +567,11 @@
         color: #065f46;
     }
 
+    .data-table .status.onhold {
+        background-color: #fff3cd; /* Light warning background */
+        color: #856404;            /* Bootstrap's text-warning color */
+    }
+
     .data-table .status.inactive {
         background-color: #fee2e2;
         color: #b91c1c;
@@ -601,34 +607,51 @@
             overflow-x: auto;
         }
     }
-    select {
-            width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-        }
-        .label {
-      font-size: 20px;
-      color: var(--dark-gray);
-      font-weight: bold;
-      white-space: nowrap;
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 955px;
+      text-align: center;
     }
-    .value {
-      font-size: 18px;
-      color: var(--dark-gray);
+
+    .form-card h2 {
+      margin-bottom: 25px;
+      color: #2d2d2d;
+      font-size: 24px;
     }
-    input[type="submit"] {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    .apps-list label {
+
+    .form-card label {
       display: block;
-      font-size: 18px;
-      color: var(--dark-gray);
-      margin-bottom: 5px;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
     }
-    button {
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--primary-dark);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-card button {
       width: 100%;
       padding: 12px;
       background: var(--primary-dark);
@@ -641,9 +664,21 @@
       transition: background 0.3s;
     }
 
-    .button:hover {
+    .form-card button:hover {
       background: #0056b3;
     }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .data-table td:nth-child(2) {
+        font-weight: bold;
+    }
+
+
     </style>
 </head>
 <body>
@@ -671,79 +706,134 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Server Setup <i class="fa fa-desktop"></i></h2>
-            <p class="section-subtitle">Easily find nearby customers with our Customer Locator – streamline visits, boost efficiency, and grow your reach with BotsDNA.</p>
+            <h2 class="section-title">Sport Shop <i class="fa fa-dumbbell"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=dt2VSb16c-I&t=52s" target = "_blank">Requirement</a>
                 <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=eOLvKy9LbM0&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=11" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/setup-server/7" target = "_blank">Buy complete step by step solution with source code</a>
             </div>
+        </div>
+        <br>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <a class="tab-btn" href = "https://youtu.be/e2HLbfaLGnM" target="_blank">Requirements</a>
+                <a class="tab-btn" href = "SportsTemplet.docx" target="_blank">Sports Template</a>
+                <a class="tab-btn" href = "SchoolOfferMail.JPG" target="_blank">Email Sample Output</a>
+                <a class="tab-btn" href = "EmailsDatabase.xlsx" target="_blank">School Email Database</a>
+                <a class="tab-btn" href = "SportsTemplet.pdf" target="_blank">Sample Email PDF Attachment</a>
+                <a class="tab-btn" href = "SportShop-SourceCode.zip" target="_blank">Download Source Code</a>
+                <a class="tab-btn" href = "https://youtu.be/M3Fo9nZziP4" target="_blank">Solution, Step by Step Explonation</a>
+            </div>
+            <div class="tabs-header">
+                <a href = "index.html" class = "tab-btn">Products</a>
+                <a href = "school.html" class = "tab-btn active">Schools</a>
+            </div>
+
             <div class="tabs-content">
-                <!-- Customer List Tab -->
-                <div class="tab-pane active" id="customer-list">
+                <!-- Court Request Tab -->
+                <div class="tab-pane active" id="court-request">
+                    <h3 style="text-align: center;">Schools</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>School Code</th><th>School Name</th><th>Student Strength</th></tr>
 
-                    <form action = "#" method = "POST" id = "serverForm">
-                        <table class = "data-table">
-                          <tr>
-                            <td class="label">Choose Operating System (OS):</td>
-                            <td>
-                              <select name="os" class="value">
-                                <option value="windows_nt">WINDOWS NT</option>
-                                <option value="windows_10">WINDOWS 10</option>
-                                <option value="linux">LINUX</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">RAM Size:</td>
-                            <td>
-                              <select name="ram" class="value">
-                                <option>4 GB</option>
-                                <option>8 GB</option>
-                                <option>16 GB</option>
-                                <option>32 GB</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">HDD Size:</td>
-                            <td class="value">
-                              <input type="radio" name="hddApp" value="hddName"> 250 GB
-                              <input type="radio" name="hddApp" value="hddName"> 500 GB
-                              <input type="radio" name="hddApp" value="hddName"> 1 TB
-                              <input type="radio" name="hddApp" value="hddName"> 2 TB
-                              <input type="radio" name="hddApp" value="hddName"> 5 TB
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="label">Select Applications:</td>
-                            <td class="apps-list">
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> 7-Zip</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Acrobat Professional</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Adobe Reader</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Google Chrome</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft Office</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Microsoft SQL Server</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> MS Teams</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> Maxima</label>
-                              <label><input type="checkbox" id="vehicle1" name="App" value="AppName"> PuTTY</label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="2" style="text-align: center;">
-                              <button type="submit" id="CreateServer">Create Server</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
+                         <tr>
+                            <td>SCH25224</td><td>K.V.N.V Prasad Public School</td><td>4054</td></tr>
+
+                         <tr>
+                            <td>SCH75985</td><td>Oxford Model High School</td><td>364</td></tr>
+
+                         <tr>
+                                <td>SCH45236</td><td>Next Gen International School</td><td>585</td></tr>
+
+                         <tr>
+                            <td>SCH96532</td><td>Ravindra Bharathi High School</td><td>1215</td></tr>
+
+                         <tr>
+                            <td>SCH15158</td><td>SSN High School</td><td>125</td></tr>
+
+                         <tr>
+                                <td>SCH54835</td><td>Ravi Priya Public School</td><td>654</td></tr>
+
+                         <tr>
+                            <td>SCH65784</td><td>Ongole Public School</td><td>192</td></tr>
+
+                         <tr>
+                            <td>SCH92655</td><td>Kendriya ViswaVidayalam</td><td>3500</td></tr>
+
+                         <tr>
+                                <td>SCH64156</td><td>Sri Chaitanya Techo School</td><td>2505</td></tr>
+
+                         <tr>
+                            <td>SCH53634</td><td>Nirmala High School</td><td>544</td></tr>
+
+                         <tr>
+                            <td>SCH87956</td><td>Vigna Swaraswathi Grammer High School</td><td>2822</td></tr>
+
+                         <tr>
+                                <td>SCH58290</td><td>Naryana Public School</td><td>100</td></tr>
+
+                         <tr>
+                            <td>SCH32424</td><td>Raghunadha Model High School</td><td>434</td></tr>
+
+                         <tr>
+                            <td>SCH24623</td><td>Vivekananda High School</td><td>150</td></tr>
+
+                         <tr>
+                                <td>SCH52166</td><td>St.Xaiver's High School</td><td>936</td></tr>
+
+                         <tr>
+                            <td>SCH54753</td><td>Brilliant Grammer High School</td><td>121</td></tr>
+
+                         <tr>
+                            <td>SCH87665</td><td>PNR Boys Residential High School</td><td>1521</td></tr>
+
+                         <tr>
+                                <td>SCH90887</td><td>Sai Baba international School</td><td>2912</td></tr>
+
+                         <tr>
+                            <td>SCH49786</td><td>QIS Public School</td><td>795</td></tr>
+
+                         <tr>
+                            <td>SCH93645</td><td>Krishna Memorial High School</td><td>815</td></tr>
+
+                         <tr>
+                                <td>SCH21542</td><td>Bashyam Public School</td><td>812</td></tr>
+
+                         <tr>
+                            <td>SCH12633</td><td>Devanandam High School</td><td>858</td></tr>
+
+                         <tr>
+                            <td>SCH46364</td><td>Saraswathi High School</td><td>642</td></tr>
+
+                         <tr>
+                                <td>SCH54745</td><td>Sri Bharathi Vidayalam</td><td>975</td></tr>
+
+                         <tr>
+                            <td>SCH65982</td><td>Prathiba Public School</td><td>228</td></tr>
+
+                         <tr>
+                            <td>SCH84546</td><td>Subbaiah High School</td><td>421</td></tr>
+
+                         <tr>
+                                <td>SCH96797</td><td>Ganga High School</td><td>452</td></tr>
+
+                         <tr>
+                            <td>SCH25251</td><td>Krishna Sai Techno School</td><td>937</td></tr>
+
+                         <tr>
+                            <td>SCH12273</td><td>Sreedatta Model School</td><td>521</td></tr>
+
+                         <tr>
+                                <td>SCH63487</td><td>BVM High School</td><td>485</td></tr>
 
 
+                    </table>
                 </div>
             </div>
         </div>
+
     </section>
     <footer>
         <div class="container">
@@ -780,13 +870,108 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function download(filename) {
+          var element = document.createElement('a');
+          element.setAttribute('href', filename);
+          element.setAttribute('download', filename);
+          element.setAttribute('target', '_blank');
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        }
+
         $(document).ready(function () {
-        $("#serverForm").on("submit", function (e) {
-            e.preventDefault(); // Prevent actual form submission
-            window.location.href = "createserver.html"; // Redirect
+          // Restore previous state from localStorage
+          $("i").each(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (localStorage.getItem(ticketNumber)) {
+              icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+              textCell.css("font-weight", "normal");
+            }
+          });
+
+          // Icon click behavior
+          $("i").click(function () {
+            const icon = $(this);
+            const row = icon.closest("tr");
+            const textCell = row.find("td:nth-child(2)");
+            const ticketText = textCell.text();
+            const ticketNumber = ticketText.substring(7, 11);
+
+            if (icon.hasClass("fa-envelope-open-o") || icon.hasClass("fa-video-camera") || icon.hasClass("fa-comment") || icon.hasClass("fa-youtube")) {
+              return;
+            }
+
+            icon.removeClass("fa-envelope-o").addClass("fa-envelope-open-o");
+            textCell.css("font-weight", "normal");
+
+            if (typeof(Storage) !== "undefined") {
+              localStorage.setItem(ticketNumber, "fa fa-envelope-open-o");
+            }
+
+            download(ticketNumber + ".zip");
+          });
+
+          // Reset button behavior
+          $("#resetData").click(function () {
+            $("i").each(function () {
+              const icon = $(this);
+              const row = icon.closest("tr");
+              const textCell = row.find("td:nth-child(2)");
+              const ticketText = textCell.text();
+              const ticketNumber = ticketText.substring(7, 11);
+
+              if (!icon.hasClass("fa-video-camera") && !icon.hasClass("fa-comment") && !icon.hasClass("fa-youtube")) {
+                icon.removeClass("fa-envelope-open-o").addClass("fa-envelope-o");
+                textCell.css("font-weight", "bold");
+                if (ticketNumber in localStorage) {
+                  localStorage.removeItem(ticketNumber);
+                }
+              }
+            });
+
+            alert("Data Reset Successfully!");
+          });
         });
+        </script>
+
+    <script>
+        function myFunction(event) {
+            event.preventDefault(); // prevent the normal form submission
+
+            var noof = document.getElementById("NoOfHours").selectedIndex + 1;
+            var teamCode = document.getElementById("TeamCode").value;
+            var courtName = document.getElementById("CourtName").value;
+
+            // You can send all values as query parameters if you want
+            var url = "booking.html?id=" + noof
+                    + "&team_code=" + encodeURIComponent(teamCode)
+                    + "&court_name=" + encodeURIComponent(courtName);
+
+            window.location.href = url; // redirect with parameters
+        }
+        </script>
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
+
+                btn.classList.add("active");
+                const target = btn.getAttribute("data-tab");
+                document.getElementById(target).classList.add("active");
+            });
         });
     </script>
     <script>
