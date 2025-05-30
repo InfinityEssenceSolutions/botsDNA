@@ -717,60 +717,1366 @@
                     <h2 style = "text-align: center;">Work Station</h2>
                     <div class="form-card">
                         <form>
-                            <label for="court-name">Plant Name</label>
+                            <label for="ddlPlant">Plant Name</label>
                             <select id="ddlPlant" name="plant_name">
-                              <option value="plant1">Plant1</option>
-                              <option value="plant2">Plant2</option>
-                              <option value="plant3">Plant3</option>
+                              <option value="Plant1">Plant1</option>
+                              <option value="Plant2">Plant2</option>
+                              <option value="Plant3">Plant3</option>
                             </select>
 
-                            <label for="court-name">Equipment Type</label>
-                            <select id="ddlEquipment" name="court_name">
-                              <option value="belts">Belts</option>
-                              <option value="tanks">Tanks</option>
-                              <option value="ovens">Ovens</option>
+                            <label for="ddlEquipment">Equipment Type</label>
+                            <select id="ddlEquipment" name="equipment_type">
+                              <option value="Belts">Belts</option>
+                              <option value="Tanks">Tanks</option>
+                              <option value="Ovens">Ovens</option>
                             </select>
-                        </form>
+                          </form>
                       </div>
                 </div>
                 <div class="tab-pane active" id="court-request">
-                    <h2 style = "text-align: center;" id="SelectedPlant">Plant1_Belts</h2>
-                    <table class="data-table" id="Plant1_Belts">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Speed</th>
-                            <th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Specialty_belt_1</td><td>65</td><td>Running</td></tr>
-                          <tr><td>Ribbed_belt_1</td><td>80</td><td>Running</td></tr>
-                          <tr><td>Synchronous_belt_1</td><td>75</td><td>Stopped</td></tr>
-                          <tr><td>Film_belt_1</td><td>55</td><td>Running</td></tr>
-                          <tr><td>Conveyor_belt_1</td><td>45</td><td>Running</td></tr>
-                          <tr><td>Toothed_belt-1</td><td>55</td><td>Stopped</td></tr>
-                          <tr><td>Multi-groove_belt_1</td><td>97</td><td>Running</td></tr>
-                          <tr><td>Film_belt_2</td><td>99</td><td>Stopped</td></tr>
-                          <tr><td>Specialty_belt_2</td><td>10</td><td>Stopped</td></tr>
-                          <tr><td>Conveyor_belt_1</td><td>25</td><td>Running</td></tr>
-                          <tr><td>Specialty_belt_3</td><td>95</td><td>Running</td></tr>
-                          <tr><td>Synchronous_belt_2</td><td>15</td><td>Stopped</td></tr>
-                          <tr><td>Multi-groove_belt_2</td><td>25</td><td>Running</td></tr>
-                          <tr><td>Toothed_belt-2</td><td>10</td><td>Stopped</td></tr>
-                          <tr><td>Flat_belt_1</td><td>90</td><td>Running</td></tr>
-                          <tr><td>Film_belt_3</td><td>85</td><td>Stopped</td></tr>
-                          <tr><td>Multi-groove_belt_3</td><td>95</td><td>Running</td></tr>
-                          <tr><td>Conveyor_belt_3</td><td>79</td><td>Running</td></tr>
-                          <tr><td>Ribbed_belt_2</td><td>64</td><td>Running</td></tr>
-                          <tr><td>Flat_belt_2</td><td>73</td><td>Stopped</td></tr>
-                          <tr><td>Synchronous_belt_3</td><td>76</td><td>Running</td></tr>
-                          <tr><td>Toothed_belt-3</td><td>94</td><td>Running</td></tr>
-                          <tr><td>Ribbed_belt_3</td><td>82</td><td>Stopped</td></tr>
-                          <tr><td>Conveyor_belt_4</td><td>80</td><td>Running</td></tr>
-                          <tr><td>Toothed_belt-4</td><td>55</td><td>Running</td></tr>
-                        </tbody>
-                      </table>
+
+<h1 style = "text-align: center;"><span id="SelectedPlant" >Plant1_Belts</span></h1>
+
+
+
+
+
+<!-- plant 1- belts -->
+
+<table class = "data-table" id=Plant1_Belts>
+
+ <tr>
+
+	<th>Name</th><th>Speed</th><th>Status</th></tr>
+
+ <tr>
+
+	<td>Conveyor_belt_1</td><td>85</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Conveyor_belt_2</td><td>97</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Multi-groove_belt_1</td><td>48</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Flat_belt_1</td><td>84</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-1</td><td>52</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Flat_belt_2</td><td>55</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_1</td><td>80</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Toothed_belt-2</td><td>88</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_2</td><td>95</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_1</td><td>44</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Film_belt_1</td><td>50</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_1</td><td>90</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-3</td><td>65</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_2</td><td>85</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Film_belt_2</td><td>80</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_3</td><td>25</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_2</td><td>75</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_2</td><td>75</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_3</td><td>97</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_3</td><td>99</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_4</td><td>97</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Flat_belt_3</td><td>80</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_4</td><td>85</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-4</td><td>55</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Flat_belt_4</td><td>98</td><td>Running</td></tr>
+
+
+</table>
+
+
+
+
+
+<!-- Plant 1 Ovens -->
+
+
+<table class = "data-table" id=Plant1_Ovens >
+
+ <tr>
+
+	<th>Name</th><th>Temperature</th></tr>
+
+ <tr>
+
+	<td>Annealing_1</td><td>4244</td></tr>
+
+
+ <tr>
+
+	<td>Batch Oven_1</td><td>6276</td></tr>
+
+
+ <tr>
+
+	<td>Clean Process Oven_1</td><td>8287</td></tr>
+
+
+ <tr>
+	<td>Gas Biolers_1</td><td>2132</td></tr>
+
+
+
+ <tr>
+
+	<td>Steam Bioler_1</td><td>1212</td></tr>
+
+
+
+
+ <tr>
+
+	<td>High Pressurized Bioler_1</td><td>9188</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Batch Oven_2</td><td>3453</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Steam Bioler_2</td><td>6272</td></tr>
+
+
+
+
+ <tr>
+
+         <td>Annealing_2</td><td>9282</td></tr>
+
+
+
+ <tr>
+	<td>Clean Process Oven_2</td><td>4244</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Biolers_2</td><td>6281</td></tr>
+
+
+
+ <tr>
+
+	<td>High Pressurized Bioler_2</td><td>8298</td></tr>
+
+
+
+ <tr>
+
+	<td>Steam Bioler_3</td><td>5521</td></tr>
+
+
+
+ <tr>
+
+	<td>Annealing_3</td><td>9811</td></tr>
+
+
+
+ <tr>
+
+	<td>Batch Oven_3</td><td>8299</td></tr>
+
+
+
+ <tr>
+
+	<td>Clean Process Oven_3</td><td>7282</td></tr>
+
+
+
+ <tr>
+
+	<td>Batch Oven_4</td><td>3252</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Biolers_3</td><td>2155</td></tr>
+
+
+
+ <tr>
+
+	<td>Annealing_4</td><td>4362</td></tr>
+
+
+
+ <tr>
+	<td>Clean Process Oven_4</td><td>4542</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Biolers_4</td><td>7372</td></tr>
+
+
+
+ <tr>
+
+	<td>Batch Oven_5</td><td>5264</td></tr>
+
+
+ <tr>
+	<td>Clean Process Oven_5</td><td>8393</td></tr>
+
+
+ <tr>
+
+	<td>Annealing_5</td><td>5432</td></tr>
+
+
+ <tr>
+
+	<td>Gas Biolers_5</td><td>4425</td></tr>
+
+
+</table>
+
+
+
+
+<!-- Plant1 Tanks -->
+
+
+<table class = "data-table" id="Plant1_Tanks" >
+
+ <tr>
+
+	<th>Name</th><th>Level</th><th>Type</th></tr>
+
+ <tr>
+
+	<td>PET_Tank1</td><td>542</td><td>Petrol</td></tr>
+
+
+ <tr>
+
+	<td>DIE_Tank1</td><td>837</td><td>Diesel</td></tr>
+
+
+ <tr>
+
+	<td>GAS_Tank1</td><td>733</td><td>Gasoline</td></tr>
+
+
+ <tr>
+
+	<td>HYD_Tank1</td><td>938</td><td>Hydrogen</td></tr>
+
+
+
+ <tr>
+
+	<td>KER_Tank1</td><td>865</td><td>Kerosene</td></tr>
+
+
+
+
+ <tr>
+
+	<td>SOD_Tank1</td><td>536</td><td>Sodium</td></tr>
+
+
+
+
+ <tr>
+
+	<td>WPET_Tank1</td><td>612</td><td>White Petrol</td></tr>
+
+
+
+
+ <tr>
+
+	<td>NIT_Tank1</td><td>968</td><td>Nitrogen</td></tr>
+
+
+
+
+ <tr>
+
+	<td>AMM_Tank1</td><td>236</td><td>Ammonia</td></tr>
+
+
+
+ <tr>
+
+	<td>OXY_Tank1</td><td>657</td><td>Oxygen</td></tr>
+
+
+
+ <tr>
+
+	<td>POT_Tank1</td><td>352</td><td>Potassium</td></tr>
+
+
+
+ <tr>
+
+	<td>HEL_Tank1</td><td>244</td><td>Helium</td></tr>
+
+
+
+ <tr>
+
+	<td>CAR_Tank1</td><td>325</td><td>Carbondioxide</td></tr>
+
+
+
+ <tr>
+
+	<td>PET_Tank2</td><td>350</td><td>Petrol</td></tr>
+
+
+
+ <tr>
+
+	<td>GAS_Tank2</td><td>436</td><td>Gasoline</td></tr>
+
+
+
+ <tr>
+
+	<td>HYD_Tank2</td><td>538</td><td>Hydrogen</td></tr>
+
+
+
+ <tr>
+
+	<td>GAS_Tank3</td><td>535</td><td>Gasoline</td></tr>
+
+
+
+ <tr>
+
+	<td>PET_Tank3</td><td>836</td><td>Petrol</td></tr>
+
+
+
+ <tr>
+
+	<td>DIE_Tank2</td><td>947</td><td>Diesel</td></tr>
+
+
+
+ <tr>
+
+	<td>GAS_Tank4</td><td>753</td><td>Gasoline</td></tr>
+
+
+
+ <tr>
+
+	<td>HYD_Tank3</td><td>536</td><td>Hydrogen</td></tr>
+
+
+
+ <tr>
+
+	<td>PET_Tank4</td><td>464</td><td>Petrol</td></tr>
+
+
+ <tr>
+
+	<td>DIE_Tank3</td><td>793</td><td>Diesel</td></tr>
+
+
+ <tr>
+
+	<td>ALU_Tank1</td><td>948</td><td>Aluminium</td></tr>
+
+
+ <tr>
+
+	<td>DIE_Tank4</td><td>543</td><td>Diesel</td></tr>
+
+
+</table>
+
+
+
+
+<!-- Plant2 Belts -->
+
+
+<table class = "data-table" id=Plant2_Belts >
+
+ <tr>
+
+	<th>Name</th><th>Speed</th><th>Status</th></tr>
+
+ <tr>
+
+	<td>Specialty_belt_1</td><td>65</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Ribbed_belt_1</td><td>80</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Synchronous_belt_1</td><td>75</td><td>Stopped</td></tr>
+
+
+ <tr>
+
+	<td>Film_belt_1</td><td>55</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_1</td><td>45</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Toothed_belt-1</td><td>55</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_1</td><td>97</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Film_belt_2</td><td>99</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Specialty_belt_2</td><td>10</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_1</td><td>25</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_3</td><td>95</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_2</td><td>15</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_2</td><td>25</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-2</td><td>10</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Flat_belt_1</td><td>90</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Film_belt_3</td><td>85</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_3</td><td>95</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_3</td><td>79</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_2</td><td>64</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Flat_belt_2</td><td>73</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_3</td><td>76</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-3</td><td>94</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_3</td><td>82</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_4</td><td>80</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-4</td><td>55</td><td>Running</td></tr>
+
+
+</table>
+
+
+
+
+<!-- Plant2 Ovens -->
+
+<table class = "data-table" id=Plant2_Ovens>
+
+ <tr>
+
+	<th>Name</th><th>Temperature</th></tr>
+
+ <tr>
+
+	<td>Flame Boiler_1</td><td>6348</td></tr>
+
+
+ <tr>
+
+	<td>Industrial Oven_1</td><td>7236</td></tr>
+
+
+ <tr>
+
+	<td>Heat Tunnel_1</td><td>5254</td></tr>
+
+
+ <tr>
+	<td>High Pressurized Bioler_1</td><td>6254</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_1</td><td>2121</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Flame Boiler_2</td><td>9162</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Industrial Oven_3</td><td>3231</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Flame Boiler_3</td><td>9290</td></tr>
+
+
+
+
+ <tr>
+
+         <td>High Pressurized Bioler_2</td><td>8278</td></tr>
+
+
+
+ <tr>
+	<td>Industrial Oven_4</td><td>2727</td></tr>
+
+
+
+ <tr>
+
+	<td>Flame Boiler_4</td><td>5275</td></tr>
+
+
+
+ <tr>
+
+	<td>Heat Tunnel_2</td><td>2442</td></tr>
+
+
+
+ <tr>
+
+	<td>Annealing_1</td><td>2212</td></tr>
+
+
+
+ <tr>
+
+	<td>High Pressurized Bioler_3</td><td>3556</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_2</td><td>8373</td></tr>
+
+
+
+ <tr>
+
+	<td>Heat Tunnel_3</td><td>5453</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_3</td><td>4452</td></tr>
+
+
+
+ <tr>
+
+	<td>Flame Boiler_5</td><td>7187</td></tr>
+
+
+
+ <tr>
+
+	<td>Industrial Oven_5</td><td>9223</td></tr>
+
+
+
+ <tr>
+	<td>High Pressurized Bioler_4</td><td>1112</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_4</td><td>9346</td></tr>
+
+
+
+ <tr>
+
+	<td>Heat Tunnel_4</td><td>8486</td></tr>
+
+
+ <tr>
+	<td>Gas Bioler_5</td><td>8512</td></tr>
+
+
+ <tr>
+
+	<td>High Pressurized Bioler_5</td><td>7262</td></tr>
+
+
+ <tr>
+
+	<td>Heat Tunnel_5</td><td>4242</td></tr>
+
+
+</table>
+
+
+
+
+<!-- Plant 2 Tanks -->
+
+<table class = "data-table" id=Plant2_Tanks>
+
+
+ <tr>
+
+	<th>Name</th><th>Level</th><th>Type</th></tr>
+
+ <tr>
+
+	<td>DIE_Tank1</td><td>637</td><td>Diesel</td></tr>
+
+
+ <tr>
+
+	<td>AMM_Tank1</td><td>839</td><td>Ammonia</td></tr>
+
+
+ <tr>
+
+	<td>OXY_Tank1</td><td>437</td><td>Oxygen</td></tr>
+
+
+ <tr>
+
+	<td>PET_Tank1</td><td>829</td><td>Petrol</td></tr>
+
+
+
+ <tr>
+
+	<td>DIE_Tank2</td><td>928</td><td>Diesel</td></tr>
+
+
+
+
+ <tr>
+
+	<td>NIT_Tank1</td><td>563</td><td>Nitrogen</td></tr>
+
+
+
+
+ <tr>
+
+	<td>HYD_Tank1</td><td>827</td><td>Hydrogen</td></tr>
+
+
+
+
+ <tr>
+
+	<td>SOD_Tank1</td><td>435</td><td>Sodium</td></tr>
+
+
+
+
+ <tr>
+
+	<td>DIE_Tank3</td><td>613</td><td>Diesel</td></tr>
+
+
+
+ <tr>
+
+	<td>GAS_Tank1</td><td>725</td><td>Gasoline</td></tr>
+
+
+
+ <tr>
+
+	<td>WPET_Tank1</td><td>247</td><td>WhitePetrol</td></tr>
+
+
+
+ <tr>
+
+	<td>HEL_Tank1</td><td>767</td><td>Helium</td></tr>
+
+
+
+ <tr>
+
+	<td>CAR_Tank1</td><td>838</td><td>Carbondioxide</td></tr>
+
+
+
+ <tr>
+
+	<td>PET_Tank2</td><td>965</td><td>Petrol</td></tr>
+
+
+
+ <tr>
+
+	<td>BIO_Tank1</td><td>922</td><td>Biogas</td></tr>
+
+
+
+
+
+
+
+
+
+</table>
+
+
+<!-- Plant3 Belts -->
+
+
+<table class = "data-table" id=Plant3_Belts>
+
+
+ <tr>
+
+	<th>Name</th><th>Speed</th><th>Status</th></tr>
+
+ <tr>
+
+	<td>Multi-groove_belt_1</td><td>75</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Conveyor_belt_1</td><td>80</td><td>Running</td></tr>
+
+
+ <tr>
+
+	<td>Flat_belt_1</td><td>50</td><td>Stopped</td></tr>
+
+
+ <tr>
+
+	<td>Toothed_belt-1</td><td>40</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_2</td><td>85</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_1</td><td>80</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_2</td><td>75</td><td>Running</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_3</td><td>60</td><td>Stopped</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Flat_belt_2</td><td>55</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-2</td><td>40</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_2</td><td>35</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_3</td><td>10</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_1</td><td>30</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_1</td><td>15</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Film_belt_1</td><td>25</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-3</td><td>60</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_3</td><td>60</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Ribbed_belt_1</td><td>55</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Multi-groove_belt_4</td><td>40</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Film_belt_2</td><td>50</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Conveyor_belt_4</td><td>54</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Synchronous_belt_4</td><td>95</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Toothed_belt-4</td><td>92</td><td>Running</td></tr>
+
+
+
+ <tr>
+
+	<td>Flat_belt_3</td><td>85</td><td>Stopped</td></tr>
+
+
+
+ <tr>
+
+	<td>Specialty_belt_2</td><td>64</td><td>Running</td></tr>
+
+
+</table>
+
+
+<!-- Plant 3 Ovens -->
+
+<table class = "data-table" id=Plant3_Ovens>
+
+ <tr>
+
+	<th>Name</th><th>Temperature</th></tr>
+
+ <tr>
+
+	<td>Spiral Ovens_1</td><td>6283</td></tr>
+
+
+ <tr>
+
+	<td>Truck-in Oven_1</td><td>7253</td></tr>
+
+
+ <tr>
+
+	<td>Annealing_1</td><td>3255</td></tr>
+
+
+ <tr>
+	<td>Reach-in Oven_1</td><td>4265</td></tr>
+
+
+
+ <tr>
+
+	<td>High Pressurized Bioler_1</td><td>3826</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Gas Bioler_1</td><td>2132</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Spiral Ovens_2</td><td>9282</td></tr>
+
+
+
+
+ <tr>
+
+	<td>Annealing_2</td><td>2122</td></tr>
+
+
+
+
+ <tr>
+
+         <td>Truck-in Oven_2</td><td>1021</td></tr>
+
+
+
+ <tr>
+	<td>Gas Bioler_2</td><td>7265</td></tr>
+
+
+
+ <tr>
+
+	<td>Reach-in Oven_2</td><td>5367</td></tr>
+
+
+
+ <tr>
+
+	<td>Spiral Ovens_3</td><td>4832</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_3</td><td>4353</td></tr>
+
+
+
+ <tr>
+
+	<td>Annealing_3</td><td>9297</td></tr>
+
+
+
+ <tr>
+
+	<td>Truck-in Oven_3</td><td>1267</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_4</td><td>9238</td></tr>
+
+
+
+ <tr>
+
+	<td>Reach-in Oven_3</td><td>5325</td></tr>
+
+
+
+ <tr>
+
+	<td>Spiral Ovens_4</td><td>4344</td></tr>
+
+
+
+ <tr>
+
+	<td>Annealing_4</td><td>5455</td></tr>
+
+
+
+ <tr>
+	<td>Truck-in Oven_4</td><td>9494</td></tr>
+
+
+
+ <tr>
+
+	<td>Gas Bioler_5</td><td>7291</td></tr>
+
+
+
+ <tr>
+
+	<td>Spiral Ovens_5</td><td>4355</td></tr>
+
+
+ <tr>
+	<td>Truck-in Oven_5</td><td>3846</td></tr>
+
+
+ <tr>
+
+	<td>Annealing_5</td><td>4868</td></tr>
+
+
+ <tr>
+
+	<td>Reach-in Oven_4</td><td>5967</td></tr>
+
+
+</table>
+
+
+
+<!-- Plant 3 Tanks -->
+
+
+<table class = "data-table" id=Plant3_Tanks >
+
+ <tr>
+
+	<th>Name</th><th>Level</th><th>Type</th></tr>
+
+ <tr>
+
+	<td>NIT_Tank1</td><td>823</td><td>Nitrogen</td></tr>
+
+
+ <tr>
+
+	<td>OXY_Tank1</td><td>357</td><td>Oxygen</td></tr>
+
+
+ <tr>
+
+	<td>STY_Tank1</td><td>345</td><td>Styrene</td></tr>
+
+
+ <tr>
+
+	<td>DIE_Tank1</td><td>898</td><td>Diesel</td></tr>
+
+
+
+ <tr>
+
+	<td>PET_Tank1</td><td>755</td><td>Petrol</td></tr>
+
+
+
+
+ <tr>
+
+	<td>HYD_Tank1</td><td>998</td><td>Hydrogen</td></tr>
+
+
+
+
+ <tr>
+
+	<td>GAS_Tank1</td><td>826</td><td>Gasoline</td></tr>
+
+
+
+
+ <tr>
+
+	<td>SOD_Tank1</td><td>433</td><td>Sodium</td></tr>
+
+
+
+
+ <tr>
+
+	<td>CMO_Tank1</td><td>637</td><td>CarbonMonoxide</td></tr>
+
+
+
+ <tr>
+
+	<td>ALU_Tank1</td><td>811</td><td>Aluminium</td></tr>
+
+
+
+ <tr>
+
+	<td>ARG_Tank1</td><td>524</td><td>Argon</td></tr>
+
+
+
+ <tr>
+
+	<td>HEL_Tank1</td><td>674</td><td>Helium</td></tr>
+
+
+
+ <tr>
+
+	<td>CHL_Tank1</td><td>712</td><td>Chlorine</td></tr>
+
+
+
+ <tr>
+
+	<td>PHG_Tank1</td><td>930</td><td>Phosgene</td></tr>
+
+
+
+ <tr>
+
+	<td>NDO_Tank1</td><td>447</td><td>Nitrogendioxide</td></tr>
+
+
+
+
+
+
+
+
+
+</table>
 
                 </div>
                 <br>

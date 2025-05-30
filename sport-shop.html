@@ -778,7 +778,7 @@
                 <div>Product Name : Badminton Cock</div>
                 <div>Product Code : DG64575</div>
                 <div>Price : 80/-</div>
-                <div>Stock Arrived From : Chennai</div>
+                <div id = "stock-info">Stock Arrived From : Chennai</div>
               </div>
             </div>
 
@@ -789,7 +789,7 @@
                 <div>Product Name : Badminton Kit Bag</div>
                 <div>Product Code : DG51534</div>
                 <div>Price : 2550/-</div>
-                <div>Stock Arrived From : Hyderabad</div>
+                <div id = "stock-info">Stock Arrived From : Hyderabad</div>
               </div>
             </div>
 
@@ -800,7 +800,7 @@
                 <div>Product Name : Badminton Net</div>
                 <div>Product Code : DG82712</div>
                 <div>Price : 1050/-</div>
-                <div>Stock Arrived From : Trivandrum</div>
+                <div id = "stock-info">Stock Arrived From : Trivandrum</div>
               </div>
             </div>
 
@@ -843,6 +843,15 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+    <script>
+        const cities = ["Chennai", "Mumbai", "Delhi", "Hyderabad", "Bangalore"]; // add more as needed
+        const stockDiv = document.getElementById("stock-info");
+
+        cities.forEach(city => {
+          const regex = new RegExp(`\\b${city}\\b`, 'g');
+          stockDiv.innerHTML = stockDiv.innerHTML.replace(regex, `<span class="highlight">${city}</span>`);
+        });
+      </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

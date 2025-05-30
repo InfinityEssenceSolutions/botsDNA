@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -725,9 +729,9 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "TodayLoans.xlsx" target = "_blank"><span id="yesterdayDate"></span></a>
-                <a class="tab-btn" href = "TodayLoans.xlsx" target = "_blank"><span id="currentDate"></span></a>
-                <a class="tab-btn" href = "https://youtu.be/x_WXKq6BFUA" target = "_blank">Requirement &amp; Solutions</a>
+                <a class="tab" href = "TodayLoans.xlsx" target = "_blank"><span id="yesterdayDate"></span> </a>&
+                <a class="tab" href = "TodayLoans.xlsx" target = "_blank"><span id="currentDate"></span> </a>  |
+                <a class="tab" href = "https://youtu.be/x_WXKq6BFUA" target = "_blank"> Requirement &amp; Solutions</a>
             </div>
 
             <div class="tabs-content">
@@ -809,47 +813,43 @@
         </svg>
     </a>
     <script>
+        // Set current and yesterday's date
         var currentDateElement = document.getElementById("currentDate");
-  var yesterdayDateElement = document.getElementById("yesterdayDate");
+        var yesterdayDateElement = document.getElementById("yesterdayDate");
 
-//Today
-  var today = new Date();
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  currentDateElement.textContent = today.toLocaleDateString('en-US', options);
+        var today = new Date();
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        currentDateElement.textContent = today.toLocaleDateString('en-US', options);
 
- // Get yesterday's date
-  var yesterday = new Date();
-  yesterday.setDate(today.getDate() - 1);
-  yesterdayDateElement.textContent = yesterday.toLocaleDateString('en-US', options);
+        var yesterday = new Date();
+        yesterday.setDate(today.getDate() - 1);
+        yesterdayDateElement.textContent = yesterday.toLocaleDateString('en-US', options);
 
+        // File submission logic
         function submitReport(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
             var fileInput = document.getElementById("reportFile");
             var successMessage = document.getElementById("successMessage");
             var errorMessage = document.getElementById("errorMessage");
             var progressBar = document.getElementById("progressBar");
 
-            // Hide both messages first
             successMessage.style.display = "none";
             errorMessage.style.display = "none";
 
-            // Check if a file is selected
             if (fileInput.files.length === 0) {
                 alert("Please select a file before submitting.");
                 return;
             }
 
             var fileName = fileInput.files[0].name;
-
-            // Validate file name
             var regex = /^\d{2}_\d{2}_\d{4}\.zip$/;
+
             if (!regex.test(fileName)) {
                 errorMessage.style.display = "block";
                 return;
             }
 
-            // Simulate upload progress
             var uploadProgress = 0;
             var uploadInterval = setInterval(function () {
                 uploadProgress += 10;
@@ -857,7 +857,6 @@
 
                 if (uploadProgress >= 100) {
                     clearInterval(uploadInterval);
-                    // Reset the form and show success
                     document.getElementById("reportForm").reset();
                     successMessage.style.display = "block";
                     progressBar.style.width = "0%";
@@ -866,9 +865,28 @@
                         successMessage.style.display = "none";
                     }, 5000);
                 }
-            }, 200); // Faster interval for smoother animation
+            }, 200);
         }
-        </script>
+
+        // Maintain table visibility using sessionStorage
+        window.addEventListener('load', function () {
+            // Restore state (if needed in future for hiding/showing elements)
+            const table = document.getElementById("loanTable");
+            const isTableVisible = sessionStorage.getItem("loanTableVisible");
+
+            if (isTableVisible === null || isTableVisible === "true") {
+                table.style.display = "table";
+            } else {
+                table.style.display = "none";
+            }
+        });
+
+        window.addEventListener('beforeunload', function () {
+            const table = document.getElementById("loanTable");
+            sessionStorage.setItem("loanTableVisible", table.style.display !== "none");
+        });
+    </script>
+
 
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
