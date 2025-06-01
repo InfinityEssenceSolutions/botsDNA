@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Loan Status</title>
+    <title>BotsDNA - Energy Bill Payment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -446,15 +446,11 @@
     }
 
     .tabs-header {
-    justify-content: center; /* Center horizontally */
-    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
-    gap: 10px;               /* Space between tabs */
-    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -655,7 +651,7 @@
     }
 
     .form-card button {
-      width: 12%;
+      width: 100%;
       padding: 12px;
       background: var(--primary-dark);
       color: #fff;
@@ -676,25 +672,57 @@
       font-size: 13px;
       color: #888;
     }
-    .success-message {
-    display: none;
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
 
-  .error-message {
-    display: none;
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 220px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"], input[type="number"], input[type="datetime-local"], select {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #mathExp {
+      padding: 10px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #000;
+    }
 
     </style>
 </head>
@@ -723,57 +751,70 @@
     </header>
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Loan Status <i class="fa fa-piggy-bank"></i></h2>
-            <p class="section-subtitle">Track Your Loan Status Instantly with BotsDNA
-                Check approvals, disbursements, and repayment schedules – all in real-time, anytime, with just a few taps!</p>
+            <h2 class="section-title">Demand Note Bill Payment <i class="fa fa-amazon-pay"></i></h2>
+            <p class="section-subtitle">Book your football court hassle-free with BotsDNA! Fast, easy, and just a few taps away</p>
         </div>
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab" href = "TodayLoans.xlsx" target = "_blank"><span id="yesterdayDate"></span> </a>&
-                <a class="tab" href = "TodayLoans.xlsx" target = "_blank"><span id="currentDate"></span> </a>  |
-                <a class="tab" href = "https://youtu.be/x_WXKq6BFUA" target = "_blank"> Requirement &amp; Solutions</a>
+                <a class="tab-btn" href = "https://www.youtube.com/watch?v=SA2RNIp5tUM&t=316s" target = "_blank">Requirement</a>
+                <a class="tab-btn" href = "Payments.zip">Payments.zip</a>
+                <a class="tab-btn" href = "https://youtu.be/FSh9UIRYyQs" target = "_blank">Step By Step Explonation(Developement) Process</a>
             </div>
 
             <div class="tabs-content">
-                <!-- Court Request Tab -->
-                <p id="successMessage" class="success-message">Report successfully uploaded!</p>
-                <p id="errorMessage" class="error-message">Invalid file format. Please upload a file with the name in 'dd_MM_yyyy.zip' format.</p>
-                <div class="tab-pane active" id="court-request">
 
-                    <table class="data-table">
-                        <thead>
-                          <tr>
-                            <th>Bank Name</th>
-                            <th>Bank Code</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td><a href = "sbi.html">SBI</a></td><td>0999</td></tr>
-                          <tr><td><a href = "icici.html">ICICI</a></td><td>0232</td></tr>
-                          <tr><td><a href = "axis.html">AXIS</a></td><td>9988</td></tr>
-                          <tr><td><a href = "hdfc.html">HDFC</a></td><td>9090</td></tr>
-                        </tbody>
-                      </table>
+                <!-- Assign Courts Tab -->
+                <div class="tab-pane active" id="assign-courts">
+                    <div class="form-card">
+                        <h2>Fill & Pay</h2>
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="myFunction()">PAYMENTS
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                              <a href="DAE.html" onclick="generateCaptcha('DAE.html')">DAE BILL PAYMENT</a>
+                              <a href="DN.html">DEMAND NOTE BILL PAYMENT</a>
+                              <a href="energy-bill-payment.html">ENERGY BILL PAYMENT</a>
+                            </div>
+                          </div>
 
+                          <!-- Payment Form -->
+                          <form onsubmit="event.preventDefault(); payment();">
+                            <label for="installment">Installment</label>
+                            <input type="text" id="installment" name="installment" placeholder="Enter Installment Number" required>
+
+                            <label for="transaction_id">Transaction ID</label>
+                            <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter Transaction ID" required>
+
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+
+                            <label for="paid_on">Paid On:</label>
+                            <input type="date" id="paid_on" name="paid_on" required>
+
+                            <label for="bill_collector">Bill Collector</label>
+                            <select id="bill_collector" name="bill_collector">
+                              <option value="Charan Teja">Charan Teja</option>
+                              <option value="Kiran Kumar">Kiran Kumar</option>
+                              <option value="Ravi Rao">Ravi Rao</option>
+                              <option value="Rama Krishna">Rama Krishna</option>
+                              <option value="Suhas Babu">Suhas Babu</option>
+                            </select>
+
+                            <!-- CAPTCHA Section -->
+                            <label id="mathExp">6 + 7 =</label>
+                            <input type="text" id="mathResult" placeholder="Enter Result" required>
+
+                            <p>
+                              <input type="checkbox" id="tCheck" />
+                              By Clicking Pay Now, you agree to our <span style="color:blue;">terms & Conditions</span>
+                            </p>
+
+                            <button type="submit">Pay Now</button>
+                          </form>
+                      </div>
                 </div>
-                <div class="form-card">
-                    <form id="reportForm" onsubmit="submitReport(event)">
-                        <label for="reportFile">Upload Today's Report (in 'dd_MM_yyyy.zip' format):</label>
-                        <input type="file" id="reportFile" accept=".zip">
-
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-
-                <div id="progressContainer" style="width: 100%; background: #f1f1f1; margin-top: 10px; height: 20px; border-radius: 5px; overflow: hidden;">
-                    <div id="progressBar" style="width: 0%; height: 100%; background: #4caf50;"></div>
-                </div>
-
-
-                </div>
-
-                <br>
             </div>
         </div>
 
@@ -813,82 +854,69 @@
             <polyline points="18 15 12 9 6 15" />
         </svg>
     </a>
+
     <script>
-        // Set current and yesterday's date
-        var currentDateElement = document.getElementById("currentDate");
-        var yesterdayDateElement = document.getElementById("yesterdayDate");
-
-        var today = new Date();
-        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        currentDateElement.textContent = today.toLocaleDateString('en-US', options);
-
-        var yesterday = new Date();
-        yesterday.setDate(today.getDate() - 1);
-        yesterdayDateElement.textContent = yesterday.toLocaleDateString('en-US', options);
-
-        // File submission logic
-        function submitReport(event) {
-            event.preventDefault();
-
-            var fileInput = document.getElementById("reportFile");
-            var successMessage = document.getElementById("successMessage");
-            var errorMessage = document.getElementById("errorMessage");
-            var progressBar = document.getElementById("progressBar");
-
-            successMessage.style.display = "none";
-            errorMessage.style.display = "none";
-
-            if (fileInput.files.length === 0) {
-                alert("Please select a file before submitting.");
-                return;
-            }
-
-            var fileName = fileInput.files[0].name;
-            var regex = /^\d{2}_\d{2}_\d{4}\.zip$/;
-
-            if (!regex.test(fileName)) {
-                errorMessage.style.display = "block";
-                return;
-            }
-
-            var uploadProgress = 0;
-            var uploadInterval = setInterval(function () {
-                uploadProgress += 10;
-                progressBar.style.width = uploadProgress + "%";
-
-                if (uploadProgress >= 100) {
-                    clearInterval(uploadInterval);
-                    document.getElementById("reportForm").reset();
-                    successMessage.style.display = "block";
-                    progressBar.style.width = "0%";
-
-                    setTimeout(function () {
-                        successMessage.style.display = "none";
-                    }, 5000);
-                }
-            }, 200);
+        // Dropdown toggle
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Maintain table visibility using sessionStorage
-        window.addEventListener('load', function () {
-            // Restore state (if needed in future for hiding/showing elements)
-            const table = document.getElementById("loanTable");
-            const isTableVisible = sessionStorage.getItem("loanTableVisible");
-
-            if (isTableVisible === null || isTableVisible === "true") {
-                table.style.display = "table";
-            } else {
-                table.style.display = "none";
+        // Close dropdown on outside click
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+            const dropdown = document.getElementById("myDropdown");
+            if (dropdown.classList.contains('show')) {
+              dropdown.classList.remove('show');
             }
-        });
+          }
+        }
 
-        window.addEventListener('beforeunload', function () {
-            const table = document.getElementById("loanTable");
-            sessionStorage.setItem("loanTableVisible", table.style.display !== "none");
-        });
-    </script>
+        // Global captcha variables
+        let a, b;
 
+        function generateCaptcha(redirectUrl = null) {
+          // Random numbers and colors
+          a = Math.floor(Math.random() * 10);
+          b = Math.floor(Math.random() * 10);
+          const colors = ["yellow", "lime", "red", "aqua", "cadetblue"];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+          // Set captcha expression and background
+          const mathExp = document.getElementById("mathExp");
+          mathExp.textContent = `${a} + ${b} =`;
+          mathExp.style.backgroundColor = randomColor;
+
+          // Clear input field
+          document.getElementById("mathResult").value = "";
+
+          // Optional redirect
+          if (redirectUrl) {
+            window.location.href = redirectUrl;
+          }
+        }
+
+        // Payment validation
+        function payment() {
+          const result = parseInt(document.getElementById("mathResult").value, 10);
+          const isChecked = document.getElementById("tCheck").checked;
+
+          if (!isChecked) {
+            alert("Please read and agree to the terms & conditions.");
+            return;
+          }
+
+          if (a + b === result) {
+            window.location.href = "Thanks.html";
+          } else {
+            alert("Error: Captcha - Math Expression Result is Wrong");
+          }
+        }
+
+        // Initialize captcha on page load
+        window.onload = function() {
+          generateCaptcha();
+        };
+      </script>
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");
