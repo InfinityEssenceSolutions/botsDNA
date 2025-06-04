@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -717,10 +721,10 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=GoF-Ba1pGKc&t=5s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "Batch Process Output Email.pdf">Email.pdf</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=iaJ7D4_cN6Q" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/batch-process/12" target = "_blank">Buy complete step by step solution with source code Here</a>
+                <a class="tab" href = "https://www.youtube.com/watch?v=GoF-Ba1pGKc&t=5s" target = "_blank">Requirement</a> |
+                <a class="tab" href = "Batch Process Output Email.pdf">Email.pdf</a> |
+                <a class="tab" href = "https://www.youtube.com/watch?v=iaJ7D4_cN6Q" target = "_blank">Solution</a> |
+                <a class="tab" href = "https://www.uipathlearner.com/home/course/batch-process/12" target = "_blank">Buy complete step by step solution with source code Here</a>
             </div>
 
             <div class="tabs-content">

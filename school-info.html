@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -707,10 +711,10 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=1jWpHvmbbl0" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "Master Template.xlsx">Master Template.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=lNNKDAxK0TQ&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=7" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/school-info/8" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab" href = "https://www.youtube.com/watch?v=1jWpHvmbbl0" target = "_blank">Requirement</a> |
+                <a class="tab" href = "Master Template.xlsx">Master Template.xlsx</a> |
+                <a class="tab" href = "https://www.youtube.com/watch?v=lNNKDAxK0TQ&list=PLj3wlxu9AsDV975ftWJdY4KhE7hgPRsNV&index=7" target = "_blank">Solution</a> |
+                <a class="tab" href = "https://www.uipathlearner.com/home/course/school-info/8" target = "_blank">Buy complete step by step solution with source code</a>
             </div>
 
             <div class="tabs-content">

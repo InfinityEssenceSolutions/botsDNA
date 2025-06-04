@@ -717,6 +717,17 @@
     text-align: center; /* Center align the main heading */
   }
 
+  .description {
+    display: none; /* Hide all descriptions by default */
+  }
+  .description.expanded {
+    display: block; /* Show expanded description */
+  }
+  .topic {
+    cursor: pointer;
+    user-select: none;
+  }
+
     </style>
 </head>
 <body>
@@ -1188,16 +1199,20 @@
     <script>
         function toggleTopic(id) {
           var element = document.getElementById(id);
-          element.classList.toggle("expanded");
+          var isExpanded = element.classList.contains("expanded");
 
+          // Hide all descriptions first
           var topics = document.querySelectorAll('.description');
           topics.forEach(function(topic) {
-            if (topic.id !== id) {
-              topic.classList.remove('expanded');
-            }
+            topic.classList.remove('expanded');
           });
+
+          // Toggle clicked one only if it was not already expanded
+          if (!isExpanded) {
+            element.classList.add('expanded');
+          }
         }
-        </script>
+      </script>
     <script>
         function download(filename) {
           var element = document.createElement('a');

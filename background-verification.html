@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -720,14 +724,14 @@
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=xKw_ouFUsrI" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "Employee Documents.zip">EmployeeDocuments.zip</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=YEeH3iWrsXQ" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/background-verification/10" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab" href = "https://www.youtube.com/watch?v=xKw_ouFUsrI" target = "_blank">Requirement</a> |
+                <a class="tab" href = "Employee Documents.zip">EmployeeDocuments.zip</a> |
+                <a class="tab" href = "https://www.youtube.com/watch?v=YEeH3iWrsXQ" target = "_blank">Solution</a> |
+                <a class="tab" href = "https://www.uipathlearner.com/home/course/background-verification/10" target = "_blank">Buy complete step by step solution with source code</a>
             </div>
             <div class="tabs-content">
                 <div class="tab-pane active" id="customer-list">
-                  <h5><span id='CurrentValue'>1</span> of 10 employees</h5>
+                  <h5 style="text-align: center"><span id='CurrentValue'>1</span> of 10 employees</h5>
                   <div id="dataEntry">
                     <form action="#" method="POST" enctype="multipart/form-data">
                       <table class="data-table">
@@ -862,30 +866,37 @@
         }
 
         function SubmitBGV() {
-          const fileInput = document.getElementById("uploadedFile");
-          const resultMessage = document.getElementById("result-message");
-          const currentEmp = TenEmployee[currentIndex];
-          const currentDocs = document.getElementById("MissingDocs").value;
+            const fileInput = document.getElementById("uploadedFile");
+            const resultMessage = document.getElementById("result-message");
+            const currentEmp = TenEmployee[currentIndex];
+            const currentDocs = document.getElementById("MissingDocs").value;
 
-          if (!fileInput.value) {
-            resultMessage.innerText = `Successfully Submitted [${currentEmp.EmployeeName}] Missing Documents: ${currentDocs}`;
-          } else {
-            document.getElementById("dataEntry").style.display = "none";
-            document.getElementById("Congrats").style.display = "block";
-            return;
-          }
+            // ✅ Check if a file is selected
+            if (!fileInput.files.length) {
+                alert("Please upload the missing documents in a .zip file before submitting.");
+                return;
+            }
 
-          currentIndex++;
+            // ✅ Check if the uploaded file is a .zip
+            const file = fileInput.files[0];
+            if (!file.name.toLowerCase().endsWith(".zip")) {
+                alert("Only .zip files are allowed.");
+                return;
+            }
 
-          if (currentIndex < 10) {
-            document.getElementById("CurrentValue").innerText = currentIndex + 1;
-            document.getElementById("uploadedFile").value = "";
-            updateEmployee(currentIndex);
-          } else {
-            document.getElementById("dataEntry").style.display = "none";
-            document.getElementById("Congrats").style.display = "block";
-          }
-        }
+            // Hide data entry and show congrats if successful
+            currentIndex++;
+
+            if (currentIndex < 10) {
+                document.getElementById("CurrentValue").innerText = currentIndex + 1;
+                fileInput.value = "";
+                updateEmployee(currentIndex);
+            } else {
+                document.getElementById("dataEntry").style.display = "none";
+                document.getElementById("Congrats").style.display = "block";
+            }
+            }
+
       </script>
     <script>
         const scrollUp = document.getElementById('scrollUp');

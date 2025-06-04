@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -705,8 +709,8 @@
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "input.xlsx">Input.xlsx</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=WI8cas6fMv4&list=PLj3wlxu9AsDUtJiSw4x_wZKiuZXmoqiU1" target = "_blank">Requirement & Solutions</a>
+                <a class="tab" href = "input.xlsx">Input.xlsx</a> |
+                <a class="tab" href = "https://www.youtube.com/watch?v=WI8cas6fMv4&list=PLj3wlxu9AsDUtJiSw4x_wZKiuZXmoqiU1" target = "_blank">Requirement & Solutions</a>
             </div>
         </div>
         <br>

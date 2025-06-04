@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -724,6 +728,81 @@
       color: #000;
     }
 
+    form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%; /* Two columns per row */
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+
+  .inline-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  label {
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #1565c0;
+  }
+
+  .terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.terms input[type="checkbox"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.terms label {
+  margin: 0;
+}
+
+.terms span {
+  color: #000;
+  cursor: pointer;
+}
+
     </style>
 </head>
 <body>
@@ -758,9 +837,9 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=SA2RNIp5tUM&t=316s" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "Payments.zip">Payments.zip</a>
-                <a class="tab-btn" href = "https://youtu.be/FSh9UIRYyQs" target = "_blank">Step By Step Explonation(Developement) Process</a>
+                <a class="tab" href = "https://www.youtube.com/watch?v=SA2RNIp5tUM&t=316s" target = "_blank">Requirement</a> |
+                <a class="tab" href = "Payments.zip">Payments.zip</a> |
+                <a class="tab" href = "https://youtu.be/FSh9UIRYyQs" target = "_blank">Step By Step Explonation(Developement) Process</a>
             </div>
 
             <div class="tabs-content">
@@ -782,37 +861,54 @@
 
                           <!-- Payment Form -->
                           <form onsubmit="event.preventDefault(); payment();">
-                            <label for="installment">Installment</label>
-                            <input type="text" id="installment" name="installment" placeholder="Enter Installment Number" required>
+                            <div class="form-group">
+                              <label for="installment">Installment</label>
+                              <input type="text" id="installment" name="installment" placeholder="Enter Installment Number" required>
+                            </div>
 
-                            <label for="transaction_id">Transaction ID</label>
-                            <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter Transaction ID" required>
+                            <div class="form-group">
+                              <label for="transaction_id">Transaction ID</label>
+                              <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter Transaction ID" required>
+                            </div>
 
-                            <label for="amount">Amount</label>
-                            <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+                            <div class="form-group">
+                              <label for="amount">Amount</label>
+                              <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+                            </div>
 
-                            <label for="paid_on">Paid On:</label>
-                            <input type="date" id="paid_on" name="paid_on" required>
+                            <div class="form-group">
+                              <label for="paid_on">Paid On</label>
+                              <input type="date" id="paid_on" name="paid_on" required>
+                            </div>
 
-                            <label for="bill_collector">Bill Collector</label>
-                            <select id="bill_collector" name="bill_collector">
-                              <option value="Charan Teja">Charan Teja</option>
-                              <option value="Kiran Kumar">Kiran Kumar</option>
-                              <option value="Ravi Rao">Ravi Rao</option>
-                              <option value="Rama Krishna">Rama Krishna</option>
-                              <option value="Suhas Babu">Suhas Babu</option>
-                            </select>
+                            <div class="form-group">
+                              <label for="bill_collector">Bill Collector</label>
+                              <select id="bill_collector" name="bill_collector">
+                                <option value="Charan Teja">Charan Teja</option>
+                                <option value="Kiran Kumar">Kiran Kumar</option>
+                                <option value="Ravi Rao">Ravi Rao</option>
+                                <option value="Rama Krishna">Rama Krishna</option>
+                                <option value="Suhas Babu">Suhas Babu</option>
+                              </select>
+                            </div>
 
-                            <!-- CAPTCHA Section -->
-                            <label id="mathExp">6 + 7 =</label>
-                            <input type="text" id="mathResult" placeholder="Enter Result" required>
+                            <div class="form-group ">
+                                <label for="mathResult">Enter Result</label>
+                                <input type="text" id="mathResult" placeholder="6 + 7 =" required>
+                            </div>
 
-                            <p>
-                              <input type="checkbox" id="tCheck" />
-                              By Clicking Pay Now, you agree to our <span style="color:blue;">terms & Conditions</span>
-                            </p>
 
-                            <button type="submit">Pay Now</button>
+                            <div class="form-group full-width">
+                                <label class="terms">
+                                  <input type="checkbox" id="tCheck" required />
+                                  <span>By Clicking Pay Now, you agree to our <span style="color:blue;">terms & Conditions</span></span>
+                                </label>
+                              </div>
+
+
+                            <div class="form-group full-width">
+                              <button type="submit">Pay Now</button>
+                            </div>
                           </form>
                       </div>
                 </div>
@@ -876,41 +972,44 @@
         let a, b;
 
         function generateCaptcha(redirectUrl = null) {
-          // Random numbers and colors
-          a = Math.floor(Math.random() * 10);
-          b = Math.floor(Math.random() * 10);
-          const colors = ["yellow", "lime", "red", "aqua", "cadetblue"];
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        // Generate two random numbers
+        a = Math.floor(Math.random() * 10);
+        b = Math.floor(Math.random() * 10);
 
-          // Set captcha expression and background
-          const mathExp = document.getElementById("mathExp");
-          mathExp.textContent = `${a} + ${b} =`;
-          mathExp.style.backgroundColor = randomColor;
+        // Generate a random background color
+        const colors = ["yellow", "lime", "red", "aqua", "cadetblue"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-          // Clear input field
-          document.getElementById("mathResult").value = "";
+        // Set placeholder text to the math expression
+        const mathInput = document.getElementById("mathResult");
+        mathInput.placeholder = `${a} + ${b} =`;
+        mathInput.style.backgroundColor = randomColor;
 
-          // Optional redirect
-          if (redirectUrl) {
+        // Clear the input
+        mathInput.value = "";
+
+        // Optional redirect
+        if (redirectUrl) {
             window.location.href = redirectUrl;
-          }
         }
+        }
+
 
         // Payment validation
         function payment() {
-          const result = parseInt(document.getElementById("mathResult").value, 10);
-          const isChecked = document.getElementById("tCheck").checked;
+            const result = parseInt(document.getElementById("mathResult").value, 10);
+            const isChecked = document.getElementById("tCheck").checked;
 
-          if (!isChecked) {
-            alert("Please read and agree to the terms & conditions.");
-            return;
-          }
+            if (!isChecked) {
+                alert("Please read and agree to the terms & conditions.");
+                return;
+            }
 
-          if (a + b === result) {
-            window.location.href = "Thanks.html";
-          } else {
-            alert("Error: Captcha - Math Expression Result is Wrong");
-          }
+            if (a + b === result) {
+                window.location.href = "Thanks.html";
+            } else {
+                alert("Error: Captcha - Math Expression Result is Wrong");
+            }
         }
 
         // Initialize captcha on page load

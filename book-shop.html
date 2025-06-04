@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -755,10 +759,10 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://youtu.be/5mwh-SLR5H0" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "Monthly Data.zip">Monthly Data.zip</a>
-                <a class="tab-btn" href = "images/Sample.jpeg" target = "_blank">Sample Output</a>
-                <a class="tab-btn" href = "https://youtu.be/s4EdTtfTA8I" target = "_blank">Solution, Step by Step Explonation</a>
+                <a class="tab" href = "https://youtu.be/5mwh-SLR5H0" target = "_blank">Requirement</a> |
+                <a class="tab" href = "Monthly Data.zip">Monthly Data.zip</a> |
+                <a class="tab" href = "images/Sample.jpeg" target = "_blank">Sample Output</a> |
+                <a class="tab" href = "https://youtu.be/s4EdTtfTA8I" target = "_blank">Solution, Step by Step Explonation</a>
             </div>
 
             <div class="tabs-content">

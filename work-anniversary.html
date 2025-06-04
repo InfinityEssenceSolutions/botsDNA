@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -635,11 +639,11 @@
         </div>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "WorkAnniversary.xlsx">Work Anniversary.xlsx</a>
-                <a class="tab-btn" href = "images/SampleEmail.jpeg" target = "_blank">Email</a>
-                <a class="tab-btn" href = "" target = "_blank">Step By Step Explonation(Developement) Process</a>
-                <a class="tab-btn" href = "YearsOfExp.html" target = "_blank">SubmitExp</a>
+                <a class="tab" href = "" target = "_blank">Requirement</a> |
+                <a class="tab" href = "WorkAnniversary.xlsx">Work Anniversary.xlsx</a> |
+                <a class="tab" href = "images/SampleEmail.jpeg" target = "_blank">Email</a> |
+                <a class="tab" href = "" target = "_blank">Step By Step Explonation(Developement) Process</a> |
+                <a class="tab" href = "YearsOfExp.html" target = "_blank">SubmitExp</a>
             </div>
             <div class="tabs-content">
                 <!-- Customer List Tab -->

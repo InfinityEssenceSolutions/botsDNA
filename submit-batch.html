@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotsDNA - Thanks</title>
+    <title>BotsDNA - Submit Batch</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -762,63 +762,54 @@
     <section class="services" id="services">
         <div class="container">
           <h2 style="text-align: center;">Batch Process</h2>
-          <table border=2>
+          <table border="2">
+            <tr>
+              <td>Batch Code:</td>
+              <td><input type="text" id="barcode" required /></td>
+            </tr>
 
             <tr>
+              <td>Max Version:</td>
+              <td>
+                <select>
+                  <option>01</option><option>02</option><option>03</option><option>04</option>
+                  <option>05</option><option>06</option><option>07</option><option>08</option>
+                  <option>09</option><option>10</option><option>11</option><option>12</option>
+                  <option>13</option><option>14</option><option>15</option>
+                </select>
+              </td>
+            </tr>
 
-               <td>Batch Code : </td><td><input type="text" /></td></tr>
+            <tr>
+              <td>Min Version:</td>
+              <td>
+                <select>
+                  <option>1</option><option>2</option><option>3</option><option>4</option>
+                  <option>5</option><option>6</option><option>7</option><option>8</option>
+                  <option>9</option><option>10</option><option>11</option><option>12</option>
+                  <option>13</option><option>14</option><option>15</option>
+                </select>
+              </td>
+            </tr>
 
-             <tr>
+            <tr>
+              <td>Batch Run Date:</td>
+              <td><input type="date" id="runDate" required /></td>
+            </tr>
 
-                 <td>Max Version : </td><td><select>
-                                                   <option>01</option>
-                               <option>02</option>
-                               <option>03</option>
-                               <option>04</option>
-                               <option>05</option>
-                               <option>06</option>
-                               <option>07</option>
-                               <option>08</option>
-                               <option>09</option>
-                               <option>10</option>
-                               <option>11</option>
-                               <option>12</option>
-                               <option>13</option>
-                               <option>14</option>
-                               <option>15</option></td></tr>
+            <tr>
+              <td>Order Type:</td>
+              <td>
+                <input type="radio" name="AtomicName" value="Dubnium" /> Dubnium
+                <input type="radio" name="AtomicName" value="Potassium" /> Potassium
+              </td>
+            </tr>
+          </table>
 
-             <tr>
+          <center>
+            <p><input type="button" value="Submit" onclick="opensubmission()" /></p>
+          </center>
 
-                  <td>Min Version : </td><td><select>
-                               <option>1</option>
-                               <option>2</option>
-                               <option>3</option>
-                               <option>4</option>
-                               <option>5</option>
-                               <option>6</option>
-                               <option>7</option>
-                               <option>8</option>
-                               <option>9</option>
-                               <option>10</option>
-                               <option>11</option>
-                               <option>12</option>
-                               <option>13</option>
-                               <option>14</option>
-                               <option>15</option></td></tr>
-
-              <tr>
-
-                    <td>Batch Run Date : </td><td><input type="date" /></td></tr>
-
-              <tr>
-
-                   <td>Order Type : </td><td>
-                                         <input type="radio"  name="AtomicName" />Dubnium<input type="radio" name="AtomicName" />Potassium</td></tr>
-
-
-           </table>
-
-                 <center><p><input type="button" value="Submit" onclick="opensubmission()" /></p></center>
         </div>
       </section>
     <!-- WhatsApp Icon -->
@@ -833,13 +824,31 @@
         </svg>
     </a>
     <script>
-
         function opensubmission() {
+          const barcode = document.getElementById("barcode").value.trim();
+          const runDate = document.getElementById("runDate").value;
+          const orderType = document.querySelector('input[name="AtomicName"]:checked');
 
-            location. href = "Thanks.html";
+          if (!barcode) {
+            alert("Please enter Batch Code.");
+            return;
+          }
 
+          if (!runDate) {
+            alert("Please select a Batch Run Date.");
+            return;
+          }
+
+          if (!orderType) {
+            alert("Please select an Order Type.");
+            return;
+          }
+
+          // All validations passed
+          location.href = "Thanks.html";
         }
-    </script>
+      </script>
+
     <script>
         const buttons = document.querySelectorAll(".tab-btn");
         const tabs = document.querySelectorAll(".tab-pane");

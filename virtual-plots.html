@@ -446,11 +446,15 @@
     }
 
     .tabs-header {
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     display: flex;
     border-bottom: 1px solid #e2e8f0;
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
+    gap: 10px;               /* Space between tabs */
+    padding: 10px;
 }
 .tabs-header::-webkit-scrollbar {
     height: 8px;
@@ -706,11 +710,11 @@
         <br>
         <div class="tabs-container">
             <div class="tabs-header">
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=SfLyN9OWKxs" target = "_blank">Requirement</a>
-                <a class="tab-btn" href = "input.xlsx">input.xlsx</a>
-                <a class="tab-btn" href = "Virtual Plot Booking Output Email.pdf">BookingEmail.pdf</a>
-                <a class="tab-btn" href = "https://www.youtube.com/watch?v=nqFAIt-vcT8&list=PLj3wlxu9AsDWXOQwXzOIaTyhUNu2QUcYn&index=10" target = "_blank">Solution</a>
-                <a class="tab-btn" href = "https://www.uipathlearner.com/home/course/vitrual-plots/9" target = "_blank">Buy complete step by step solution with source code</a>
+                <a class="tab" href = "https://www.youtube.com/watch?v=SfLyN9OWKxs" target = "_blank">Requirement</a> |
+                <a class="tab" href = "input.xlsx">input.xlsx</a> |
+                <a class="tab" href = "Virtual Plot Booking Output Email.pdf">BookingEmail.pdf</a> |
+                <a class="tab" href = "https://www.youtube.com/watch?v=nqFAIt-vcT8&list=PLj3wlxu9AsDWXOQwXzOIaTyhUNu2QUcYn&index=10" target = "_blank">Solution</a> |
+                <a class="tab" href = "https://www.uipathlearner.com/home/course/vitrual-plots/9" target = "_blank">Buy complete step by step solution with source code</a>
             </div>
 
             <div class="tabs-content">
